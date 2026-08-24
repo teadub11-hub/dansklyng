@@ -1,23 +1,18 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
-import { LanguageProvider } from "@/lib/i18n";
-import { SiteShell } from "@/components/site-shell";
+import { DEFAULT_LANG, htmlLang, langFromPath } from "@/lib/locale";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Dansk Lyng";
-
 export const Route = createRootRoute({
+  beforeLoad: ({ location }) => ({
+    lang: langFromPath(location.pathname) ?? DEFAULT_LANG,
+  }),
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: APP_NAME },
-      {
-        name: "description",
-        content:
-          "Dansk Lyng — Danish heather honey and seasonal Nordic honeys from Jutland. Single-origin, supplied to trade.",
-      },
+      { title: "Dansk Lyng" },
       { name: "theme-color", content: "#3D4A3A" },
       { name: "author", content: "Dansk Lyng" },
     ],
@@ -38,19 +33,16 @@ export const Route = createRootRoute({
 });
 
 function Root() {
+  const { lang } = Route.useRouteContext();
   return (
-    <html lang="zh-Hant" suppressHydrationWarning>
+    <html lang={htmlLang(lang)} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body className="antialiased">
         <PreviewHostBridge />
         <AuthProvider>
-          <LanguageProvider>
-            <SiteShell>
-              <Outlet />
-            </SiteShell>
-          </LanguageProvider>
+          <Outlet />
         </AuthProvider>
         <Scripts />
       </body>

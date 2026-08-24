@@ -193,13 +193,13 @@ export const journal = [
     body: {
       zh: [
         "Lynghonning 2025 由我們送 Intertek 檢測。對照的是丹麥養蜂人協會的嚴格品質標準，而不是「可以出口就好」。指標包括水分、HMF（加熱劣變）、澱粉酶（生蜜活性）與花粉譜。",
-        "這份報告說明我們交出的是什麼。它不能替代進口商的送驗。各國食品規定不同——台灣、香港、新加坡、日本的殘留與標示要求並不是同一套。進口商必須依目的地市場自行送驗。",
-        "每一批都附灌裝證明，可追溯該批採收與裝罐。貿易訂單另附丹麥產地證明。HS Code 0409.00.00。這不是行銷附件，是報關與上架要用的文件。",
+        "這份報告說明我們交出的是什麼。它不能替代進口商的送驗。目的地市場的食品規定各不相同，進口商須依自己的市場自行送驗。",
+        "每一批都附灌裝證明，可追溯該批採收與裝罐。產地相關說明，可以在合適的對話裡一起看。",
       ],
       en: [
         "We sent Lynghonning 2025 to Intertek. We compare results to the strict quality standards of the Danish Beekeepers Association — not to a minimum that merely clears export. The metrics: moisture, HMF (heat damage), diastase (enzyme activity in raw honey), and pollen profile.",
-        "That report describes what we packed. It does not replace the importer’s own testing. Food law is not the same in Taiwan, Hong Kong, Singapore, or Japan. The importer tests for the destination market.",
-        "Every lot ships with a filling certificate, traceable to that harvest and bottling, plus a Danish origin certificate. HS Code 0409.00.00. This is not a marketing pack. It is the paperwork customs and a quality team will ask for.",
+        "That report describes what we packed. It does not replace the importer’s own testing. Food law differs by destination. The importer tests for their own market.",
+        "Every lot ships with a filling certificate, traceable to that harvest and bottling. Origin information can be looked at together in a qualified conversation.",
       ],
     },
   },
@@ -231,23 +231,21 @@ export const journal = [
     theme: "knowledge" as JournalTheme,
     featured: false,
     date: "2026-05-12",
-    title: { zh: "進口丹麥蜂蜜：稅則、認證與清關", en: "Importing Danish honey: tariffs, certifications, clearance" },
+    title: { zh: "進口丹麥蜂蜜時會碰到什麼", en: "What importing Danish honey involves" },
     lede: {
-      zh: "下貿易訂單之前，需要先對上的實務框架。",
-      en: "The practical frame you need before placing a trade order.",
+      zh: "產地、文件、目的地市場的規定。細節在對話裡對。",
+      en: "Origin, paperwork, and the destination market’s rules. The rest is for a conversation.",
     },
     body: {
       zh: [
-        "稅則：HS 0409.00.00（天然蜂蜜）。丹麥／歐盟原產。實際關稅與食品法規以目的地市場為準——台灣、香港、新加坡、日本的標示與殘留標準並不相同。",
-        "文件：丹麥產地證明、每一批的灌裝證明。我們有 Intertek 報告（Lynghonning 2025）。進口商仍須依目的地市場自行送驗——各國規定不同。標示由我們與進口商在合約階段確認，不會在出貨前一週才改。",
-        "運輸：海運至亞洲主要港口約六至八週。蜂蜜不需冷鏈，但應避高熱。室溫、乾燥、避光。",
-        "結晶是品質訊號，不是瑕疵。復原請用水浴、低於 40°C。不要微波。",
+        "天然蜂蜜的稅則分類是 HS 0409.00.00，丹麥／歐盟原產。實際關稅與食品法規以目的地市場為準——不同市場的標示與殘留標準並不相同。",
+        "我們可以準備產地與批次相關的說明。Lynghonning 2025 由我們送 Intertek 檢測（水分、HMF、澱粉酶、花粉譜）。進口商仍須依自己國家規定送驗。",
+        "蜂蜜不需冷鏈，但應避高熱。室溫、乾燥、避光。結晶是品質訊號，不是瑕疵。復原請用水浴、低於 40°C。不要微波。",
       ],
       en: [
-        "Classification: HS 0409.00.00 (natural honey). Danish / EU origin. Duty and food law follow the destination — labelling and residue rules are not the same in Taiwan, Hong Kong, Singapore, or Japan.",
-        "Documents: Danish origin certificate, and a filling certificate with every lot. We hold an Intertek report for Lynghonning 2025. Importers still test to their own market — the rules differ by country. Artwork is locked at contract, not the week before the vessel sails.",
-        "Freight: typically by sea, six to eight weeks to major Asian ports. Honey does not need a cold chain, but it hates heat. Cool, dry, dark.",
-        "Crystallisation is a quality sign, not a fault. To reliquefy, use a water bath below 40°C. Do not microwave.",
+        "Natural honey is classified HS 0409.00.00, of Danish / EU origin. Duty and food law follow the destination — labelling and residue rules are not the same everywhere.",
+        "Origin and lot information can be prepared. We sent Lynghonning 2025 to Intertek (moisture, HMF, diastase, pollen). Importers still test to their own market.",
+        "Honey does not need a cold chain, but it hates heat. Cool, dry, dark. Crystallisation is a quality sign, not a fault. To reliquefy, use a water bath below 40°C. Do not microwave.",
       ],
     },
   },
@@ -256,21 +254,21 @@ export const journal = [
     theme: "knowledge" as JournalTheme,
     featured: false,
     date: "2026-06-01",
-    title: { zh: "把 Dansk Lyng 帶進一個市場", en: "Bringing Dansk Lyng into a market" },
+    title: { zh: "把 Dansk Lyng 帶到一個新的地方", en: "Bringing Dansk Lyng to a new place" },
     lede: {
-      zh: "產品是真的。出口做得到。下一步是對話。",
-      en: "The product is real. Export is in place. The next step is a conversation.",
+      zh: "產地是清楚的。下一步是對話。",
+      en: "The origin is clear. The next step is a conversation.",
     },
     body: {
       zh: [
-        "Dansk Lyng 來自西日德蘭。規格是 450 g 玻璃罐、每箱 12 罐。每批附灌裝證明與產地文件；我們持有 Lynghonning 2025 的 Intertek 報告。進口商仍須依自己國家規定送驗。",
-        "文件與標示可依目的地市場準備。外箱與棧板按出口規格出貨。",
-        "商業條件、量與市場安排，個別討論。石楠花蜜受花期限制——真正要引進的人，會在花季前開始對話。",
+        "Dansk Lyng 來自西日德蘭。旗艦是 Lynghonning，其餘是同一群蜂的季節。",
+        "產地說明、文件與目的地市場標示，可以在合適的對話裡一起看。",
+        "適不適合這個市場、怎麼合作，個別討論。石楠花蜜受花期限制。",
       ],
       en: [
-        "Dansk Lyng comes from West Jutland. The format is a 450 g glass jar, 12 jars per case. Every lot ships with a filling certificate and origin papers; we hold an Intertek report for Lynghonning 2025. Importers still test to their own market.",
-        "Documents and labelling can be prepared to destination-market requirements. Cases and pallets ship in export configuration.",
-        "Commercial terms, volumes and market arrangements are discussed individually. Heather honey is limited by bloom — a serious introduction starts before the season, with a conversation.",
+        "Dansk Lyng comes from West Jutland. Lynghonning is the signature harvest; the others are the rest of the year from the same hives.",
+        "Origin information, documents and destination-market labelling can be looked at together in a qualified conversation.",
+        "Whether it belongs in a market, and how to work, is discussed individually. Heather honey is limited by bloom.",
       ],
     },
   },
@@ -310,12 +308,12 @@ export const journal = [
     body: {
       zh: [
         "與我們合作的日德蘭養蜂人，在這片荒原上已累積四十多年的採收經驗。蜂箱隨著花期移動，而不是固定在觀光點旁邊供拍照。",
-        "每一罐都是生蜜：不加熱、只做粗濾、採收後數日內冷封入罐。不壓榨、不跨季混煉、不添加。",
+        "每一罐都是生蜜：不加熱、只做粗濾。不壓榨、不跨季混煉、不添加。",
         "我們的工作不是把蜂蜜賣得更遠。是讓荒原給的東西，原樣抵達懂得它的桌子。",
       ],
       en: [
         "The Jutland beekeepers we work with have more than forty years of harvest knowledge on this heath. Hives move with the bloom. They are not parked beside a viewpoint for photographs.",
-        "Every jar is raw: unheated, strained only coarsely, cold-sealed within days of harvest. We do not press. We do not blend across seasons. Nothing is added.",
+        "Every jar is raw: unheated, strained only coarsely. We do not press. We do not blend across seasons. Nothing is added.",
         "Our work is not to sell honey further. It is to let what the heath gave arrive, as it is, at a table that knows how to hold it.",
       ],
     },
@@ -333,7 +331,6 @@ export const themeLabel: Record<JournalTheme, Localized> = {
   beekeeping: { zh: "養蜂", en: "Beekeeping" },
 };
 
-export const CASE_SIZE = 12;
 export const JAR_SIZE = "450 g";
 export const EMAIL = "hej@dansklyng.com";
 export const HS_CODE = "0409.00.00";

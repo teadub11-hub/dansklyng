@@ -1,7 +1,7 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, type ReactNode } from "react";
+import { useRouter } from "@tanstack/react-router";
 import type { Lang } from "./content";
-
-const STORAGE_KEY = "dansk-lyng-lang";
+import { STORAGE_KEY, localePath, stripLangPrefix } from "./locale";
 
 type I18nCtx = {
   lang: Lang;
@@ -10,28 +10,23 @@ type I18nCtx = {
 
 const Ctx = createContext<I18nCtx | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("zh");
+export function LanguageProvider({ lang, children }: { lang: Lang; children: ReactNode }) {
+  const router = useRouter();
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const fromUrl = params.get("lang");
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (fromUrl === "en" || fromUrl === "zh") setLangState(fromUrl);
-    else if (stored === "en" || stored === "zh") setLangState(stored);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
     window.localStorage.setItem(STORAGE_KEY, lang);
   }, [lang]);
 
   const value = useMemo(
     () => ({
       lang,
-      setLang: (next: Lang) => setLangState(next),
+      setLang: (next: Lang) => {
+        window.localStorage.setItem(STORAGE_KEY, next);
+        const rest = stripLangPrefix(router.state.location.pathname);
+        void router.navigate({ href: localePath(next, rest) });
+      },
     }),
-    [lang],
+    [lang, router],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
@@ -42,6 +37,7 @@ export function useLang() {
   if (!ctx) throw new Error("useLang must be used within LanguageProvider");
   return ctx;
 }
+
 
 export const ui = {
   zh: {
@@ -76,10 +72,8 @@ export const ui = {
     subscribeBody: "花開、採收、偶爾一封信。不是促銷。",
     subscribeCta: "訂閱",
     subscribePlaceholder: "你的工作信箱",
-    subscribeDone: "已記下。我們只在有事情時寫信。",
-    moq: "每個 SKU 最低 12 罐起訂，首單可混箱。",
+    subscribeDone: "已記在這台瀏覽器裡。訂閱信箱尚未接到伺服器。",
     jar: "450 g 玻璃罐",
-    caseSize: "每箱 12 罐",
     danishOrigin: "丹麥產地",
     natural: "天然生蜜",
     seasonal: "季節限定",
@@ -138,22 +132,6 @@ export const ui = {
     aboutQuote: "我們把自然的禮物，原樣交給你。\nEt produkt fra den danske natur.",
     aboutFounder: "Victoria Gravesen",
     aboutFounderRole: "創辦人",
-    aboutLand: "日德蘭的保護荒原帶",
-    aboutLandBody:
-      "蜂蜜來自西岸一條狹長的保護荒原：從內陸 Borris Hede，到沿海沙丘的國家公園 Thy 與 Hanstholm。鹽風、貧瘠砂土、漫長的北歐光。這不是背景，是被管理的風土。",
-    aboutKeepers: "一小圈荒原養蜂人",
-    aboutKeepersBody:
-      "蜂群隨著花期在保護帶上移動。每一罐生蜜：不加熱、只做粗濾、採收後數日內入罐。不壓榨、不跨季混合、不添加。",
-    aboutWindows: "旗艦，以及三個季節窗口",
-    aboutCert: "驗證、文件、溯源",
-    aboutCert1t: "丹麥產地",
-    aboutCert1: "百分之百在丹麥採收、裝罐。HS 0409.00.00。",
-    aboutCert2t: "我們的送驗",
-    aboutCert2: "Lynghonning 2025 由我們送 Intertek 檢測（水分、HMF、澱粉酶、花粉譜）。進口商仍須依目的地市場自行送驗——各國規定不同，這份報告不能替代你的。",
-    aboutCert3t: "生蜜、不加熱",
-    aboutCert3: "不巴氏殺菌、不超濾、無添加。",
-    aboutCert4t: "灌裝證明",
-    aboutCert4: "每一批都附灌裝證明，可追溯該批採收與裝罐。",
     ctaStart: "洽詢合作",
     partnerTitle: "把日德蘭的荒原，帶到新的地方。",
     partnerLede: "Dansk Lyng 與不同市場的夥伴建立長期合作，讓來自西日德蘭的蜂蜜，以適合當地的方式被認識。",
@@ -163,37 +141,22 @@ export const ui = {
       "Lynghonning 來自日德蘭半島西岸短暫的石楠花季。特殊的產地、質地與風味，讓它在成熟的蜂蜜市場裡，仍然有自己的位置。",
     partnerHow: "我們怎麼合作",
     partnerCh1t: "產品",
-    partnerCh1: "丹麥產地。旗艦是 Lynghonning，以及同一群蜂的季節系列。零售規格 450 g。",
+    partnerCh1: "丹麥產地。旗艦是 Lynghonning，以及同一群蜂的季節系列。",
     partnerCh2t: "出口就緒",
-    partnerCh2: "出口文件、既有檢測報告、目的地市場標示協助，以及外箱與棧板規格。",
+    partnerCh2: "產地與產品說明、對話中可提供的文件，以及目的地市場標示的協調。",
     partnerCh3t: "合作",
-    partnerCh3: "每個市場不同。我們會根據市場、通路與合作方式，一起討論適合的產品組合、數量、物流與商業安排。",
-    tradeSheet: "貿易資料",
-    tradeOriginT: "產地",
-    tradeOrigin: "丹麥 · 西日德蘭",
-    tradeFormatT: "零售規格",
-    tradeFormat: "450 g 玻璃罐",
-    tradeDocsT: "文件",
-    tradeDocs: "備索",
-    tradeLogT: "出口規格",
-    tradeLog: "外箱與棧板",
-    tradeCaseT: "箱規",
-    tradeCase: "12 罐",
-    statusExclusive: "獨家夥伴已確定",
-    statusOpen: "開放洽詢",
-    statusDiscussion: "洽談中",
-    partnerTimeline: "從洽詢到首批抵達——約 10–14 週",
-    step1t: "合作洽詢",
-    step1: "填表。兩個工作天內回覆評估與 Sample Case 條件。",
-    step2t: "樣品送達",
-    step2: "空運樣品供內部品嚐、送檢與通路提案。空運費用由買方負擔。",
-    step3t: "合約與訂金",
-    step3: "確認量、獨家範圍與標示。之後排產。",
-    step4t: "生產與海運",
-    step4: "三至四週生產，六至八週海運至亞洲主要港口。",
-    partnerNotes: "時程隨樣品、標示簽核與船期變動。石楠花蜜是單花花期、限量產品——建議花季前規劃。",
+    partnerCh3: "每個市場不同。適合的合作方式，坐下來談。",
+    supportTitle: "我們能一起準備的",
+    support1t: "產品與產地",
+    support1: "Lynghonning 從哪裡來、為什麼長這樣，以及同一群蜂其餘的季節。",
+    support2t: "文件",
+    support2: "在合適的對話裡，可以一起看產地與批次相關的說明。",
+    support3t: "標示",
+    support3: "目的地市場的標示，可以一起協調。",
+    support4t: "對話",
+    support4: "適不適合、怎麼合作，直接談。",
     applyTitle: "洽詢合作",
-    applyLede: "寫下你的市場與公司。我們會回信。",
+    applyLede: "寫下你的市場與公司。草稿只存在這台裝置上。",
     applyStepCompany: "公司",
     applyStepNeeds: "需求",
     applyStepContact: "聯絡",
@@ -214,10 +177,10 @@ export const ui = {
     applyName: "聯絡人",
     applyEmail: "工作信箱",
     applyPhone: "電話（選填）",
-    applySubmit: "送出洽詢",
-    applyPrivacy: "資料只用來回覆這次合作洽詢。",
-    applyDoneTitle: "我們收到了。",
-    applyDoneBody: "兩個工作天內，會有人寫信到你的信箱。若要先讀文件，風土誌裡有進口與夥伴說明。",
+    applySubmit: "儲存草稿",
+    applyPrivacy: "草稿只存在這台瀏覽器。要開始對話，請來信。",
+    applyDoneTitle: "草稿在這台裝置上。",
+    applyDoneBody: "表單還沒送到我們。請來信 hej@dansklyng.com，我們再開始談。",
     applyDraft: "草稿已儲存",
     contactTitle: "聯絡我們",
     contactLede: "一般詢問、品牌合作或媒體，請來信。貿易請走合作洽詢，回覆會比較快。",
@@ -229,9 +192,9 @@ export const ui = {
     journalStart: "從這裡讀。",
     journalAll: "全部筆記",
     faqTitle: "常見問題",
-    faqLede: "供貨、蜂蜜本身、文件與合作——買手最常問的。",
-    faq1q: "現在可以進口嗎？",
-    faq1a: "可以。石楠花蜜受花期限制。下一步是對話。",
+    faqLede: "蜂蜜本身、文件與合作。",
+    faq1q: "如何開始談合作？",
+    faq1a: "合作是個別討論的。時程取決於花期與目的地市場的要求，而不是一份公開的供貨表。",
     faq2q: "為什麼會結晶？",
     faq2a: "天然、未加熱的蜂蜜會結晶。這是品質訊號，不是變質。用水浴低於 40°C 即可復原。不要微波。",
     faq3q: "如何保存？",
@@ -248,18 +211,40 @@ export const ui = {
     faq8a: "只為了回覆你的來信或洽詢。我們不把名單賣掉，也沒有追蹤用的廣告 cookie。",
     legalPrivacyTitle: "隱私權政策",
     legalPrivacy:
-      "Dansk Lyng 是一個來自丹麥的小品牌。本預覽站不會把表單寄到伺服器——洽詢草稿只存在你的瀏覽器。正式站的信箱是 hej@dansklyng.com。我們不出售個人資料。",
+      "Dansk Lyng 是一個來自丹麥的小品牌。這個網站上的洽詢與訂閱表單目前不會送到伺服器——草稿只存在你的瀏覽器。請來信 hej@dansklyng.com。我們不出售個人資料。",
     legalTermsTitle: "使用條款",
     legalTerms:
       "本網站內容供了解品牌與合作。產品供應受花期與合約約束。價格、交期與商業條件以書面確認為準。",
     legalCookiesTitle: "Cookie 政策",
     legalCookies:
-      "我們希望這個網站像玻璃罐裡的蜂蜜一樣安靜。這個預覽不使用追蹤 cookie，只在你的裝置上記住語言與洽詢草稿。",
+      "我們希望這個網站像玻璃罐裡的蜂蜜一樣安靜。不使用追蹤 cookie，只在你的裝置上記住語言與洽詢草稿。",
     notFound: "沒有這一篇。",
     backJournal: "回到風土誌",
     backProducts: "回到型錄",
     menu: "選單",
     close: "關閉",
+    seoHomeTitle: "等一年，為了六週。 — Dansk Lyng",
+    seoHomeDesc: "石楠只在西日德蘭開這麼短。Dansk Lyng 的名字，從這裡來。",
+    seoAboutTitle: "從荒原開始。 — Dansk Lyng",
+    seoAboutDesc: "Dansk Lyng 始於一片地景。石楠、西日德蘭短暫的花期，以及一罐盡量接近荒原原本樣子的蜂蜜。",
+    seoProductsTitle: "一年四罐 — Dansk Lyng",
+    seoProductsDesc: "先是石楠。其餘三款，是同一群蜂在紫色出現之前採下的。",
+    seoJournalTitle: "從荒原讀起 — Dansk Lyng",
+    seoJournalDesc: "花期為什麼短。這罐為什麼長這樣。",
+    seoPartnerTitle: "合作 — Dansk Lyng",
+    seoPartnerDesc: "Dansk Lyng 與不同市場的夥伴建立長期合作，讓來自西日德蘭的蜂蜜，以適合當地的方式被認識。",
+    seoApplyTitle: "洽詢合作 — Dansk Lyng",
+    seoApplyDesc: "寫下你的市場與公司。草稿只存在這台裝置上。",
+    seoContactTitle: "聯絡我們 — Dansk Lyng",
+    seoContactDesc: "一般詢問、品牌合作或媒體，請來信 hej@dansklyng.com。",
+    seoFaqTitle: "常見問題 — Dansk Lyng",
+    seoFaqDesc: "蜂蜜本身、文件與合作。合作是個別討論的。",
+    seoPrivacyTitle: "隱私權政策 — Dansk Lyng",
+    seoPrivacyDesc: "洽詢與訂閱表單目前不會送到伺服器。草稿只存在你的瀏覽器。",
+    seoTermsTitle: "使用條款 — Dansk Lyng",
+    seoTermsDesc: "本網站內容供了解品牌與合作。商業條件以書面確認為準。",
+    seoCookiesTitle: "Cookie 政策 — Dansk Lyng",
+    seoCookiesDesc: "不使用追蹤 cookie。只在你的裝置上記住語言與洽詢草稿。",
   },
   en: {
     skip: "Skip to main content",
@@ -293,10 +278,8 @@ export const ui = {
     subscribeBody: "When it flowers, when we take it. The occasional letter. Not a promotion.",
     subscribeCta: "Subscribe",
     subscribePlaceholder: "Work email",
-    subscribeDone: "Noted. We write when there is something to say.",
-    moq: "Minimum 12 jars per SKU. Mixed cases on first orders.",
+    subscribeDone: "Saved in this browser. The mailing list is not connected to a server yet.",
     jar: "450 g glass jar",
-    caseSize: "12 jars per case",
     danishOrigin: "Danish origin",
     natural: "Raw, unheated",
     seasonal: "Seasonal",
@@ -355,22 +338,6 @@ export const ui = {
     aboutQuote: "We pass on nature’s gift, as it is.\nEt produkt fra den danske natur.",
     aboutFounder: "Victoria Gravesen",
     aboutFounderRole: "Founder",
-    aboutLand: "Jutland’s protected heath belt",
-    aboutLandBody:
-      "A narrow strip along Denmark’s west coast — from inland Borris Hede to the dunes of Nationalpark Thy and Hanstholm. Salt wind, poor sand, long northern light. Not a backdrop. A working terroir.",
-    aboutKeepers: "A small circle of heathland beekeepers",
-    aboutKeepersBody:
-      "Hives move with the bloom along the protected belt. Every jar is raw: unheated, coarsely strained, sealed within days. We do not press, blend across seasons, or add anything.",
-    aboutWindows: "The signature, and three seasonal windows",
-    aboutCert: "Verified, documented, traceable",
-    aboutCert1t: "Danish origin",
-    aboutCert1: "Harvested and jarred in Denmark. HS 0409.00.00.",
-    aboutCert2t: "Our lab work",
-    aboutCert2: "We sent Lynghonning 2025 to Intertek (moisture, HMF, diastase, pollen). Importers still test to their own market — the rules differ by country, and our report does not replace yours.",
-    aboutCert3t: "Raw, unheated",
-    aboutCert3: "No pasteurisation, no ultrafiltration, no additives.",
-    aboutCert4t: "Filling certificate",
-    aboutCert4: "Every lot ships with a filling certificate, traceable to that harvest and bottling.",
     ctaStart: "Partnership enquiry",
     partnerTitle: "Bring the Jutland heath to a new place.",
     partnerLede: "Dansk Lyng builds long partnerships in different markets, so honey from West Jutland can be known in a way that fits the place it arrives.",
@@ -380,38 +347,22 @@ export const ui = {
       "Lynghonning comes from a short heather season on Jutland’s west coast. Origin, texture and flavour give it a place of its own, even in a mature honey market.",
     partnerHow: "How we work",
     partnerCh1t: "The product",
-    partnerCh1: "Danish origin. Lynghonning as the signature harvest, and a seasonal collection from the same hives. 450 g retail format.",
+    partnerCh1: "Danish origin. Lynghonning as the signature harvest, and a seasonal collection from the same hives.",
     partnerCh2t: "Market ready",
-    partnerCh2: "Export documentation, laboratory reports we hold, destination-market labelling support, case and pallet configurations.",
+    partnerCh2: "Product and origin information, documents shared in a qualified conversation, and labelling coordinated for the destination market.",
     partnerCh3t: "Partnership",
-    partnerCh3: "Every market is different. We discuss the right mix, volumes, logistics and commercial arrangements together — according to market, channel and how we work.",
-    tradeSheet: "Trade information",
-    tradeOriginT: "Origin",
-    tradeOrigin: "Denmark · West Jutland",
-    tradeFormatT: "Retail format",
-    tradeFormat: "450 g glass jar",
-    tradeDocsT: "Documentation",
-    tradeDocs: "Available on request",
-    tradeLogT: "Export configuration",
-    tradeLog: "Case and pallet",
-    tradeCaseT: "Case pack",
-    tradeCase: "12 jars",
-    statusExclusive: "Exclusive partner engaged",
-    statusOpen: "Open for enquiry",
-    statusDiscussion: "In discussion",
-    partnerTimeline: "Enquiry to first delivery — typically 10–14 weeks",
-    step1t: "Partnership enquiry",
-    step1: "Submit the form. We reply within two business days with assessment and Sample Case terms.",
-    step2t: "Sample Case delivered",
-    step2: "Samples by air for tasting, lab checks, and channel pitching. Air freight at buyer’s cost.",
-    step3t: "Contract & deposit",
-    step3: "Volume, exclusivity, label artwork. Then production is scheduled.",
-    step4t: "Production & sea freight",
-    step4: "Three to four weeks in production, six to eight weeks at sea to major Asian ports.",
-    partnerNotes:
-      "Timelines move with samples, artwork sign-off and vessels. Lyng honey is a single-bloom, limited-yield product — plan before the season.",
+    partnerCh3: "Every market is different. How we work together is something to sit down and discuss.",
+    supportTitle: "What we can support",
+    support1t: "Product and provenance",
+    support1: "Where Lynghonning comes from, why the jar sits like this, and the rest of the year from the same hives.",
+    support2t: "Documentation",
+    support2: "In a qualified conversation, we can look together at origin and lot information.",
+    support3t: "Labelling",
+    support3: "Destination-market labelling can be coordinated together.",
+    support4t: "A conversation",
+    support4: "Whether it belongs, and how to work — talked through directly.",
     applyTitle: "Partnership enquiry",
-    applyLede: "Tell us your market and company. We will write back.",
+    applyLede: "Tell us your market and company. The draft stays on this device.",
     applyStepCompany: "Company",
     applyStepNeeds: "Trade needs",
     applyStepContact: "Contact",
@@ -432,10 +383,10 @@ export const ui = {
     applyName: "Contact name",
     applyEmail: "Work email",
     applyPhone: "Phone (optional)",
-    applySubmit: "Send enquiry",
-    applyPrivacy: "Used only to reply to this partnership enquiry.",
-    applyDoneTitle: "We have it.",
-    applyDoneBody: "Someone will write within two business days. The journal has the import and partner notes if you want to read while you wait.",
+    applySubmit: "Save draft",
+    applyPrivacy: "The draft stays in this browser. To start a conversation, write to us.",
+    applyDoneTitle: "Saved on this device.",
+    applyDoneBody: "Nothing has been sent to us yet. Write to hej@dansklyng.com and we can begin the conversation.",
     applyDraft: "Draft saved",
     contactTitle: "Contact",
     contactLede: "General, press, or brand notes — write to us. Trade enquiries go faster through the partnership form.",
@@ -447,9 +398,9 @@ export const ui = {
     journalStart: "Start here.",
     journalAll: "All notes",
     faqTitle: "Questions we are asked",
-    faqLede: "Availability, the honey itself, documents, partnership.",
-    faq1q: "Is Dansk Lyng available for import now?",
-    faq1a: "Yes. Heather honey is limited by bloom. The next step is a conversation.",
+    faqLede: "The honey itself, documents, partnership.",
+    faq1q: "How do we begin a partnership conversation?",
+    faq1a: "Partnerships are discussed individually. Timing depends on harvest and on the destination market’s requirements — not on a public availability list.",
     faq2q: "Why does it crystallise?",
     faq2a: "Raw, unheated honey crystallises. It is a quality sign, not spoilage. Reliquefy in a water bath below 40°C. Do not microwave.",
     faq3q: "How should I store it?",
@@ -466,18 +417,40 @@ export const ui = {
     faq8a: "Only to answer you. We do not sell lists, and we do not run ad-tracking cookies.",
     legalPrivacyTitle: "Privacy",
     legalPrivacy:
-      "Dansk Lyng is a small Danish brand. This preview does not post forms to a server — enquiry drafts live in your browser. The working address is hej@dansklyng.com. We do not sell personal data.",
+      "Dansk Lyng is a small Danish brand. Enquiry and subscription forms on this site are not posted to a server — drafts stay in your browser. Write to hej@dansklyng.com. We do not sell personal data.",
     legalTermsTitle: "Terms",
     legalTerms:
       "Content is for understanding the brand and partnership. Supply depends on bloom and contract. Price, lead time and commercial terms are those confirmed in writing.",
     legalCookiesTitle: "Cookies",
     legalCookies:
-      "We would like this site to be as quiet as honey in a glass jar. This preview uses no tracking cookies. Language and enquiry drafts stay on your device.",
+      "We would like this site to be as quiet as honey in a glass jar. No tracking cookies. Language and enquiry drafts stay on your device.",
     notFound: "This note is not here.",
     backJournal: "Back to the journal",
     backProducts: "Back to catalog",
     menu: "Menu",
     close: "Close",
+    seoHomeTitle: "Wait a year. For six weeks. — Dansk Lyng",
+    seoHomeDesc: "Heather honey from West Jutland. A few weeks a year. Then you wait.",
+    seoAboutTitle: "Born from the heath. — Dansk Lyng",
+    seoAboutDesc: "Dansk Lyng began with a landscape. Heather, a short season on the Jutland heath, and a jar that leaves Denmark as the heath made it.",
+    seoProductsTitle: "Four jars, one year — Dansk Lyng",
+    seoProductsDesc: "Heather first. The other three are what the same hives take before the purple comes.",
+    seoJournalTitle: "From the heath — Dansk Lyng",
+    seoJournalDesc: "Why the bloom is short. Why the jar sits like this.",
+    seoPartnerTitle: "Partnerships — Dansk Lyng",
+    seoPartnerDesc: "Dansk Lyng builds long partnerships so honey from the West Jutland heath can be known in a new place.",
+    seoApplyTitle: "Partnership enquiry — Dansk Lyng",
+    seoApplyDesc: "Tell us your market and company. The draft stays on this device.",
+    seoContactTitle: "Contact — Dansk Lyng",
+    seoContactDesc: "General, press, or brand notes — write to hej@dansklyng.com.",
+    seoFaqTitle: "Questions we are asked — Dansk Lyng",
+    seoFaqDesc: "The honey itself, documents, partnership. Partnerships are discussed individually.",
+    seoPrivacyTitle: "Privacy — Dansk Lyng",
+    seoPrivacyDesc: "Enquiry and subscription forms are not posted to a server. Drafts stay in your browser.",
+    seoTermsTitle: "Terms — Dansk Lyng",
+    seoTermsDesc: "Content is for understanding the brand and partnership. Commercial terms are those confirmed in writing.",
+    seoCookiesTitle: "Cookies — Dansk Lyng",
+    seoCookiesDesc: "No tracking cookies. Language and enquiry drafts stay on your device.",
   },
 } as const;
 

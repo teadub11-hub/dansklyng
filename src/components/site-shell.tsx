@@ -4,11 +4,13 @@ import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { EMAIL } from "@/lib/content";
 import { useLang, useT } from "@/lib/i18n";
+import { localePath, stripLangPrefix } from "@/lib/locale";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const t = useT();
   const { lang, setLang } = useLang();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const rest = stripLangPrefix(pathname);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,7 +25,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [pathname]);
 
-  const overHero = pathname === "/" && !scrolled && !open;
+  const overHero = rest === "/" && !scrolled && !open;
 
   const links = [
     { to: "/products", label: t.navProducts },
@@ -50,7 +52,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6">
           <Link
-            to="/"
+            to={localePath(lang, "/") as "/"}
             className={cn(
               "font-display text-xl tracking-wide sm:text-2xl",
               overHero ? "text-cream" : "text-ink",
@@ -69,11 +71,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
             {links.map((l) => (
               <Link
                 key={l.to}
-                to={l.to}
+                to={localePath(lang, l.to) as "/"}
                 className={cn(
                   "transition-colors",
                   overHero ? "hover:text-cream" : "hover:text-ink",
-                  pathname.startsWith(l.to) && (overHero ? "text-cream" : "text-ink"),
+                  rest.startsWith(l.to) && (overHero ? "text-cream" : "text-ink"),
                 )}
               >
                 {l.label}
@@ -94,7 +96,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               {t.langSwitch}
             </button>
             <Link
-              to="/partner"
+              to={localePath(lang, "/partner") as "/"}
               className={cn(
                 "hidden min-h-11 items-center px-4 text-xs tracking-widest uppercase transition-transform duration-150 ease-out active:scale-[0.96] sm:inline-flex",
                 overHero ? "bg-cream text-ink" : "bg-heath text-cream",
@@ -123,20 +125,20 @@ export function SiteShell({ children }: { children: ReactNode }) {
               {links.map((l) => (
                 <Link
                   key={l.to}
-                  to={l.to}
+                  to={localePath(lang, l.to) as "/"}
                   className="flex min-h-11 items-center text-base text-ink"
                 >
                   {l.label}
                 </Link>
               ))}
-              <Link to="/partner" className="flex min-h-11 items-center text-base text-ink">
+              <Link to={localePath(lang, "/partner") as "/"} className="flex min-h-11 items-center text-base text-ink">
                 {t.navPartner}
               </Link>
-              <Link to="/contact" className="flex min-h-11 items-center text-base text-ink">
+              <Link to={localePath(lang, "/contact") as "/"} className="flex min-h-11 items-center text-base text-ink">
                 {t.navContact}
               </Link>
               <Link
-                to="/partner"
+                to={localePath(lang, "/partner") as "/"}
                 className="mt-2 flex min-h-11 items-center justify-center bg-heath text-sm tracking-widest text-cream uppercase"
               >
                 {t.ctaForTrade}
@@ -157,6 +159,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
 function Footer() {
   const t = useT();
+  const { lang } = useLang();
   return (
     <footer className="border-t border-ink/10 bg-heath text-cream">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-12">
@@ -170,27 +173,27 @@ function Footer() {
           <FooterCol
             title={t.footerProducts}
             items={[
-              { to: "/products", label: t.ctaCatalog },
-              { to: "/products/lyng", label: "Lynghonning" },
-              { to: "/faq", label: "FAQ" },
+              { to: localePath(lang, "/products"), label: t.ctaCatalog },
+              { to: localePath(lang, "/products/lyng"), label: "Lynghonning" },
+              { to: localePath(lang, "/faq"), label: "FAQ" },
             ]}
           />
           <FooterCol
             title={t.footerPartner}
             items={[
-              { to: "/partner", label: t.navPartner },
-              { to: "/partner/apply", label: t.ctaPartner },
-              { to: "/contact", label: t.navContact },
+              { to: localePath(lang, "/partner"), label: t.navPartner },
+              { to: localePath(lang, "/partner/apply"), label: t.ctaPartner },
+              { to: localePath(lang, "/contact"), label: t.navContact },
             ]}
           />
           <FooterCol
             title={t.footerBrand}
             items={[
-              { to: "/about", label: t.navAbout },
-              { to: "/journal", label: t.navJournal },
-              { to: "/privacy", label: t.footerPrivacy },
-              { to: "/terms", label: t.footerTerms },
-              { to: "/cookies", label: t.footerCookies },
+              { to: localePath(lang, "/about"), label: t.navAbout },
+              { to: localePath(lang, "/journal"), label: t.navJournal },
+              { to: localePath(lang, "/privacy"), label: t.footerPrivacy },
+              { to: localePath(lang, "/terms"), label: t.footerTerms },
+              { to: localePath(lang, "/cookies"), label: t.footerCookies },
             ]}
           />
         </div>
@@ -286,9 +289,10 @@ export function TextLink({
   children: ReactNode;
   tone?: "ink" | "cream";
 }) {
+  const { lang } = useLang();
   return (
     <Link
-      to={to as "/"}
+      to={localePath(lang, to) as "/"}
       className={cn(
         "inline-flex min-h-11 items-center gap-2 text-sm tracking-wide",
         tone === "ink" ? "text-ink hover:text-heather" : "text-cream hover:text-honey",
@@ -309,9 +313,10 @@ export function SolidLink({
   children: ReactNode;
   invert?: boolean;
 }) {
+  const { lang } = useLang();
   return (
     <Link
-      to={to as "/"}
+      to={localePath(lang, to) as "/"}
       className={cn(
         "inline-flex min-h-11 items-center justify-center px-5 text-xs tracking-widest uppercase transition-transform duration-150 ease-out active:scale-[0.96]",
         invert ? "bg-parchment text-ink" : "bg-heath text-cream",
