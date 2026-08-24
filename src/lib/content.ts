@@ -64,8 +64,8 @@ export const products = [
       en: "Clover and lime, with a hint of the heath still to come.",
     } as Localized,
     lede: {
-      zh: "白三葉草、菩提、柳蘭與初開的石楠，在晚夏自然交會。色澤較深，質地有時偏硬。",
-      en: "White clover, lime, fireweed and the first heather meet naturally in late summer. Deeper in colour, sometimes firm in texture.",
+      zh: "白三葉草、菩提、柳蘭與初開的石楠，在晚夏交織出較深的色澤。隨著時間自然結晶，質地也會逐漸變得細緻而厚實。",
+      en: "White clover, lime, fireweed and the first heather come together in late summer. Deeper in colour, it gradually crystallises into a fine, fuller texture.",
     } as Localized,
     pairings: {
       zh: "黑麥麵包、硬起司、燕麥粥、紅茶",
