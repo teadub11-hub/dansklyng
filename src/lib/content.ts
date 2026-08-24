@@ -64,8 +64,8 @@ export const products = [
       en: "Clover and lime, with a hint of the heath still to come.",
     } as Localized,
     lede: {
-      zh: "白三葉草、菩提，加一點柳蘭和石楠。蜜蜂混的，不是我們。色深，有時已經硬了。",
-      en: "White clover, lime, a little fireweed and heather. The bees blended it. Dark, and sometimes already firm.",
+      zh: "白三葉草、菩提、柳蘭與初開的石楠，在晚夏自然交會。色澤較深，質地有時偏硬。",
+      en: "White clover, lime, fireweed and the first heather meet naturally in late summer. Deeper in colour, sometimes firm in texture.",
     } as Localized,
     pairings: {
       zh: "黑麥麵包、硬起司、燕麥粥、紅茶",
@@ -84,12 +84,12 @@ export const products = [
     color: { zh: "近洋槐的淺金，有時偏深", en: "Acacia-pale, sometimes dark" } as Localized,
     texture: { zh: "近洋槐，流動", en: "Acacia-like, flowing" } as Localized,
     notes: {
-      zh: "有時像洋槐那樣淺，有時深得嚇人。",
-      en: "Sometimes pale as acacia. Sometimes dark enough to stop you.",
+      zh: "有時淡如洋槐蜜，有時呈現更深的琥珀色。",
+      en: "Sometimes pale like acacia honey; in other years, a deeper amber.",
     } as Localized,
     lede: {
-      zh: "色和質地有時像洋槐，有時很深、很衝。哪一種，那年的林子說了算。",
-      en: "Colour and body can sit next to acacia — or run dark and forceful. The forest that year decides.",
+      zh: "色澤與質地隨林間花期而變：有時清亮流動，有時深沉飽滿。",
+      en: "Colour and texture follow the woodland bloom: sometimes pale and fluid, sometimes dark and full-bodied.",
     } as Localized,
     pairings: {
       zh: "早餐桌、料理、白麵包、清淡起司",
@@ -145,15 +145,15 @@ export const journal = [
     body: {
       zh: [
         "丹麥石楠花蜜（lynghonning）是從石楠花（Hedelyng / Calluna vulgaris）採集的單一花源蜂蜜，尤其來自日德蘭西岸那一帶受保護的荒原。",
-        "它不是比較濃的超市蜂蜜。紅棕到波特酒色，辛香，質地像凝膠——湯匙挖開，它會再合上。花期六到八週，盛在八月中到九月中。錯過，就是下一年。",
-        "我們不混花、不加熱、不稀釋。每一罐對應那一年的花，不是一條可以隨時加大的產線。",
-        "產地、季節、處理。缺一就不是這罐。",
+        "石楠花蜜呈紅棕至波特酒色，帶辛香，並有少見的凝膠質地：湯匙劃過後，蜜面會慢慢合起。花期集中在晚夏的短暫數週。",
+        "我們希望每一批都保留當年花期留下的差異，不以加熱或稀釋把它修整成一致的味道。",
+        "它的個性來自產地、季節與處理方式。",
       ],
       en: [
         "Danish heather honey — lynghonning — is a single-flower honey gathered from heather (Hedelyng / Calluna vulgaris), especially across the protected heathlands of western Jutland.",
-        "It is not stronger supermarket honey. Red-brown to deep port, spicy, a gel that closes behind the spoon. Six to eight weeks, peaking mid-August to mid-September. Miss it, wait a year.",
-        "We do not blend across flowers, heat, or dilute. Each jar answers to that year’s bloom — not to a line that can be scaled.",
-        "Place, season, handling. Miss one, and it is a different honey.",
+        "Heather honey ranges from red-brown to deep port, with spice and an unusual gel texture: draw a spoon through it and the surface slowly closes again. The bloom is concentrated in a brief period in late summer.",
+        "We want each harvest to retain the differences left by that year’s bloom, without heat or dilution smoothing them away.",
+        "Its character comes from place, season and handling.",
       ],
     },
   },
@@ -215,13 +215,13 @@ export const journal = [
     },
     body: {
       zh: [
-        "風味圖譜不是海報。它是一份閱讀地圖：內圈四個家族（花香、焦糖、木質、質地），外圈十二個音符。亮起的，是這批日德蘭石楠花蜜實際有的；灰色的，是石楠花蜜家族裡可能出現、但這罐沒有硬寫進去的。",
+        "風味圖譜把石楠花蜜分成四個面向：花香、焦糖、木質與質地。亮起的項目，是這批日德蘭石楠花蜜較清楚的特徵；灰色項目則是同類蜂蜜可能出現、但我們沒有在這一批辨認出的風味。",
         "我們的五項：石楠花開、乾花、太妃、辛香、凝膠質地。沒有把「草原」或「蜜桃」寫進去，因為喝不到就不該寫。",
         "產品頁上的圖譜可以點選。建議先聞、再含在舌上、再等尾韻——凝膠質地會讓風味比流動蜜更慢展開。",
       ],
       en: [
-        "The Aroma Map is not a poster. It is a reading map: four families on the inside (floral, caramel, wood, texture), twelve notes on the outside. Lit notes are present in this Jutland heather honey; dimmed notes belong to the wider heather family but are not claimed for our jar.",
-        "Ours are five: heather bloom, dried flower, toffee, spice, gel texture. We do not write “meadow” or “peach” onto a honey that does not carry them.",
+        "The Aroma Map considers heather honey through four aspects: floral, caramel, wood and texture. Lit notes are the clearest traits in this Jutland harvest; dimmed notes may occur in the wider style but were not identified in this batch.",
+        "This harvest shows five: heather bloom, dried flower, toffee, spice and gel texture.",
         "The map on the product page is clickable. Smell first, then hold on the tongue, then wait for the finish — gel texture unfolds more slowly than a running honey.",
       ],
     },
