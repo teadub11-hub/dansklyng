@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { EMAIL } from "@/lib/content";
+import { EMAIL, INSTAGRAM } from "@/lib/content";
 import { useLang, useT } from "@/lib/i18n";
 import { localePath } from "@/lib/locale";
 import { uiHead } from "@/lib/seo";
@@ -29,14 +29,11 @@ function ContactPage() {
           </Link>
         </Row>
         <Row label={t.contactPress}>
-          <a href={`mailto:${EMAIL}`} className="text-ink hover:text-heather">
-            {EMAIL}
+          <a href={INSTAGRAM} className="text-ink hover:text-heather" rel="noreferrer" target="_blank">
+            @dansklyng
           </a>
         </Row>
       </dl>
-      <p className="mt-16 text-sm tracking-widest text-muted uppercase">
-        Jutland heathlands — where the heather blooms
-      </p>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { AromaMap } from "@/components/aroma-map";
 import { SolidLink } from "@/components/site-shell";
-import { JAR_SIZE, productBySlug, products } from "@/lib/content";
+import { productBySlug, products } from "@/lib/content";
 import { useLang, useT } from "@/lib/i18n";
 import { localePath, parseLang } from "@/lib/locale";
 import { JsonLd, productJsonLd, seoHead } from "@/lib/seo";
@@ -21,8 +21,8 @@ export const Route = createFileRoute("/$lang/products/$slug")({
     return seoHead({
       lang,
       path: `/products/${product.slug}`,
-      title: `${product.danish} — Dansk Lyng`,
-      description: product.lede[lang],
+      title: product.seoTitle[lang],
+      description: product.seoDesc[lang],
       image: product.image,
     });
   },
@@ -57,31 +57,34 @@ function ProductPage() {
           />
         </div>
         <div className="flex flex-col justify-center px-4 py-16 sm:px-12">
-          <p className="font-display text-xl italic text-heather">{product.danish}</p>
-          <h1 className="mt-2 font-display text-5xl text-ink">{product.name[lang]}</h1>
-          {product.featured ? (
-            <p className="mt-4 text-sm tracking-widest text-heather uppercase">{t.homeSigNote}</p>
-          ) : (
-            <p className="mt-4 text-sm tracking-widest text-muted uppercase">{t.homeRange}</p>
-          )}
+          <p className="text-xs tracking-widest text-heather uppercase">{product.eyebrow[lang]}</p>
+          <h1 className="mt-3 font-display text-5xl text-ink">{product.danish}</h1>
+          <p className="mt-2 font-display text-2xl text-ink-soft">{product.name[lang]}</p>
           <p className="mt-6 max-w-md text-ink-soft">{product.lede[lang]}</p>
-          <p className="mt-6 text-sm tracking-wide text-muted">
-            {product.color[lang]} · {product.texture[lang]}
-          </p>
           <dl className="mt-10 grid max-w-md grid-cols-2 gap-6 text-sm">
             <div>
-              <dt className="text-xs tracking-widest text-muted uppercase">{t.harvest}</dt>
-              <dd className="mt-1">{product.season[lang]}</dd>
-              <dd className="text-ink-soft">{product.months[lang]}</dd>
+              <dt className="text-xs tracking-widest text-muted uppercase">{t.specSource}</dt>
+              <dd className="mt-1">{product.source[lang]}</dd>
             </div>
             <div>
-              <dt className="text-xs tracking-widest text-muted uppercase">{t.format}</dt>
-              <dd className="mt-1">{t.jar}</dd>
-              <dd className="text-ink-soft">{JAR_SIZE}</dd>
+              <dt className="text-xs tracking-widest text-muted uppercase">{t.specOrigin}</dt>
+              <dd className="mt-1">{product.origin[lang]}</dd>
+            </div>
+            <div>
+              <dt className="text-xs tracking-widest text-muted uppercase">{t.specColor}</dt>
+              <dd className="mt-1">{product.color[lang]}</dd>
+            </div>
+            <div>
+              <dt className="text-xs tracking-widest text-muted uppercase">{t.specTexture}</dt>
+              <dd className="mt-1">{product.texture[lang]}</dd>
             </div>
             <div className="col-span-2">
-              <dt className="text-xs tracking-widest text-muted uppercase">{t.aroma}</dt>
-              <dd className="mt-1">{product.notes[lang]}</dd>
+              <dt className="text-xs tracking-widest text-muted uppercase">{t.specFlavour}</dt>
+              <dd className="mt-1">{product.flavor[lang]}</dd>
+            </div>
+            <div className="col-span-2">
+              <dt className="text-xs tracking-widest text-muted uppercase">{t.format}</dt>
+              <dd className="mt-1">{t.jar}</dd>
             </div>
             <div className="col-span-2">
               <dt className="text-xs tracking-widest text-muted uppercase">{t.pairings}</dt>
@@ -105,8 +108,17 @@ function ProductPage() {
         <img src={product.landscape} alt="" className="h-80 w-full object-cover sm:h-[28rem]" />
       </section>
 
+      <section className="mx-auto max-w-3xl px-4 py-24 sm:px-6">
+        {product.sections.map((section) => (
+          <div key={section.title.zh} className="mt-12 first:mt-0">
+            <h2 className="font-display text-3xl text-ink">{section.title[lang]}</h2>
+            <p className="mt-4 text-lg leading-relaxed text-pretty text-ink-soft">{section.body[lang]}</p>
+          </div>
+        ))}
+      </section>
+
       {product.slug === "lyng" ? (
-        <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
           <p className="text-xs tracking-widest text-muted uppercase">{t.aromaTitle}</p>
           <h2 className="mt-3 max-w-2xl font-display text-4xl text-ink">{t.aromaLede}</h2>
           <div className="mt-12">

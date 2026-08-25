@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { EMAIL } from "@/lib/content";
 import { useLang, useT } from "@/lib/i18n";
@@ -29,8 +29,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
   const links = [
     { to: "/products", label: t.navProducts },
-    { to: "/journal", label: t.navJournal },
+    { to: "/heath", label: t.navHeath },
     { to: "/about", label: t.navAbout },
+    { to: "/journal", label: t.navJournal },
+    { to: "/contact", label: t.navContact },
   ] as const;
 
   return (
@@ -64,7 +66,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
           <nav
             className={cn(
-              "hidden items-center gap-8 text-sm tracking-wide md:flex",
+              "hidden items-center gap-6 text-sm tracking-wide lg:flex",
               overHero ? "text-cream/80" : "text-ink-soft",
             )}
           >
@@ -107,7 +109,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <button
               type="button"
               className={cn(
-                "inline-flex min-h-11 min-w-11 items-center justify-center md:hidden",
+                "inline-flex min-h-11 min-w-11 items-center justify-center lg:hidden",
                 overHero ? "text-cream" : "text-ink",
               )}
               onClick={() => setOpen((v) => !v)}
@@ -120,7 +122,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </div>
 
         {open ? (
-          <div className="border-t border-ink/10 bg-parchment px-4 py-4 md:hidden">
+          <div className="border-t border-ink/10 bg-parchment px-4 py-4 lg:hidden">
             <nav className="flex flex-col">
               {links.map((l) => (
                 <Link
@@ -134,14 +136,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
               <Link to={localePath(lang, "/partner") as "/"} className="flex min-h-11 items-center text-base text-ink">
                 {t.navPartner}
               </Link>
-              <Link to={localePath(lang, "/contact") as "/"} className="flex min-h-11 items-center text-base text-ink">
-                {t.navContact}
-              </Link>
               <Link
-                to={localePath(lang, "/partner") as "/"}
+                to={localePath(lang, "/products") as "/"}
                 className="mt-2 flex min-h-11 items-center justify-center bg-heath text-sm tracking-widest text-cream uppercase"
               >
-                {t.ctaForTrade}
+                {t.ctaCatalog}
               </Link>
             </nav>
           </div>
@@ -167,7 +166,16 @@ function Footer() {
           <p className="font-display text-3xl">Dansk Lyng</p>
           <p className="mt-4 max-w-sm text-sm text-cream/70">{t.footerNature}</p>
           <p className="mt-8 font-display text-xl italic text-honey">{t.footerMotto}</p>
-          <Subscribe />
+          <div className="mt-10 max-w-sm">
+            <p className="text-xs tracking-widest text-cream/50 uppercase">{t.subscribeTitle}</p>
+            <p className="mt-2 text-sm text-cream/70">{t.subscribeBody}</p>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="mt-4 inline-flex min-h-11 items-center text-sm text-honey hover:text-cream"
+            >
+              {t.subscribeCta} →
+            </a>
+          </div>
         </div>
         <div className="grid gap-10 text-sm sm:grid-cols-3 md:col-span-7">
           <FooterCol
@@ -175,6 +183,7 @@ function Footer() {
             items={[
               { to: localePath(lang, "/products"), label: t.ctaCatalog },
               { to: localePath(lang, "/products/lyng"), label: "Lynghonning" },
+              { to: localePath(lang, "/heath"), label: t.navHeath },
               { to: localePath(lang, "/faq"), label: "FAQ" },
             ]}
           />
@@ -230,52 +239,6 @@ function FooterCol({
           </li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-function Subscribe() {
-  const t = useT();
-  const [email, setEmail] = useState("");
-  const [done, setDone] = useState(false);
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!email.trim()) return;
-    const list = JSON.parse(window.localStorage.getItem("dansk-lyng-list") || "[]") as string[];
-    list.push(email.trim());
-    window.localStorage.setItem("dansk-lyng-list", JSON.stringify(list));
-    setDone(true);
-  }
-
-  return (
-    <div className="mt-10 max-w-sm">
-      <p className="text-xs tracking-widest text-cream/50 uppercase">{t.subscribeTitle}</p>
-      <p className="mt-2 text-sm text-cream/70">{t.subscribeBody}</p>
-      {done ? (
-        <p className="mt-4 text-sm text-honey">{t.subscribeDone}</p>
-      ) : (
-        <form onSubmit={onSubmit} className="mt-4 flex gap-2">
-          <label className="sr-only" htmlFor="trade-email">
-            {t.subscribePlaceholder}
-          </label>
-          <input
-            id="trade-email"
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder={t.subscribePlaceholder}
-            className="min-h-11 flex-1 border border-cream/20 bg-heath px-3 text-sm text-cream outline-none placeholder:text-cream/40 focus:border-honey"
-          />
-          <button
-            type="submit"
-            className="min-h-11 bg-honey px-4 text-xs tracking-widest text-ink uppercase transition-transform duration-150 ease-out active:scale-[0.96]"
-          >
-            {t.subscribeCta}
-          </button>
-        </form>
-      )}
     </div>
   );
 }

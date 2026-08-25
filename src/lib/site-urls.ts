@@ -4,6 +4,7 @@ import { LANGS, localePath } from "./locale";
 export const STATIC_PATHS = [
   "/",
   "/about",
+  "/heath",
   "/products",
   "/journal",
   "/partner",

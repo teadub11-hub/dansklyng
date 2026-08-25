@@ -15,6 +15,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as HeathRouteImport } from './routes/heath'
 import { Route as JournalRouteImport } from './routes/journal'
 import { Route as PartnerRouteImport } from './routes/partner'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -27,6 +28,7 @@ import { Route as LangAboutRouteImport } from './routes/$lang/about'
 import { Route as LangContactRouteImport } from './routes/$lang/contact'
 import { Route as LangCookiesRouteImport } from './routes/$lang/cookies'
 import { Route as LangFaqRouteImport } from './routes/$lang/faq'
+import { Route as LangHeathRouteImport } from './routes/$lang/heath'
 import { Route as LangJournalRouteImport } from './routes/$lang/journal'
 import { Route as LangPartnerRouteImport } from './routes/$lang/partner'
 import { Route as LangPrivacyRouteImport } from './routes/$lang/privacy'
@@ -73,6 +75,11 @@ const CookiesRoute = CookiesRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeathRoute = HeathRouteImport.update({
+  id: '/heath',
+  path: '/heath',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JournalRoute = JournalRouteImport.update({
@@ -133,6 +140,11 @@ const LangCookiesRoute = LangCookiesRouteImport.update({
 const LangFaqRoute = LangFaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangHeathRoute = LangHeathRouteImport.update({
+  id: '/heath',
+  path: '/heath',
   getParentRoute: () => LangRoute,
 } as any)
 const LangJournalRoute = LangJournalRouteImport.update({
@@ -228,6 +240,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
+  '/heath': typeof HeathRoute
   '/journal': typeof JournalRouteWithChildren
   '/partner': typeof PartnerRouteWithChildren
   '/privacy': typeof PrivacyRoute
@@ -239,6 +252,7 @@ export interface FileRoutesByFullPath {
   '/$lang/contact': typeof LangContactRoute
   '/$lang/cookies': typeof LangCookiesRoute
   '/$lang/faq': typeof LangFaqRoute
+  '/$lang/heath': typeof LangHeathRoute
   '/$lang/journal': typeof LangJournalRouteWithChildren
   '/$lang/partner': typeof LangPartnerRouteWithChildren
   '/$lang/privacy': typeof LangPrivacyRoute
@@ -264,6 +278,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
+  '/heath': typeof HeathRoute
   '/privacy': typeof PrivacyRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -272,6 +287,7 @@ export interface FileRoutesByTo {
   '/$lang/contact': typeof LangContactRoute
   '/$lang/cookies': typeof LangCookiesRoute
   '/$lang/faq': typeof LangFaqRoute
+  '/$lang/heath': typeof LangHeathRoute
   '/$lang/privacy': typeof LangPrivacyRoute
   '/$lang/terms': typeof LangTermsRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -296,6 +312,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
+  '/heath': typeof HeathRoute
   '/journal': typeof JournalRouteWithChildren
   '/partner': typeof PartnerRouteWithChildren
   '/privacy': typeof PrivacyRoute
@@ -307,6 +324,7 @@ export interface FileRoutesById {
   '/$lang/contact': typeof LangContactRoute
   '/$lang/cookies': typeof LangCookiesRoute
   '/$lang/faq': typeof LangFaqRoute
+  '/$lang/heath': typeof LangHeathRoute
   '/$lang/journal': typeof LangJournalRouteWithChildren
   '/$lang/partner': typeof LangPartnerRouteWithChildren
   '/$lang/privacy': typeof LangPrivacyRoute
@@ -335,6 +353,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cookies'
     | '/faq'
+    | '/heath'
     | '/journal'
     | '/partner'
     | '/privacy'
@@ -346,6 +365,7 @@ export interface FileRouteTypes {
     | '/$lang/contact'
     | '/$lang/cookies'
     | '/$lang/faq'
+    | '/$lang/heath'
     | '/$lang/journal'
     | '/$lang/partner'
     | '/$lang/privacy'
@@ -371,6 +391,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cookies'
     | '/faq'
+    | '/heath'
     | '/privacy'
     | '/robots.txt'
     | '/sitemap.xml'
@@ -379,6 +400,7 @@ export interface FileRouteTypes {
     | '/$lang/contact'
     | '/$lang/cookies'
     | '/$lang/faq'
+    | '/$lang/heath'
     | '/$lang/privacy'
     | '/$lang/terms'
     | '/journal/$slug'
@@ -402,6 +424,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cookies'
     | '/faq'
+    | '/heath'
     | '/journal'
     | '/partner'
     | '/privacy'
@@ -413,6 +436,7 @@ export interface FileRouteTypes {
     | '/$lang/contact'
     | '/$lang/cookies'
     | '/$lang/faq'
+    | '/$lang/heath'
     | '/$lang/journal'
     | '/$lang/partner'
     | '/$lang/privacy'
@@ -440,6 +464,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
   FaqRoute: typeof FaqRoute
+  HeathRoute: typeof HeathRoute
   JournalRoute: typeof JournalRouteWithChildren
   PartnerRoute: typeof PartnerRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
@@ -491,6 +516,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heath': {
+      id: '/heath'
+      path: '/heath'
+      fullPath: '/heath'
+      preLoaderRoute: typeof HeathRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journal': {
@@ -575,6 +607,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/$lang/faq'
       preLoaderRoute: typeof LangFaqRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/heath': {
+      id: '/$lang/heath'
+      path: '/heath'
+      fullPath: '/$lang/heath'
+      preLoaderRoute: typeof LangHeathRouteImport
       parentRoute: typeof LangRoute
     }
     '/$lang/journal': {
@@ -746,6 +785,7 @@ interface LangRouteChildren {
   LangContactRoute: typeof LangContactRoute
   LangCookiesRoute: typeof LangCookiesRoute
   LangFaqRoute: typeof LangFaqRoute
+  LangHeathRoute: typeof LangHeathRoute
   LangJournalRoute: typeof LangJournalRouteWithChildren
   LangPartnerRoute: typeof LangPartnerRouteWithChildren
   LangPrivacyRoute: typeof LangPrivacyRoute
@@ -759,6 +799,7 @@ const LangRouteChildren: LangRouteChildren = {
   LangContactRoute: LangContactRoute,
   LangCookiesRoute: LangCookiesRoute,
   LangFaqRoute: LangFaqRoute,
+  LangHeathRoute: LangHeathRoute,
   LangJournalRoute: LangJournalRouteWithChildren,
   LangPartnerRoute: LangPartnerRouteWithChildren,
   LangPrivacyRoute: LangPrivacyRoute,
@@ -816,6 +857,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
   FaqRoute: FaqRoute,
+  HeathRoute: HeathRoute,
   JournalRoute: JournalRouteWithChildren,
   PartnerRoute: PartnerRouteWithChildren,
   PrivacyRoute: PrivacyRoute,

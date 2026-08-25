@@ -17,7 +17,6 @@ function FaqPage() {
     [t.faq5q, t.faq5a],
     [t.faq6q, t.faq6a],
     [t.faq7q, t.faq7a],
-    [t.faq8q, t.faq8a],
   ];
 
   return (

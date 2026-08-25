@@ -12,6 +12,13 @@ function AboutPage() {
   const t = useT();
   const { lang } = useLang();
 
+  const blocks = [
+    { title: t.aboutDanskT, body: t.aboutDansk },
+    { title: t.aboutLyngT, body: t.aboutLyng },
+    { title: t.aboutRangeT, body: t.aboutRange },
+    { title: t.aboutCraftT, body: t.aboutCraft },
+  ];
+
   return (
     <article>
       <header className="relative isolate overflow-hidden">
@@ -25,11 +32,12 @@ function AboutPage() {
       </header>
 
       <section className="mx-auto max-w-2xl px-4 py-24 sm:px-6">
-        <p className="font-display text-3xl text-ink sm:text-4xl">{t.aboutOpen}</p>
-        <p className="mt-12 whitespace-pre-line text-lg leading-relaxed text-ink-soft">{t.aboutStanza}</p>
-        <p className="mt-12 text-lg leading-relaxed text-ink">{t.aboutP1}</p>
-        <p className="mt-8 text-lg leading-relaxed text-pretty text-ink-soft">{t.aboutP2}</p>
-        <p className="mt-8 text-lg leading-relaxed text-pretty text-ink-soft">{t.aboutP3}</p>
+        {blocks.map((block, i) => (
+          <div key={block.title} className={i === 0 ? "" : "mt-16"}>
+            <h2 className="font-display text-3xl text-ink sm:text-4xl">{block.title}</h2>
+            <p className="mt-6 text-lg leading-relaxed text-pretty text-ink-soft">{block.body}</p>
+          </div>
+        ))}
       </section>
 
       <figure className="bg-cream">
@@ -40,27 +48,10 @@ function AboutPage() {
         />
       </figure>
 
-      <section className="mx-auto max-w-2xl px-4 py-24 sm:px-6">
-        <p className="text-lg leading-relaxed text-pretty text-ink-soft">{t.aboutP4}</p>
-        <p className="mt-8 text-lg leading-relaxed text-pretty text-ink-soft">{t.aboutP5}</p>
-        <p className="mt-8 text-lg leading-relaxed text-pretty text-ink-soft">{t.aboutP6}</p>
-        <p className="mt-12 font-display text-3xl text-ink sm:text-4xl">{t.aboutP7}</p>
-
-        <blockquote className="mt-20 border-l-2 border-honey pl-6">
-          <p className="font-display text-2xl whitespace-pre-line text-ink italic">{t.aboutQuote}</p>
-          <footer className="mt-6">
-            <p className="text-sm tracking-widest text-ink uppercase">{t.aboutFounder}</p>
-            <p className="mt-1 text-xs tracking-widest text-muted uppercase">{t.aboutFounderRole}</p>
-          </footer>
-        </blockquote>
-      </section>
-
       <nav className="border-t border-line">
         <div className="mx-auto flex max-w-2xl flex-col px-4 py-16 sm:px-6">
-          <TextLink to="/products/lyng">{t.ctaDiscoverLyng}</TextLink>
-          <TextLink to="/journal/the-danish-heathlands">
-            {lang === "zh" ? "西日德蘭的荒原" : "The heathlands of West Jutland"}
-          </TextLink>
+          <TextLink to="/products">{t.ctaFour}</TextLink>
+          <TextLink to="/heath">{t.navHeath}</TextLink>
           <TextLink to="/partner">{t.ctaForTrade}</TextLink>
         </div>
       </nav>

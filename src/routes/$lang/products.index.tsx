@@ -14,11 +14,11 @@ function ProductsPage() {
   const t = useT();
   const { lang } = useLang();
   const lyng = products.find((p) => p.featured)!;
-  const seasonal = products.filter((p) => !p.featured);
+  const rest = products.filter((p) => !p.featured);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <p className="text-xs tracking-widest text-muted uppercase">{t.navProducts}</p>
+      <p className="text-xs tracking-widest text-muted uppercase">{t.catalogEyebrow}</p>
       <h1 className="mt-3 font-display text-5xl text-ink">{t.catalogTitle}</h1>
       <p className="mt-4 max-w-2xl text-pretty text-ink-soft">{t.catalogLede}</p>
 
@@ -48,11 +48,11 @@ function ProductsPage() {
 
       <div className="mt-16">
         <p className="text-xs tracking-widest text-muted uppercase">{t.homeRange}</p>
-        <h2 className="mt-3 font-display text-3xl text-ink">{t.homeRangeLede}</h2>
+        <h2 className="mt-3 font-display text-3xl text-ink">{t.homeRangeTitle}</h2>
       </div>
 
       <div className="mt-12 grid gap-12 md:grid-cols-3">
-        {seasonal.map((p) => (
+        {rest.map((p) => (
           <article key={p.slug}>
             <img
               src={p.image}
@@ -73,8 +73,11 @@ function ProductsPage() {
       </div>
 
       <div className="mt-24 flex flex-col items-start justify-between gap-6 border-t border-line py-12 sm:flex-row sm:items-center">
-        <p className="font-display text-3xl text-ink">{t.catalogReady}</p>
-        <SolidLink to="/partner/apply">{t.ctaPartner}</SolidLink>
+        <div>
+          <p className="font-display text-3xl text-ink">{t.catalogReady}</p>
+          <p className="mt-2 text-ink-soft">{t.catalogReadyBody}</p>
+        </div>
+        <SolidLink to="/partner">{t.ctaForTrade}</SolidLink>
       </div>
     </div>
   );

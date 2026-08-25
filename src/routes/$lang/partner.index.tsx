@@ -31,15 +31,18 @@ function PartnerPage() {
         <img src="/images/hero-heath.jpg" alt="" className="h-[32rem] w-full object-cover sm:h-[40rem]" />
         <div className="absolute inset-0 bg-gradient-to-t from-heath via-heath/40 to-heath/20" />
         <div className="absolute inset-0 mx-auto flex max-w-3xl flex-col justify-end px-4 py-16 sm:px-6">
-          <p className="text-xs tracking-widest text-cream/70 uppercase">{t.navPartner}</p>
+          <p className="text-xs tracking-widest text-cream/70 uppercase">{t.partnerEyebrow}</p>
           <h1 className="mt-4 font-display text-4xl leading-none text-balance text-cream sm:text-6xl">
             {t.partnerTitle}
           </h1>
           <p className="mt-6 max-w-xl text-pretty text-lg text-cream/80">{t.partnerLede}</p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <SolidLink to="/partner/apply" invert>
               {t.ctaPartner}
             </SolidLink>
+            <TextLink to="/products" tone="cream">
+              {t.ctaCatalog}
+            </TextLink>
           </div>
         </div>
       </header>
