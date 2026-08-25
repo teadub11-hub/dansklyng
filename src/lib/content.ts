@@ -35,28 +35,28 @@ export const products = [
         title: { zh: "它有什麼不同？", en: "What sets it apart" },
         body: {
           zh: "石楠花蜜不以清淡為特色。它的深色、辛香與濃厚質地，使味道停留得更久，也與一般春夏花蜜形成清楚區別。",
-          en: "Heather honey is not made to be mild. The dark colour, spice and dense texture linger, and set it apart from the lighter blossom honeys of spring and summer.",
+          en: "Heather honey is distinctly full-flavoured. Its deep colour, spicy character and dense texture linger on the palate, setting it apart from the lighter blossom honeys of spring and summer.",
         },
       },
       {
         title: { zh: "怎麼品嚐？", en: "How to taste it" },
         body: {
           zh: "先觀察色澤與質地，再聞香、入口，最後留意尾韻。可單獨品嚐，也適合搭配藍紋起司、熟成起司、燕麥餅與黑麥麵包。",
-          en: "Look first at colour and texture, then smell, taste, and wait for the finish. It stands on its own, and sits well with blue cheese, aged cheese, oat biscuits and rye bread.",
+          en: "Begin with the colour and texture, then notice the aroma, flavour and finish. Enjoy it on its own or pair it with blue cheese, aged cheese, oat biscuits or rye bread.",
         },
       },
       {
         title: { zh: "天然的批次差異", en: "Natural variation" },
         body: {
           zh: "花期與天氣每年不同，天然蜂蜜的色澤、香氣、質地與產量也可能有所變化。個別產品資訊以實際批次為準。",
-          en: "Bloom and weather change from year to year, so colour, aroma, texture and yield can change with them. What is in the jar follows the batch.",
+          en: "Bloom and weather vary from year to year, and the honey varies with them. Each harvest may differ slightly in colour, aroma and texture.",
         },
       },
       {
         title: { zh: "從蜂巢到玻璃罐", en: "From hive to jar" },
         body: {
           zh: "蜂箱在石楠盛開時移至西日德蘭海岸線的石楠荒原。蜂蜜以離心方式取出，不以高溫加熱，並透過結晶控制形成細緻、如絲絨般容易塗抹的質地。產品不添加其他成分。",
-          en: "When the heather is in bloom, the hives are moved to the coastal heaths of West Jutland. The honey is extracted by centrifuge, not heated at high temperature, and guided into a fine, velvet texture that spreads easily. Nothing else is added.",
+          en: "When the heather blooms, the hives are moved to the coastal heaths of West Jutland. The honey is gently spun from the comb, never exposed to high heat and carefully crystallised for a fine, velvety texture that spreads easily. Nothing else is added.",
         },
       },
     ] as ProductSection[],
@@ -155,7 +155,7 @@ export const products = [
         title: { zh: "它有什麼不同？", en: "What sets it apart" },
         body: {
           zh: "這不是人工調配的風味。不同花源由蜜蜂在同一採集期自然帶回蜂巢，因此每年的花源比例、色澤和質地都可能不同。",
-          en: "This is not a blended flavour. The bees bring different flowers home in the same period, so the mix, the colour and the texture can change from year to year.",
+          en: "The bees naturally gather nectar from several late-summer flowers during the same period. Their changing proportions give each harvest its own colour, flavour and texture; the honey is not blended to create a flavour.",
         },
       },
       {
@@ -208,7 +208,7 @@ export const products = [
         title: { zh: "它有什麼不同？", en: "What sets it apart" },
         body: {
           zh: "森林蜜的來源與花蜜不同，批次之間也可能呈現明顯差異。產品描述應以實際批次為準，不將所有年份寫成相同味道。",
-          en: "Forest honey does not come from flower nectar, and batches can differ clearly. What we say about it follows the jar in front of you, not a single taste for every year.",
+          en: "Unlike blossom honey, forest honey comes from woodland honeydew. Its colour, texture and flavour can vary noticeably from one harvest to the next.",
         },
       },
       {
@@ -272,7 +272,7 @@ export const journal = [
     title: { zh: "什麼是丹麥石楠花蜜？", en: "What is Danish heather honey?" },
     lede: {
       zh: "從蜜源、色澤、辛香與質地，認識 Lynghonning 與一般花蜜的不同。",
-      en: "Heather as the source, then colour, spice and texture: how Lynghonning differs from ordinary blossom honey.",
+      en: "Discover how heather gives Lynghonning its deep colour, spicy flavour and distinctive texture.",
     },
     body: {
       zh: [
@@ -282,10 +282,10 @@ export const journal = [
         "花期與天氣每年不同，色澤、香氣、質地與產量也可能有所變化。個別產品資訊以實際批次為準。",
       ],
       en: [
-        "Lynghonning is heather honey from the Jutland heath. Heather grows in open, sandy ground in the sea wind. In late summer the land turns purple, and that is when the bees take this honey.",
-        "It is usually red-brown to deep burgundy, with a clear spicy note and a fine, dense texture that spreads easily. Heather honey is not made to be mild. Colour, spice and density linger, and set it apart from the lighter blossom honeys of spring and summer.",
+        "Lynghonning is heather honey from the Jutland heath. Heather thrives in open, sandy ground exposed to the sea wind. In late summer, the landscape turns purple and the bees begin to gather from the bloom.",
+        "The honey is usually red-brown to deep burgundy, distinctly spicy and full-flavoured, with a fine, dense texture that spreads easily. Its colour, flavour and texture set it apart from the lighter blossom honeys of spring and summer.",
         "DANSK LYNG heather honey comes from the West Jutland coast. When the heather is in bloom, the beekeepers we work with move the hives to coastal heaths and nature reserves — more than thirty sites, from north to south. In full bloom, heather is the main source on those shores.",
-        "Bloom and weather change from year to year, so colour, aroma, texture and yield can change with them. What is in the jar follows the batch.",
+        "Bloom and weather vary from year to year, and the honey varies with them. Each harvest may differ slightly in colour, aroma and texture.",
       ],
     },
   },
@@ -308,9 +308,9 @@ export const journal = [
       ],
       en: [
         "Heather usually enters its main bloom in late summer, roughly from August to September. When it starts, peaks and ends depends on temperature, wind, rain and the year.",
-        "The hives are moved, and the honey is taken, according to that year’s flowers — not a fixed calendar. Fair weather lets the bees work steadily; wind and rain rewrite both bloom and yield.",
+        "The hives are moved and the honey harvested in step with that year’s flowers, not a fixed calendar. Fair weather lets the bees forage steadily, while wind and rain can change both the bloom and the yield.",
         "That is why colour, aroma, texture and quantity can change from harvest to harvest.",
-        "What is in the jar follows the batch.",
+        "Each jar reflects the conditions of its harvest.",
       ],
     },
   },
@@ -332,10 +332,10 @@ export const journal = [
         "石楠花蜜以深色、辛香與濃厚質地受到辨認。它不是被加工成一種荒原風格，而是由蜜源與當年環境形成。",
       ],
       en: [
-        "Heather grows on open, sandy, rather poor ground. When it flowers, the heath turns in wide purple stands, and the bees take that bloom as their source.",
+        "Heather thrives on open heathland, in sandy, nutrient-poor soil. When it flowers, broad stretches of the landscape turn purple and become an important source of nectar for the bees.",
         "DANSK LYNG heather honey comes from the West Jutland coast. In bloom, the beekeepers we work with move the hives to coastal heaths and nature reserves — more than thirty sites from north to south. On those shores, heather is the main source in full bloom, and that is what gives the honey its colour, spice and texture.",
-        "Heathland has to be kept. Left alone, older plants and other growth slowly take the place of heather. Local conservation work renews the ground in cycles, so new heather can grow.",
-        "Heather honey is known by its dark colour, spice and dense texture. It is not styled to look like a heath. The plant and the year make it.",
+        "Heathland needs active care. Without it, ageing plants and other vegetation gradually replace the heather. Local conservation work renews the landscape in cycles, allowing fresh heather to grow.",
+        "Heather honey is recognised by its deep colour, spicy flavour and dense, smooth texture — qualities shaped by the plant, the place and the season.",
       ],
     },
   },
@@ -347,7 +347,7 @@ export const journal = [
     title: { zh: "從蜂巢到玻璃罐", en: "From hive to jar" },
     lede: {
       zh: "離心取蜜、低溫處理與結晶控制，如何形成細緻、容易塗抹的蜂蜜質地。",
-      en: "Centrifuge, no high heat, and a careful set: how the honey keeps a fine texture that spreads easily.",
+      en: "Gentle extraction, no high heat and careful crystallisation create a fine texture that spreads easily.",
     },
     body: {
       zh: [
@@ -358,9 +358,9 @@ export const journal = [
       ],
       en: [
         "When the heather is in bloom, the hives are moved to the coastal heaths of West Jutland. More than thirty sites, north to south, are used according to the year. The late-summer bloom falls roughly in August and September; the exact days follow the weather.",
-        "The honey is extracted by centrifuge. It is not heated at high temperature, and nothing else is added. A careful set then gives it a smooth texture that spreads easily.",
-        "The jar holds honey only, including the differences each year leaves behind. Blomsterhonning, Sensommerhonning and Skovhonning come from the same Danish landscape, in other seasons and from other sources.",
-        "What we want each jar to keep is where it came from, and what that year actually gave.",
+        "The honey is gently spun from the comb, never exposed to high heat and made with nothing else added. Careful crystallisation creates a smooth texture that spreads easily.",
+        "Each jar contains honey only and preserves the natural differences of its harvest. Blomsterhonning, Sensommerhonning and Skovhonning come from other Danish seasons and sources, each with its own character.",
+        "Every jar should taste of where it came from and the season in which it was made.",
       ],
     },
   },
@@ -384,8 +384,8 @@ export const journal = [
       en: [
         "Lynghonning is heather honey from the Jutland heath. Red-brown to deep burgundy, spicy and full, with a fine texture that spreads easily. It is the flavour the brand is known by.",
         "Blomsterhonning is wildflower honey from many Danish flowers in spring and summer. Paler, milder, lightly floral — the most approachable of the four.",
-        "Sensommerhonning is gathered in late summer, often from white clover, lime, fireweed and heather. It is deeper in colour, full in aroma, and sometimes thicker. The bees bring those flowers home in the same period; the taste is not blended by hand.",
-        "Skovhonning is forest honey, a honeydew honey. It does not come from flower nectar, but from honeydew in woodland. Some batches are pale and fluid; others are darker and stronger. Batches can differ clearly, and the description follows the jar.",
+        "Sensommerhonning is gathered in late summer, often from white clover, lime, fireweed and heather. It is deeper in colour, full in aroma and sometimes thicker in texture. The bees naturally gather from these flowers during the same period; the flavour is not blended by hand.",
+        "Skovhonning is a forest honey made from woodland honeydew rather than flower nectar. Some harvests are pale and fluid; others are darker and more intense. Its character can vary noticeably from year to year.",
       ],
     },
   },
@@ -397,7 +397,7 @@ export const journal = [
     title: { zh: "蜂蜜為什麼會結晶？", en: "Why honey crystallises" },
     lede: {
       zh: "天然結晶及正確保存方式。結晶並不代表蜂蜜變質。",
-      en: "Natural crystallisation, and how to keep the jar. A set honey has not gone wrong.",
+      en: "Why natural honey crystallises, what it means and how to store it well.",
     },
     body: {
       zh: [
@@ -408,9 +408,9 @@ export const journal = [
       ],
       en: [
         "Natural honey may crystallise with time. How quickly, and in what texture, depends on the source, the temperature and how it is kept. It does not mean the honey has spoiled.",
-        "DANSK LYNG guides that set so the honey stays smooth and easy to spread. Heather honey especially: fine, dense, ready for bread.",
-        "Keep it cool, dry and away from light. It does not need a refrigerator. Avoid long heat and direct sun.",
-        "The jar holds honey only. Colour, aroma and texture change with source and year. That is natural variation, not a scale of quality.",
+        "DANSK LYNG carefully controls crystallisation to create a smooth, spreadable texture. This is especially important for heather honey, which is naturally dense and distinctive.",
+        "Store honey in a cool, dry place away from direct light. Refrigeration is not required. Avoid prolonged heat or direct sunlight.",
+        "Each jar contains honey only. Colour, aroma and texture vary naturally with the source and the season; these differences are not a measure of quality.",
       ],
     },
   },
@@ -422,7 +422,7 @@ export const journal = [
     title: { zh: "如何品嚐四款丹麥蜂蜜？", en: "How to taste the four Danish honeys" },
     lede: {
       zh: "從色澤、香氣、入口質地到尾韻，找到四款蜂蜜各自適合的餐桌搭配。",
-      en: "Colour, aroma, texture on the tongue, then the finish — and the table each honey belongs on.",
+      en: "Compare colour, aroma, texture and finish, then discover the pairings that suit each honey.",
     },
     body: {
       zh: [
@@ -432,10 +432,10 @@ export const journal = [
         "Skovhonning 是蜜露蜜，有時清亮流動，有時深沉強勁。適合早餐麵包、清淡起司，也可用於料理。產品頁上的風味圖譜，可以幫助閱讀 Lynghonning 的花香、焦糖、木質與質地。",
       ],
       en: [
-        "Look first at colour and texture, then smell, taste, and wait for the finish. That order makes the four honeys easiest to tell apart.",
-        "Lynghonning is dark, spicy, velvet on the knife. It stands alone, and sits well with blue cheese, aged cheese, oat biscuits and rye bread.",
+        "Begin with colour and texture, then notice the aroma, flavour and finish. This makes the differences between the four honeys easy to recognise.",
+        "Lynghonning is dark, distinctly spicy and velvety-smooth. Enjoy it on its own or pair it with blue cheese, aged cheese, oat biscuits or rye bread.",
         "Blomsterhonning is pale and mild — breakfast bread, butter, yoghurt, porridge, herbal tea. Sensommerhonning is fuller in aroma, sometimes thicker, and belongs with rye bread, hard cheese, porridge and black tea.",
-        "Skovhonning is honeydew: sometimes pale and running, sometimes dark and intense. Use it on breakfast bread, with mild cheese, or in cooking. The aroma map on the Lynghonning page is a way to read its floral, caramel, wood and texture notes.",
+        "Skovhonning is made from honeydew: sometimes pale and fluid, sometimes dark and intense. Serve it on breakfast bread, with mild cheese or in cooking. The aroma map on the Lynghonning page explores its floral, caramel, woody and textural notes.",
       ],
     },
   },
@@ -456,9 +456,9 @@ export const journal = [
         "DANSK LYNG 的石楠花蜜，來自這類受管理的西日德蘭海岸荒原。蜂箱在盛開時移入，花期結束後再移走。蜂蜜的色澤、辛香與質地，與這片被維持下來的植物有關。",
       ],
       en: [
-        "Heather grows on open, sandy, rather poor ground. That ground has to be kept that way if heather is to remain the main plant.",
-        "Heathland needs ongoing care, or older plants and other growth slowly replace the heather. Local conservation work renews the ground in cycles, taking out ageing plants so new heather can grow.",
-        "DANSK LYNG heather honey comes from this kind of managed coastal heath in West Jutland. The hives are moved in for the bloom and moved on when it ends. Colour, spice and texture belong to a plant that is still there because the land is kept.",
+        "Heather thrives on open heathland, in sandy, nutrient-poor soil. The landscape must be actively cared for if heather is to remain its defining plant.",
+        "Without ongoing care, ageing plants and other vegetation gradually replace the heather. Local conservation work renews the landscape in cycles, allowing fresh heather to grow.",
+        "DANSK LYNG heather honey comes from managed coastal heathland in West Jutland. The hives arrive for the bloom and move on when it ends. The honey’s colour, spice and texture begin with the heather preserved in this landscape.",
       ],
     },
   },
