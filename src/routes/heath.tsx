@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { redirectPreservingPath } from "@/lib/locale";
 
-export const Route = createFileRoute("/faq")({
+export const Route = createFileRoute("/heath")({
   beforeLoad: redirectPreservingPath,
 });

@@ -10,25 +10,51 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LangRouteImport } from './routes/$lang'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as HeathRouteImport } from './routes/heath'
 import { Route as JournalRouteImport } from './routes/journal'
 import { Route as PartnerRouteImport } from './routes/partner'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductsRouteImport } from './routes/products'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as LangIndexRouteImport } from './routes/$lang/index'
+import { Route as LangAboutRouteImport } from './routes/$lang/about'
+import { Route as LangContactRouteImport } from './routes/$lang/contact'
+import { Route as LangCookiesRouteImport } from './routes/$lang/cookies'
+import { Route as LangFaqRouteImport } from './routes/$lang/faq'
+import { Route as LangHeathRouteImport } from './routes/$lang/heath'
+import { Route as LangJournalRouteImport } from './routes/$lang/journal'
+import { Route as LangPartnerRouteImport } from './routes/$lang/partner'
+import { Route as LangPrivacyRouteImport } from './routes/$lang/privacy'
+import { Route as LangProductsRouteImport } from './routes/$lang/products'
+import { Route as LangTermsRouteImport } from './routes/$lang/terms'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
 import { Route as PartnerIndexRouteImport } from './routes/partner.index'
 import { Route as PartnerApplyRouteImport } from './routes/partner.apply'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
+import { Route as LangJournalIndexRouteImport } from './routes/$lang/journal.index'
+import { Route as LangJournalSlugRouteImport } from './routes/$lang/journal.$slug'
+import { Route as LangPartnerIndexRouteImport } from './routes/$lang/partner.index'
+import { Route as LangPartnerApplyRouteImport } from './routes/$lang/partner.apply'
+import { Route as LangProductsIndexRouteImport } from './routes/$lang/products.index'
+import { Route as LangProductsSlugRouteImport } from './routes/$lang/products.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LangRoute = LangRouteImport.update({
+  id: '/$lang',
+  path: '/$lang',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -51,6 +77,11 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HeathRoute = HeathRouteImport.update({
+  id: '/heath',
+  path: '/heath',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JournalRoute = JournalRouteImport.update({
   id: '/journal',
   path: '/journal',
@@ -71,10 +102,75 @@ const ProductsRoute = ProductsRouteImport.update({
   path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
+} as any)
+const LangIndexRoute = LangIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangAboutRoute = LangAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangContactRoute = LangContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangCookiesRoute = LangCookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangFaqRoute = LangFaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangHeathRoute = LangHeathRouteImport.update({
+  id: '/heath',
+  path: '/heath',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangJournalRoute = LangJournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangPartnerRoute = LangPartnerRouteImport.update({
+  id: '/partner',
+  path: '/partner',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangPrivacyRoute = LangPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangProductsRoute = LangProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangTermsRoute = LangTermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => LangRoute,
 } as any)
 const JournalIndexRoute = JournalIndexRouteImport.update({
   id: '/',
@@ -106,24 +202,75 @@ const ProductsSlugRoute = ProductsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ProductsRoute,
 } as any)
+const LangJournalIndexRoute = LangJournalIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangJournalRoute,
+} as any)
+const LangJournalSlugRoute = LangJournalSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => LangJournalRoute,
+} as any)
+const LangPartnerIndexRoute = LangPartnerIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangPartnerRoute,
+} as any)
+const LangPartnerApplyRoute = LangPartnerApplyRouteImport.update({
+  id: '/apply',
+  path: '/apply',
+  getParentRoute: () => LangPartnerRoute,
+} as any)
+const LangProductsIndexRoute = LangProductsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangProductsRoute,
+} as any)
+const LangProductsSlugRoute = LangProductsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => LangProductsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$lang': typeof LangRouteWithChildren
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
+  '/heath': typeof HeathRoute
   '/journal': typeof JournalRouteWithChildren
   '/partner': typeof PartnerRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/cookies': typeof LangCookiesRoute
+  '/$lang/faq': typeof LangFaqRoute
+  '/$lang/heath': typeof LangHeathRoute
+  '/$lang/journal': typeof LangJournalRouteWithChildren
+  '/$lang/partner': typeof LangPartnerRouteWithChildren
+  '/$lang/privacy': typeof LangPrivacyRoute
+  '/$lang/products': typeof LangProductsRouteWithChildren
+  '/$lang/terms': typeof LangTermsRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/partner/apply': typeof PartnerApplyRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/$lang/': typeof LangIndexRoute
   '/journal/': typeof JournalIndexRoute
   '/partner/': typeof PartnerIndexRoute
   '/products/': typeof ProductsIndexRoute
+  '/$lang/journal/$slug': typeof LangJournalSlugRoute
+  '/$lang/partner/apply': typeof LangPartnerApplyRoute
+  '/$lang/products/$slug': typeof LangProductsSlugRoute
+  '/$lang/journal/': typeof LangJournalIndexRoute
+  '/$lang/partner/': typeof LangPartnerIndexRoute
+  '/$lang/products/': typeof LangProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -131,53 +278,112 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
+  '/heath': typeof HeathRoute
   '/privacy': typeof PrivacyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/cookies': typeof LangCookiesRoute
+  '/$lang/faq': typeof LangFaqRoute
+  '/$lang/heath': typeof LangHeathRoute
+  '/$lang/privacy': typeof LangPrivacyRoute
+  '/$lang/terms': typeof LangTermsRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/partner/apply': typeof PartnerApplyRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/$lang': typeof LangIndexRoute
   '/journal': typeof JournalIndexRoute
   '/partner': typeof PartnerIndexRoute
   '/products': typeof ProductsIndexRoute
+  '/$lang/journal/$slug': typeof LangJournalSlugRoute
+  '/$lang/partner/apply': typeof LangPartnerApplyRoute
+  '/$lang/products/$slug': typeof LangProductsSlugRoute
+  '/$lang/journal': typeof LangJournalIndexRoute
+  '/$lang/partner': typeof LangPartnerIndexRoute
+  '/$lang/products': typeof LangProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$lang': typeof LangRouteWithChildren
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
+  '/heath': typeof HeathRoute
   '/journal': typeof JournalRouteWithChildren
   '/partner': typeof PartnerRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/cookies': typeof LangCookiesRoute
+  '/$lang/faq': typeof LangFaqRoute
+  '/$lang/heath': typeof LangHeathRoute
+  '/$lang/journal': typeof LangJournalRouteWithChildren
+  '/$lang/partner': typeof LangPartnerRouteWithChildren
+  '/$lang/privacy': typeof LangPrivacyRoute
+  '/$lang/products': typeof LangProductsRouteWithChildren
+  '/$lang/terms': typeof LangTermsRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/partner/apply': typeof PartnerApplyRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/$lang/': typeof LangIndexRoute
   '/journal/': typeof JournalIndexRoute
   '/partner/': typeof PartnerIndexRoute
   '/products/': typeof ProductsIndexRoute
+  '/$lang/journal/$slug': typeof LangJournalSlugRoute
+  '/$lang/partner/apply': typeof LangPartnerApplyRoute
+  '/$lang/products/$slug': typeof LangProductsSlugRoute
+  '/$lang/journal/': typeof LangJournalIndexRoute
+  '/$lang/partner/': typeof LangPartnerIndexRoute
+  '/$lang/products/': typeof LangProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$lang'
     | '/about'
     | '/contact'
     | '/cookies'
     | '/faq'
+    | '/heath'
     | '/journal'
     | '/partner'
     | '/privacy'
     | '/products'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/terms'
+    | '/$lang/about'
+    | '/$lang/contact'
+    | '/$lang/cookies'
+    | '/$lang/faq'
+    | '/$lang/heath'
+    | '/$lang/journal'
+    | '/$lang/partner'
+    | '/$lang/privacy'
+    | '/$lang/products'
+    | '/$lang/terms'
     | '/journal/$slug'
     | '/partner/apply'
     | '/products/$slug'
+    | '/$lang/'
     | '/journal/'
     | '/partner/'
     | '/products/'
+    | '/$lang/journal/$slug'
+    | '/$lang/partner/apply'
+    | '/$lang/products/$slug'
+    | '/$lang/journal/'
+    | '/$lang/partner/'
+    | '/$lang/products/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -185,44 +391,86 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cookies'
     | '/faq'
+    | '/heath'
     | '/privacy'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/terms'
+    | '/$lang/about'
+    | '/$lang/contact'
+    | '/$lang/cookies'
+    | '/$lang/faq'
+    | '/$lang/heath'
+    | '/$lang/privacy'
+    | '/$lang/terms'
     | '/journal/$slug'
     | '/partner/apply'
     | '/products/$slug'
+    | '/$lang'
     | '/journal'
     | '/partner'
     | '/products'
+    | '/$lang/journal/$slug'
+    | '/$lang/partner/apply'
+    | '/$lang/products/$slug'
+    | '/$lang/journal'
+    | '/$lang/partner'
+    | '/$lang/products'
   id:
     | '__root__'
     | '/'
+    | '/$lang'
     | '/about'
     | '/contact'
     | '/cookies'
     | '/faq'
+    | '/heath'
     | '/journal'
     | '/partner'
     | '/privacy'
     | '/products'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/terms'
+    | '/$lang/about'
+    | '/$lang/contact'
+    | '/$lang/cookies'
+    | '/$lang/faq'
+    | '/$lang/heath'
+    | '/$lang/journal'
+    | '/$lang/partner'
+    | '/$lang/privacy'
+    | '/$lang/products'
+    | '/$lang/terms'
     | '/journal/$slug'
     | '/partner/apply'
     | '/products/$slug'
+    | '/$lang/'
     | '/journal/'
     | '/partner/'
     | '/products/'
+    | '/$lang/journal/$slug'
+    | '/$lang/partner/apply'
+    | '/$lang/products/$slug'
+    | '/$lang/journal/'
+    | '/$lang/partner/'
+    | '/$lang/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LangRoute: typeof LangRouteWithChildren
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
   FaqRoute: typeof FaqRoute
+  HeathRoute: typeof HeathRoute
   JournalRoute: typeof JournalRouteWithChildren
   PartnerRoute: typeof PartnerRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   ProductsRoute: typeof ProductsRouteWithChildren
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -233,6 +481,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$lang': {
+      id: '/$lang'
+      path: '/$lang'
+      fullPath: '/$lang'
+      preLoaderRoute: typeof LangRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -263,6 +518,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/heath': {
+      id: '/heath'
+      path: '/heath'
+      fullPath: '/heath'
+      preLoaderRoute: typeof HeathRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/journal': {
       id: '/journal'
       path: '/journal'
@@ -291,12 +553,103 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/$lang/': {
+      id: '/$lang/'
+      path: '/'
+      fullPath: '/$lang/'
+      preLoaderRoute: typeof LangIndexRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/about': {
+      id: '/$lang/about'
+      path: '/about'
+      fullPath: '/$lang/about'
+      preLoaderRoute: typeof LangAboutRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/contact': {
+      id: '/$lang/contact'
+      path: '/contact'
+      fullPath: '/$lang/contact'
+      preLoaderRoute: typeof LangContactRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/cookies': {
+      id: '/$lang/cookies'
+      path: '/cookies'
+      fullPath: '/$lang/cookies'
+      preLoaderRoute: typeof LangCookiesRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/faq': {
+      id: '/$lang/faq'
+      path: '/faq'
+      fullPath: '/$lang/faq'
+      preLoaderRoute: typeof LangFaqRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/heath': {
+      id: '/$lang/heath'
+      path: '/heath'
+      fullPath: '/$lang/heath'
+      preLoaderRoute: typeof LangHeathRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/journal': {
+      id: '/$lang/journal'
+      path: '/journal'
+      fullPath: '/$lang/journal'
+      preLoaderRoute: typeof LangJournalRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/partner': {
+      id: '/$lang/partner'
+      path: '/partner'
+      fullPath: '/$lang/partner'
+      preLoaderRoute: typeof LangPartnerRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/privacy': {
+      id: '/$lang/privacy'
+      path: '/privacy'
+      fullPath: '/$lang/privacy'
+      preLoaderRoute: typeof LangPrivacyRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/products': {
+      id: '/$lang/products'
+      path: '/products'
+      fullPath: '/$lang/products'
+      preLoaderRoute: typeof LangProductsRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/terms': {
+      id: '/$lang/terms'
+      path: '/terms'
+      fullPath: '/$lang/terms'
+      preLoaderRoute: typeof LangTermsRouteImport
+      parentRoute: typeof LangRoute
     }
     '/journal/': {
       id: '/journal/'
@@ -340,8 +693,122 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsSlugRouteImport
       parentRoute: typeof ProductsRoute
     }
+    '/$lang/journal/': {
+      id: '/$lang/journal/'
+      path: '/'
+      fullPath: '/$lang/journal/'
+      preLoaderRoute: typeof LangJournalIndexRouteImport
+      parentRoute: typeof LangJournalRoute
+    }
+    '/$lang/journal/$slug': {
+      id: '/$lang/journal/$slug'
+      path: '/$slug'
+      fullPath: '/$lang/journal/$slug'
+      preLoaderRoute: typeof LangJournalSlugRouteImport
+      parentRoute: typeof LangJournalRoute
+    }
+    '/$lang/partner/': {
+      id: '/$lang/partner/'
+      path: '/'
+      fullPath: '/$lang/partner/'
+      preLoaderRoute: typeof LangPartnerIndexRouteImport
+      parentRoute: typeof LangPartnerRoute
+    }
+    '/$lang/partner/apply': {
+      id: '/$lang/partner/apply'
+      path: '/apply'
+      fullPath: '/$lang/partner/apply'
+      preLoaderRoute: typeof LangPartnerApplyRouteImport
+      parentRoute: typeof LangPartnerRoute
+    }
+    '/$lang/products/': {
+      id: '/$lang/products/'
+      path: '/'
+      fullPath: '/$lang/products/'
+      preLoaderRoute: typeof LangProductsIndexRouteImport
+      parentRoute: typeof LangProductsRoute
+    }
+    '/$lang/products/$slug': {
+      id: '/$lang/products/$slug'
+      path: '/$slug'
+      fullPath: '/$lang/products/$slug'
+      preLoaderRoute: typeof LangProductsSlugRouteImport
+      parentRoute: typeof LangProductsRoute
+    }
   }
 }
+
+interface LangJournalRouteChildren {
+  LangJournalSlugRoute: typeof LangJournalSlugRoute
+  LangJournalIndexRoute: typeof LangJournalIndexRoute
+}
+
+const LangJournalRouteChildren: LangJournalRouteChildren = {
+  LangJournalSlugRoute: LangJournalSlugRoute,
+  LangJournalIndexRoute: LangJournalIndexRoute,
+}
+
+const LangJournalRouteWithChildren = LangJournalRoute._addFileChildren(
+  LangJournalRouteChildren,
+)
+
+interface LangPartnerRouteChildren {
+  LangPartnerApplyRoute: typeof LangPartnerApplyRoute
+  LangPartnerIndexRoute: typeof LangPartnerIndexRoute
+}
+
+const LangPartnerRouteChildren: LangPartnerRouteChildren = {
+  LangPartnerApplyRoute: LangPartnerApplyRoute,
+  LangPartnerIndexRoute: LangPartnerIndexRoute,
+}
+
+const LangPartnerRouteWithChildren = LangPartnerRoute._addFileChildren(
+  LangPartnerRouteChildren,
+)
+
+interface LangProductsRouteChildren {
+  LangProductsSlugRoute: typeof LangProductsSlugRoute
+  LangProductsIndexRoute: typeof LangProductsIndexRoute
+}
+
+const LangProductsRouteChildren: LangProductsRouteChildren = {
+  LangProductsSlugRoute: LangProductsSlugRoute,
+  LangProductsIndexRoute: LangProductsIndexRoute,
+}
+
+const LangProductsRouteWithChildren = LangProductsRoute._addFileChildren(
+  LangProductsRouteChildren,
+)
+
+interface LangRouteChildren {
+  LangAboutRoute: typeof LangAboutRoute
+  LangContactRoute: typeof LangContactRoute
+  LangCookiesRoute: typeof LangCookiesRoute
+  LangFaqRoute: typeof LangFaqRoute
+  LangHeathRoute: typeof LangHeathRoute
+  LangJournalRoute: typeof LangJournalRouteWithChildren
+  LangPartnerRoute: typeof LangPartnerRouteWithChildren
+  LangPrivacyRoute: typeof LangPrivacyRoute
+  LangProductsRoute: typeof LangProductsRouteWithChildren
+  LangTermsRoute: typeof LangTermsRoute
+  LangIndexRoute: typeof LangIndexRoute
+}
+
+const LangRouteChildren: LangRouteChildren = {
+  LangAboutRoute: LangAboutRoute,
+  LangContactRoute: LangContactRoute,
+  LangCookiesRoute: LangCookiesRoute,
+  LangFaqRoute: LangFaqRoute,
+  LangHeathRoute: LangHeathRoute,
+  LangJournalRoute: LangJournalRouteWithChildren,
+  LangPartnerRoute: LangPartnerRouteWithChildren,
+  LangPrivacyRoute: LangPrivacyRoute,
+  LangProductsRoute: LangProductsRouteWithChildren,
+  LangTermsRoute: LangTermsRoute,
+  LangIndexRoute: LangIndexRoute,
+}
+
+const LangRouteWithChildren = LangRoute._addFileChildren(LangRouteChildren)
 
 interface JournalRouteChildren {
   JournalSlugRoute: typeof JournalSlugRoute
@@ -385,14 +852,18 @@ const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LangRoute: LangRouteWithChildren,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
   FaqRoute: FaqRoute,
+  HeathRoute: HeathRoute,
   JournalRoute: JournalRouteWithChildren,
   PartnerRoute: PartnerRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   ProductsRoute: ProductsRouteWithChildren,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
