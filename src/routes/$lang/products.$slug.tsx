@@ -96,7 +96,19 @@ function ProductPage() {
             </div>
           </dl>
           <div className="mt-10 flex flex-wrap gap-4">
-            <SolidLink to="/partner/apply">{t.requestSpec}</SolidLink>
+            <a
+              href="#flavour-and-pairings"
+              className="inline-flex min-h-11 items-center justify-center bg-heath px-5 text-xs tracking-widest text-cream uppercase transition-transform duration-150 ease-out active:scale-[0.96]"
+              onClick={(event) => {
+                event.preventDefault();
+                document.getElementById("flavour-and-pairings")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }}
+            >
+              {t.productExplore}
+            </a>
             <Link to={localePath(lang, "/products") as "/"} className="inline-flex min-h-11 items-center text-sm text-ink-soft">
               {t.backProducts}
             </Link>
@@ -108,7 +120,10 @@ function ProductPage() {
         <img src={product.landscape} alt="" className="h-80 w-full object-cover sm:h-[28rem]" />
       </section>
 
-      <section className="mx-auto max-w-3xl px-4 py-24 sm:px-6">
+      <section
+        id="flavour-and-pairings"
+        className="mx-auto max-w-3xl scroll-mt-20 px-4 py-24 sm:scroll-mt-24 sm:px-6"
+      >
         {product.sections.map((section) => (
           <div key={section.title.zh} className="mt-12 first:mt-0">
             <h2 className="font-display text-3xl text-ink">{section.title[lang]}</h2>
@@ -126,6 +141,16 @@ function ProductPage() {
           </div>
         </section>
       ) : null}
+
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+          <h2 className="font-display text-3xl text-ink">{t.productTradeTitle}</h2>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">{t.productTradeBody}</p>
+          <div className="mt-8">
+            <SolidLink to="/partner/apply">{t.ctaPartner}</SolidLink>
+          </div>
+        </div>
+      </section>
 
       <section className="border-t border-line bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
