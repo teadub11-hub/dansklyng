@@ -18,8 +18,14 @@ function Home() {
   return (
     <>
       <section className="relative isolate -mt-16 min-h-dvh overflow-hidden bg-heath sm:-mt-20">
+        <img
+          src="/images/hero-heath.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-[center_72%] outline-none max-sm:origin-bottom max-sm:scale-[1.35] sm:object-center"
+        />
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="hero-motion absolute inset-0 h-full w-full object-cover object-[center_72%] outline-none max-sm:origin-bottom max-sm:scale-[1.35] sm:object-center"
           autoPlay
           muted
           loop
@@ -29,7 +35,7 @@ function Home() {
         >
           <source src="/video/hero-heath.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-heath via-heath/45 to-heath/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-heath via-heath/40 to-heath/15" />
         <div className="relative z-10 mx-auto flex min-h-dvh max-w-6xl flex-col justify-end px-4 pb-16 pt-28 sm:px-6">
           <p className="text-xs tracking-widest text-cream/70 uppercase">{t.homeEyebrow}</p>
           <h1 className="mt-4 max-w-3xl font-display text-5xl leading-none text-balance text-cream sm:text-7xl">
