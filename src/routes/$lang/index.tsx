@@ -91,6 +91,11 @@ function Home() {
             </div>
             <TextLink to="/products">{t.ctaCatalog}</TextLink>
           </div>
+          <img
+            src="/images/honey-flight.jpg"
+            alt={lang === "zh" ? "DANSK LYNG 四款蜂蜜" : "The four DANSK LYNG honeys"}
+            className="mt-12 aspect-video w-full object-cover"
+          />
           <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((p) => (
               <Link
