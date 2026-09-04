@@ -116,8 +116,12 @@ function ProductPage() {
         </div>
       </section>
 
-      <section className="overflow-hidden">
-        <img src={product.landscape} alt="" className="h-80 w-full object-cover sm:h-[28rem]" />
+      <section className="overflow-hidden bg-cream">
+        <img
+          src={product.landscape}
+          alt=""
+          className="mx-auto aspect-square w-full max-w-4xl object-cover"
+        />
       </section>
 
       <section

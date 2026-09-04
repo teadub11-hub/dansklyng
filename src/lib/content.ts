@@ -69,7 +69,7 @@ export const products = [
       en: "Danish heather honey from the Jutland heath: dark in the glass, spicy on the palate, fine in texture.",
     } as Localized,
     image: "/images/jar-lyng.jpg",
-    landscape: "/images/hero-heath.jpg",
+    landscape: "/images/flavor-lyng.jpg",
     featured: true,
   },
   {
@@ -119,7 +119,7 @@ export const products = [
       en: "Danish wildflower honey from spring and summer flowers. Pale, mild, and lightly floral.",
     } as Localized,
     image: "/images/jar-blomster.jpg",
-    landscape: "/images/meadow.jpg",
+    landscape: "/images/flavor-blomster.jpg",
     featured: false,
   },
   {
@@ -175,7 +175,7 @@ export const products = [
       en: "Danish honey from the late-summer bloom: white clover, lime, fireweed and heather among the flowers the bees bring home.",
     } as Localized,
     image: "/images/jar-sensommer.jpg",
-    landscape: "/images/latesummer.jpg",
+    landscape: "/images/flavor-sensommer.jpg",
     featured: false,
   },
   {
@@ -228,7 +228,7 @@ export const products = [
       en: "Danish forest honey is a honeydew honey. Colour and taste follow the batch, from pale and fluid to dark and intense.",
     } as Localized,
     image: "/images/jar-skov.jpg",
-    landscape: "/images/forest.jpg",
+    landscape: "/images/flavor-skov.jpg",
     featured: false,
   },
 ] as const;
