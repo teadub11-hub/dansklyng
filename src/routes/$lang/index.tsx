@@ -150,8 +150,8 @@ function Home() {
             </div>
           </div>
           <img
-            src="/images/hero-heath.jpg"
-            alt={lang === "zh" ? "西日德蘭石楠荒原" : "West Jutland heather heath"}
+            src={note.image}
+            alt={note.imageAlt[lang]}
             className="aspect-video w-full object-cover"
           />
         </div>
