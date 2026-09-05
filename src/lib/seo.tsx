@@ -84,7 +84,6 @@ export function organizationJsonLd() {
 export function productJsonLd(input: {
   lang: Lang;
   name: string;
-  danish: string;
   description: string;
   image: string;
   slug: string;
@@ -92,8 +91,7 @@ export function productJsonLd(input: {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: input.danish,
-    alternateName: input.name,
+    name: input.name,
     description: input.description,
     image: absoluteUrl(input.image),
     brand: { "@type": "Brand", name: "Dansk Lyng" },
