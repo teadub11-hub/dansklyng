@@ -130,7 +130,7 @@ export const products = [
     slug: "sensommer",
     danish: "Sensommerhonning",
     name: { zh: "晚夏蜜", en: "Late-summer honey" } as Localized,
-    eyebrow: { zh: "DANISH LATE SUMMER HONEY", en: "DANISH LATE SUMMER HONEY" } as Localized,
+    eyebrow: { zh: "DANISH LATE SUMMER HONEY", en: "DANISH LATE-SUMMER HONEY" } as Localized,
     source: {
       zh: "白三葉草、菩提、柳蘭與石楠等晚夏花源",
       en: "Late-summer flowers, including white clover, linden blossom, fireweed and heather",
