@@ -126,7 +126,7 @@ function Home() {
             <h2 className="mt-3 font-display text-4xl text-ink">{t.homeCraftTitle}</h2>
             <p className="mt-6 text-pretty text-lg text-ink-soft">{t.homeCraftBody}</p>
             <div className="mt-10">
-              <TextLink to="/journal/meet-the-beekeeper">{t.ctaCraft}</TextLink>
+              <TextLink to="/journal/from-hive-to-jar">{t.ctaCraft}</TextLink>
             </div>
           </div>
         </div>
