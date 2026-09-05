@@ -75,7 +75,7 @@ function Home() {
             <h2 className="mt-3 font-display text-4xl text-ink sm:text-5xl">{t.homeLyngTitle}</h2>
             <p className="mt-8 max-w-md text-pretty text-lg text-ink-soft">{t.homeLyngBody}</p>
             <div className="mt-10">
-              <TextLink to="/products/lyng">{t.ctaHeath}</TextLink>
+              <TextLink to="/products/lyng">{t.ctaDiscoverLyng}</TextLink>
             </div>
           </div>
         </div>
