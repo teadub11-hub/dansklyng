@@ -89,69 +89,7 @@ function PartnerPage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-cream">
-        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-          <p className="text-xs tracking-widest text-muted uppercase">{t.staffEyebrow}</p>
-          <h2 className="mt-3 max-w-2xl font-display text-4xl text-ink">{t.staffTitle}</h2>
-          <p className="mt-8 max-w-2xl font-display text-2xl text-ink">{t.staffLine}</p>
-          <p className="mt-4 max-w-2xl text-ink-soft">{t.staffLineNote}</p>
-
-          <ol className="mt-16 grid gap-10 lg:grid-cols-3">
-            {[
-              { t: t.staffL1t, do: t.staffL1do, dont: t.staffL1dont },
-              { t: t.staffL2t, do: t.staffL2do, dont: t.staffL2dont },
-              { t: t.staffL3t, do: t.staffL3do, dont: t.staffL3dont },
-            ].map((layer) => (
-              <li key={layer.t} className="border-t border-line pt-6">
-                <h3 className="font-display text-3xl text-ink">{layer.t}</h3>
-                <p className="mt-6 text-xs tracking-widest text-muted uppercase">{t.staffDo}</p>
-                <p className="mt-2 text-ink">{layer.do}</p>
-                <p className="mt-6 text-xs tracking-widest text-muted uppercase">{t.staffDont}</p>
-                <p className="mt-2 text-ink-soft">{layer.dont}</p>
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-20 grid gap-12 lg:grid-cols-2">
-            <div className="border-t border-line pt-6">
-              <h3 className="font-display text-3xl text-ink">{t.staffShelfT}</h3>
-              <ul className="mt-6 space-y-3 text-ink-soft">
-                <li>{t.staffShelf1}</li>
-                <li>{t.staffShelf2}</li>
-                <li>{t.staffShelf3}</li>
-              </ul>
-            </div>
-            <div className="border-t border-line pt-6">
-              <h3 className="font-display text-3xl text-ink">{t.staffTalkT}</h3>
-              <dl className="mt-6 space-y-5">
-                <div>
-                  <dt className="text-xs tracking-widest text-muted uppercase">{t.staffTalk1t}</dt>
-                  <dd className="mt-1 text-ink">{t.staffTalk1}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs tracking-widest text-muted uppercase">{t.staffTalk2t}</dt>
-                  <dd className="mt-1 text-ink">{t.staffTalk2}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs tracking-widest text-muted uppercase">{t.staffTalk3t}</dt>
-                  <dd className="mt-1 text-ink">{t.staffTalk3}</dd>
-                </div>
-              </dl>
-            </div>
-            <div className="border-t border-line pt-6">
-              <h3 className="font-display text-3xl text-ink">{t.staffTasteT}</h3>
-              <p className="mt-6 text-ink-soft">{t.staffTaste}</p>
-            </div>
-            <div className="border-t border-line pt-6">
-              <h3 className="font-display text-3xl text-ink">{t.staffAvoidT}</h3>
-              <p className="mt-6 text-ink-soft">{t.staffAvoid}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-line">
-        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+      <section className="border-t border-line bg-cream">        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
           <p className="text-xs tracking-widest text-muted uppercase">{t.supportTitle}</p>
           <ol className="mt-10 divide-y divide-line border-y border-line">
             {support.map((item) => (
