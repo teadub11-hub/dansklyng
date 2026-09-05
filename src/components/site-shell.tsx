@@ -56,12 +56,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Link
             to={localePath(lang, "/") as "/"}
             className={cn(
-              "font-display text-xl tracking-wide sm:text-2xl",
+              "font-display text-xl tracking-[0.14em] sm:text-2xl",
               overHero ? "text-cream" : "text-ink",
             )}
             aria-label={t.wordmark}
           >
-            Dansk Lyng
+            {t.wordmark}
           </Link>
 
           <nav
@@ -163,7 +163,7 @@ function Footer() {
     <footer className="border-t border-ink/10 bg-heath text-cream">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="font-display text-3xl">Dansk Lyng</p>
+          <p className="font-display text-3xl tracking-[0.14em]">{t.wordmark}</p>
           <p className="mt-4 max-w-sm text-sm text-cream/70">{t.footerNature}</p>
           <p className="mt-8 font-display text-xl italic text-honey">{t.footerMotto}</p>
           <div className="mt-10 max-w-sm">
