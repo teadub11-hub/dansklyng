@@ -84,7 +84,6 @@ export function organizationJsonLd() {
 export function productJsonLd(input: {
   lang: Lang;
   name: string;
-  danish: string;
   description: string;
   image: string;
   slug: string;
@@ -92,8 +91,7 @@ export function productJsonLd(input: {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: input.danish,
-    alternateName: input.name,
+    name: input.name,
     description: input.description,
     image: absoluteUrl(input.image),
     brand: { "@type": "Brand", name: "Dansk Lyng" },
@@ -108,12 +106,14 @@ export function articleJsonLd(input: {
   description: string;
   date: string;
   slug: string;
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: input.title,
     description: input.description,
+    image: input.image ? absoluteUrl(input.image) : undefined,
     datePublished: input.date,
     inLanguage: htmlLang(input.lang),
     author: { "@type": "Organization", name: "Dansk Lyng" },

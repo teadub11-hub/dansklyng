@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
-import { EMAIL } from "@/lib/content";
+import { EMAIL, products } from "@/lib/content";
 import { useLang, useT } from "@/lib/i18n";
 import { localePath, stripLangPrefix } from "@/lib/locale";
 
@@ -56,12 +56,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Link
             to={localePath(lang, "/") as "/"}
             className={cn(
-              "font-display text-xl tracking-wide sm:text-2xl",
+              "font-display text-xl tracking-[0.14em] sm:text-2xl",
               overHero ? "text-cream" : "text-ink",
             )}
             aria-label={t.wordmark}
           >
-            Dansk Lyng
+            {t.wordmark}
           </Link>
 
           <nav
@@ -163,7 +163,7 @@ function Footer() {
     <footer className="border-t border-ink/10 bg-heath text-cream">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="font-display text-3xl">Dansk Lyng</p>
+          <p className="font-display text-3xl tracking-[0.14em]">{t.wordmark}</p>
           <p className="mt-4 max-w-sm text-sm text-cream/70">{t.footerNature}</p>
           <p className="mt-8 font-display text-xl italic text-honey">{t.footerMotto}</p>
           <div className="mt-10 max-w-sm">
@@ -182,7 +182,7 @@ function Footer() {
             title={t.footerProducts}
             items={[
               { to: localePath(lang, "/products"), label: t.ctaCatalog },
-              { to: localePath(lang, "/products/lyng"), label: "Lynghonning" },
+              { to: localePath(lang, "/products/lyng"), label: products.find((p) => p.featured)!.name[lang] },
               { to: localePath(lang, "/heath"), label: t.navHeath },
               { to: localePath(lang, "/faq"), label: "FAQ" },
             ]}

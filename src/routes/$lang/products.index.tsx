@@ -22,19 +22,25 @@ function ProductsPage() {
       <h1 className="mt-3 font-display text-5xl text-ink">{t.catalogTitle}</h1>
       <p className="mt-4 max-w-2xl text-pretty text-ink-soft">{t.catalogLede}</p>
 
+      <img
+        src="/images/honey-flight.jpg"
+        alt={lang === "zh" ? "DANSK LYNG 四款蜂蜜" : "The four DANSK LYNG honeys"}
+        className="mt-12 aspect-video w-full object-cover"
+      />
+
       <article className="mt-16 grid items-center gap-10 border-b border-line pb-20 lg:grid-cols-2">
         <img
           src={lyng.image}
-          alt={`${lyng.danish} — ${lyng.name[lang]}`}
+          alt={lyng.name[lang]}
           className="aspect-3/4 w-full object-cover object-bottom"
         />
         <div>
-          <p className="font-display text-lg italic text-heather">{lyng.danish}</p>
-          <h2 className="mt-1 font-display text-4xl text-ink">{lyng.name[lang]}</h2>
-          <p className="mt-6 text-lg text-ink-soft">{lyng.lede[lang]}</p>
-          <p className="mt-4 text-sm text-muted">
-            {lyng.color[lang]} · {lyng.texture[lang]}
+          <p className="text-xs tracking-widest text-heather uppercase">
+            {t.homeFlag} · {lyng.season[lang]}
           </p>
+          <h2 className="mt-3 font-display text-4xl text-ink">{lyng.name[lang]}</h2>
+          <p className="mt-4 text-sm text-muted">{lyng.tasting[lang]}</p>
+          <p className="mt-6 text-lg text-ink-soft">{lyng.lede[lang]}</p>
           <div className="mt-10">
             <Link
               to={localePath(lang, `/products/${lyng.slug}`) as "/"}
@@ -47,8 +53,8 @@ function ProductsPage() {
       </article>
 
       <div className="mt-16">
-        <p className="text-xs tracking-widest text-muted uppercase">{t.homeRange}</p>
-        <h2 className="mt-3 font-display text-3xl text-ink">{t.homeRangeTitle}</h2>
+        <p className="text-xs tracking-widest text-muted uppercase">{t.catalogRest}</p>
+        <h2 className="mt-3 font-display text-3xl text-ink">{t.catalogRestTitle}</h2>
       </div>
 
       <div className="mt-12 grid gap-12 md:grid-cols-3">
@@ -56,11 +62,12 @@ function ProductsPage() {
           <article key={p.slug}>
             <img
               src={p.image}
-              alt={`${p.danish} — ${p.name[lang]}`}
+              alt={p.name[lang]}
               className="aspect-3/4 w-full object-cover"
             />
-            <p className="mt-5 font-display italic text-heather">{p.danish}</p>
-            <h2 className="font-display text-2xl text-ink">{p.name[lang]}</h2>
+            <p className="mt-5 text-xs tracking-widest text-heather uppercase">{p.season[lang]}</p>
+            <h2 className="mt-2 font-display text-2xl text-ink">{p.name[lang]}</h2>
+            <p className="mt-2 text-sm text-muted">{p.tasting[lang]}</p>
             <p className="mt-3 text-sm text-ink-soft">{p.lede[lang]}</p>
             <Link
               to={localePath(lang, `/products/${p.slug}`) as "/"}

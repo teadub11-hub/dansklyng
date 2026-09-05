@@ -22,7 +22,11 @@ function AboutPage() {
   return (
     <article>
       <header className="relative isolate overflow-hidden">
-        <img src="/images/hero-heath.jpg" alt="" className="h-[32rem] w-full object-cover sm:h-[40rem]" />
+        <img
+          src="/images/lyng-scene-heath.jpg"
+          alt=""
+          className="h-[32rem] w-full object-cover object-center sm:h-[40rem]"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-heath via-heath/40 to-heath/15" />
         <div className="absolute inset-0 mx-auto flex max-w-3xl flex-col justify-end px-4 py-16 sm:px-6">
           <p className="text-xs tracking-widest text-cream/70 uppercase">{t.aboutEyebrow}</p>
@@ -42,9 +46,9 @@ function AboutPage() {
 
       <figure className="bg-cream">
         <img
-          src="/images/hives.jpg"
-          alt={lang === "zh" ? "荒原上的蜂箱" : "Hives on the heath"}
-          className="mx-auto max-h-[36rem] w-full max-w-6xl object-cover"
+          src="/images/craft-comb.jpg"
+          alt={lang === "zh" ? "封蓋良好的巢脾" : "A well-capped comb from a healthy colony"}
+          className="mx-auto max-h-[40rem] w-full max-w-xl object-cover"
         />
       </figure>
 

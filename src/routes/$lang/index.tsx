@@ -91,6 +91,11 @@ function Home() {
             </div>
             <TextLink to="/products">{t.ctaCatalog}</TextLink>
           </div>
+          <img
+            src="/images/honey-flight.jpg"
+            alt={lang === "zh" ? "DANSK LYNG 四款蜂蜜" : "The four DANSK LYNG honeys"}
+            className="mt-12 aspect-video w-full object-cover"
+          />
           <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((p) => (
               <Link
@@ -98,8 +103,7 @@ function Home() {
                 to={localePath(lang, `/products/${p.slug}`) as "/"}
                 className="group block"
               >
-                <p className="font-display text-sm italic text-heather">{p.danish}</p>
-                <h3 className="mt-1 font-display text-2xl text-ink group-hover:text-heather">{p.name[lang]}</h3>
+                <h3 className="font-display text-2xl text-ink group-hover:text-heather">{p.name[lang]}</h3>
                 {p.featured ? (
                   <p className="mt-2 text-xs tracking-widest text-heather uppercase">{t.homeFlag}</p>
                 ) : null}
@@ -113,8 +117,8 @@ function Home() {
       <section className="border-t border-line bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2">
           <img
-            src="/images/hives.jpg"
-            alt={lang === "zh" ? "荒原上的蜂箱" : "Hives on the heath"}
+            src="/images/craft-cream.jpg"
+            alt={lang === "zh" ? "結晶控制中的蜂蜜" : "Honey during crystallisation"}
             className="aspect-video w-full object-cover"
           />
           <div>
@@ -122,7 +126,7 @@ function Home() {
             <h2 className="mt-3 font-display text-4xl text-ink">{t.homeCraftTitle}</h2>
             <p className="mt-6 text-pretty text-lg text-ink-soft">{t.homeCraftBody}</p>
             <div className="mt-10">
-              <TextLink to="/journal/meet-the-beekeeper">{t.ctaCraft}</TextLink>
+              <TextLink to="/journal/from-hive-to-jar">{t.ctaCraft}</TextLink>
             </div>
           </div>
         </div>
@@ -146,8 +150,8 @@ function Home() {
             </div>
           </div>
           <img
-            src="/images/hero-heath.jpg"
-            alt={lang === "zh" ? "西日德蘭石楠荒原" : "West Jutland heather heath"}
+            src={note.image}
+            alt={note.imageAlt[lang]}
             className="aspect-video w-full object-cover"
           />
         </div>

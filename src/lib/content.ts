@@ -18,6 +18,8 @@ export const products = [
     color: { zh: "紅棕至深酒紅色", en: "Red-brown to deep burgundy" } as Localized,
     texture: { zh: "細緻、濃稠、易於塗抹", en: "Fine, dense, easy to spread" } as Localized,
     flavor: { zh: "鮮明辛香", en: "Clear, spicy character" } as Localized,
+    season: { zh: "晚夏花期", en: "Late-summer bloom" } as Localized,
+    tasting: { zh: "紅棕至酒紅 · 鮮明辛香 · 細緻濃稠", en: "Red-brown to burgundy · Spicy · Fine and dense" } as Localized,
     notes: {
       zh: "辛香、深色，質地細緻而易於塗抹。",
       en: "Spicy and dark, with a fine texture that spreads easily.",
@@ -61,15 +63,15 @@ export const products = [
       },
     ] as ProductSection[],
     seoTitle: {
-      zh: "Lynghonning 丹麥石楠花蜜｜DANSK LYNG",
-      en: "Lynghonning, Danish heather honey | DANSK LYNG",
+      zh: "石楠花蜜｜DANSK LYNG",
+      en: "Heather honey | DANSK LYNG",
     } as Localized,
     seoDesc: {
       zh: "認識來自日德蘭荒原、帶有深色外觀、辛香風味與細緻質地的丹麥石楠花蜜。",
       en: "Danish heather honey from the Jutland heath: dark in the glass, spicy on the palate, fine in texture.",
     } as Localized,
     image: "/images/jar-lyng.jpg",
-    landscape: "/images/hero-heath.jpg",
+    landscape: "/images/flavor-lyng.jpg",
     featured: true,
   },
   {
@@ -82,6 +84,8 @@ export const products = [
     color: { zh: "極淺、淡黃至淺棕", en: "Very pale, light yellow to light brown" } as Localized,
     texture: { zh: "柔和、易於塗抹", en: "Soft, easy to spread" } as Localized,
     flavor: { zh: "溫和、細緻", en: "Mild and delicate" } as Localized,
+    season: { zh: "春夏", en: "Spring and summer" } as Localized,
+    tasting: { zh: "淺金 · 溫和花香 · 柔和易塗", en: "Pale gold · Mild floral · Soft and spreadable" } as Localized,
     notes: {
       zh: "來自春夏多種花源，色澤較淺，風味溫和。",
       en: "From many spring and summer flowers. Paler in colour, mild in taste.",
@@ -98,8 +102,8 @@ export const products = [
       {
         title: { zh: "它有什麼不同？", en: "What sets it apart" },
         body: {
-          zh: "Blomsterhonning 是四款中最容易入門的一款。花源組成隨季節與年份改變，顏色與香氣也會有所不同。",
-          en: "Blomsterhonning is the most approachable of the four. The mix of flowers changes with season and year, and so do colour and aroma.",
+          zh: "野花蜜是四款中最容易入門的一款。花源組成隨季節與年份改變，顏色與香氣也會有所不同。",
+          en: "Wildflower honey is the most approachable of the four. The mix of flowers changes with season and year, and so do colour and aroma.",
         },
       },
       {
@@ -111,15 +115,15 @@ export const products = [
       },
     ] as ProductSection[],
     seoTitle: {
-      zh: "Blomsterhonning 丹麥野花蜜｜DANSK LYNG",
-      en: "Blomsterhonning, Danish wildflower honey | DANSK LYNG",
+      zh: "野花蜜｜DANSK LYNG",
+      en: "Wildflower honey | DANSK LYNG",
     } as Localized,
     seoDesc: {
       zh: "採集自丹麥春夏多種花源的野花蜜。色澤較淺，風味溫和，帶有細緻花香。",
       en: "Danish wildflower honey from spring and summer flowers. Pale, mild, and lightly floral.",
     } as Localized,
     image: "/images/jar-blomster.jpg",
-    landscape: "/images/meadow.jpg",
+    landscape: "/images/flavor-blomster.jpg",
     featured: false,
   },
   {
@@ -138,6 +142,8 @@ export const products = [
       zh: "飽滿，呈現多種晚夏花源的層次",
       en: "Full, with the layered character of late-summer flowers",
     } as Localized,
+    season: { zh: "晚夏", en: "Late summer" } as Localized,
+    tasting: { zh: "色澤較深 · 飽滿花香 · 有時厚實", en: "Deeper colour · Full aroma · Sometimes thicker" } as Localized,
     notes: {
       zh: "多種晚夏花源由蜜蜂自然採集，香氣飽滿，質地有時較為厚實。",
       en: "Bees gather several late-summer flowers. The aroma is full; the texture is sometimes thicker.",
@@ -167,15 +173,15 @@ export const products = [
       },
     ] as ProductSection[],
     seoTitle: {
-      zh: "Sensommerhonning 丹麥晚夏蜜｜DANSK LYNG",
-      en: "Sensommerhonning, Danish late-summer honey | DANSK LYNG",
+      zh: "晚夏蜜｜DANSK LYNG",
+      en: "Late-summer honey | DANSK LYNG",
     } as Localized,
     seoDesc: {
       zh: "採集自晚夏花期的丹麥蜂蜜。常見蜜源包括白三葉草、菩提、柳蘭與石楠。",
       en: "Danish honey from the late-summer bloom: white clover, lime, fireweed and heather among the flowers the bees bring home.",
     } as Localized,
     image: "/images/jar-sensommer.jpg",
-    landscape: "/images/latesummer.jpg",
+    landscape: "/images/flavor-sensommer.jpg",
     featured: false,
   },
   {
@@ -191,6 +197,8 @@ export const products = [
       zh: "帶有辛香；深色批次可能更為強勁",
       en: "A spicy note; darker batches can taste stronger",
     } as Localized,
+    season: { zh: "林木蜜露", en: "Woodland honeydew" } as Localized,
+    tasting: { zh: "淺至深 · 帶有辛香 · 有時流動", en: "Pale to dark · A spicy note · Sometimes fluid" } as Localized,
     notes: {
       zh: "來自林間蜜露，色澤與風味依批次而異，有時清亮，有時深沉強勁。",
       en: "From woodland honeydew. Colour and taste change with the batch: sometimes pale, sometimes dark and intense.",
@@ -220,15 +228,15 @@ export const products = [
       },
     ] as ProductSection[],
     seoTitle: {
-      zh: "Skovhonning 丹麥森林蜜｜DANSK LYNG",
-      en: "Skovhonning, Danish forest honey | DANSK LYNG",
+      zh: "森林蜜｜DANSK LYNG",
+      en: "Forest honey | DANSK LYNG",
     } as Localized,
     seoDesc: {
       zh: "森林蜜屬於蜜露蜜，來源是林木環境中的蜜露。色澤與風味依批次而異。",
       en: "Danish forest honey is a honeydew honey. Colour and taste follow the batch, from pale and fluid to dark and intense.",
     } as Localized,
     image: "/images/jar-skov.jpg",
-    landscape: "/images/forest.jpg",
+    landscape: "/images/flavor-skov.jpg",
     featured: false,
   },
 ] as const;
@@ -263,37 +271,70 @@ export const aromaFamilies = [
 
 export type JournalTheme = "terroir" | "taste" | "knowledge" | "beekeeping";
 
+export type JournalShape = "wide" | "square" | "portrait";
+
+export type JournalFigure = {
+  src: string;
+  alt: Localized;
+  after: number;
+  shape: JournalShape;
+};
+
+export type JournalCta = "lyng" | "catalog" | "heath";
+
 export const journal = [
   {
     slug: "what-is-lyng-honey",
     theme: "taste" as JournalTheme,
-    featured: true,
     date: "2025-08-15",
+    image: "/images/journal/heather-closeup.jpg",
+    imageAlt: { zh: "盛開的石楠", en: "Heather in bloom" } as Localized,
+    imageShape: "square" as JournalShape,
+    cta: "lyng" as JournalCta,
+    figures: [
+      {
+        src: "/images/journal/honey-spoon.jpg",
+        alt: { zh: "石楠花蜜濃稠細緻的質地", en: "The dense, fine texture of heather honey" } as Localized,
+        after: 1,
+        shape: "square" as JournalShape,
+      },
+    ] as JournalFigure[],
     title: { zh: "什麼是丹麥石楠花蜜？", en: "What is Danish heather honey?" },
     lede: {
-      zh: "從蜜源、色澤、辛香與質地，認識 Lynghonning 與一般花蜜的不同。",
-      en: "Discover how heather gives Lynghonning its deep colour, spicy flavour and distinctive texture.",
+      zh: "從蜜源、色澤、辛香與質地，認識石楠花蜜與一般花蜜的不同。",
+      en: "Discover how heather gives this honey its deep colour, spicy flavour and distinctive texture.",
     },
     body: {
       zh: [
-        "Lynghonning 是來自日德蘭荒原的石楠花蜜。石楠迎著海風生長在開闊的砂質土地，到了晚夏，整片荒原轉為紫色。蜜蜂在這段花期採集，才有這款蜂蜜。",
+        "這是來自日德蘭荒原的石楠花蜜。石楠迎著海風生長在開闊的砂質土地，到了晚夏，整片荒原轉為紫色。蜜蜂在這段花期採集，才有這款蜂蜜。",
         "它通常呈紅棕至深酒紅色，帶有鮮明辛香，質地細緻、濃稠而容易塗抹。石楠花蜜不以清淡為特色。深色、辛香與濃厚質地，使味道停留得更久，也與一般春夏花蜜形成清楚區別。",
         "DANSK LYNG 的石楠花蜜來自西日德蘭海岸線。石楠盛開時，合作養蜂人將蜂箱移至沿岸不同的石楠荒原與自然保護區，從北到南分布於三十多個採集地點。盛花期的沿岸荒原以石楠為主要蜜源。",
-        "花期與天氣每年不同，色澤、香氣、質地與產量也可能有所變化。個別產品資訊以實際批次為準。",
+        "花期與天氣每年不同，色澤、香氣、質地與產量也可能有所變化。它是品牌最具代表性的風味。個別產品資訊以實際批次為準。",
       ],
       en: [
-        "Lynghonning is heather honey from the Jutland heath. Heather thrives in open, sandy ground exposed to the sea wind. In late summer, the landscape turns purple and the bees begin to gather from the bloom.",
+        "Heather honey from the Jutland heath. Heather thrives in open, sandy ground exposed to the sea wind. In late summer, the landscape turns purple and the bees begin to gather from the bloom.",
         "The honey is usually red-brown to deep burgundy, distinctly spicy and full-flavoured, with a fine, dense texture that spreads easily. Its colour, flavour and texture set it apart from the lighter blossom honeys of spring and summer.",
         "DANSK LYNG heather honey comes from the West Jutland coast. When the heather is in bloom, the beekeepers we work with move the hives to coastal heaths and nature reserves — more than thirty sites, from north to south. In full bloom, heather is the main source on those shores.",
-        "Bloom and weather vary from year to year, and the honey varies with them. Each harvest may differ slightly in colour, aroma and texture.",
+        "Bloom and weather vary from year to year, and the honey varies with them. It is the flavour the brand is known by. Each harvest may differ slightly in colour, aroma and texture.",
       ],
     },
   },
   {
     slug: "why-once-a-year",
     theme: "terroir" as JournalTheme,
-    featured: true,
     date: "2026-03-01",
+    image: "/images/journal/heather-bloom.jpg",
+    imageAlt: { zh: "西日德蘭石楠盛開", en: "Heather in full bloom in West Jutland" } as Localized,
+    imageShape: "wide" as JournalShape,
+    cta: "lyng" as JournalCta,
+    figures: [
+      {
+        src: "/images/journal/bees-bloom.jpg",
+        alt: { zh: "蜜蜂在石楠花上採蜜", en: "Bees gathering from heather bloom" } as Localized,
+        after: 1,
+        shape: "portrait" as JournalShape,
+      },
+    ] as JournalFigure[],
     title: { zh: "石楠花期如何影響蜂蜜？", en: "How the heather bloom shapes the honey" },
     lede: {
       zh: "開花、天氣與蜜蜂採集的條件，會讓每年的石楠花蜜有所不同。",
@@ -317,8 +358,37 @@ export const journal = [
   {
     slug: "the-danish-heathlands",
     theme: "terroir" as JournalTheme,
-    featured: true,
     date: "2026-04-20",
+    image: "/images/journal/dunes.jpg",
+    imageAlt: { zh: "日德蘭西岸沙丘與荒原", en: "West Jutland dunes and heathland" } as Localized,
+    imageShape: "wide" as JournalShape,
+    cta: "heath" as JournalCta,
+    figures: [
+      {
+        src: "/images/journal/heathland.jpg",
+        alt: { zh: "紫色石楠荒原", en: "Purple heather across the heath" } as Localized,
+        after: 0,
+        shape: "wide" as JournalShape,
+      },
+      {
+        src: "/images/journal/red-deer.jpg",
+        alt: { zh: "荒原上的野生紅鹿", en: "Wild red deer on the heath" } as Localized,
+        after: 1,
+        shape: "wide" as JournalShape,
+      },
+      {
+        src: "/images/journal/burn.jpg",
+        alt: { zh: "荒原的週期性更新", en: "Cyclical renewal of the heath" } as Localized,
+        after: 2,
+        shape: "square" as JournalShape,
+      },
+      {
+        src: "/images/journal/new-shoots.jpg",
+        alt: { zh: "更新後重新生長的石楠", en: "Fresh heather rising after renewal" } as Localized,
+        after: 3,
+        shape: "square" as JournalShape,
+      },
+    ] as JournalFigure[],
     title: { zh: "西日德蘭的石楠荒原", en: "The heather heaths of West Jutland" },
     lede: {
       zh: "Lyng 是丹麥文的石楠，也是 DANSK LYNG 名稱的由來。招牌蜂蜜的蜜源，從這裡開始。",
@@ -327,23 +397,40 @@ export const journal = [
     body: {
       zh: [
         "石楠生長於開闊、砂質而相對貧瘠的土地。開花時，荒原會出現大片紫色花叢，成為蜜蜂在這段花期的重要蜜源。",
-        "DANSK LYNG 的石楠花蜜來自西日德蘭海岸線。石楠盛開時，合作養蜂人將蜂箱移至沿岸不同的石楠荒原與自然保護區，從北到南分布於三十多個採集地點。盛花期的沿岸荒原以石楠為主要蜜源，形成這款蜂蜜鮮明的色澤、辛香與質地。",
-        "石楠荒原需要持續管理，才能避免老化植株與其他植被逐漸取代石楠。當地自然保護管理會依區域狀況，以週期性更新方式移除老化植株，讓新的石楠重新生長。",
-        "石楠花蜜以深色、辛香與濃厚質地受到辨認。它不是被加工成一種荒原風格，而是由蜜源與當年環境形成。",
+        "DANSK LYNG 的石楠花蜜來自西日德蘭海岸線。石楠盛開時，合作養蜂人將蜂箱移至沿岸不同的石楠荒原與自然保護區，從北到南分布於三十多個採集地點。花期結束後，蜂箱再移走。",
+        "石楠荒原不會自己一直開成紫色。沒有管理，老化植株與其他植被會慢慢取代石楠。當地自然保護會依區域狀況，以週期性更新移除老化植株，讓新的石楠重新生長。",
+        "石楠花蜜的深色、辛香與濃厚質地，來自這片被維持下來的植物，而不是被加工成一種荒原風格。",
       ],
       en: [
         "Heather thrives on open heathland, in sandy, nutrient-poor soil. When it flowers, broad stretches of the landscape turn purple and become an important source of nectar for the bees.",
-        "DANSK LYNG heather honey comes from the West Jutland coast. In bloom, the beekeepers we work with move the hives to coastal heaths and nature reserves — more than thirty sites from north to south. On those shores, heather is the main source in full bloom, and that is what gives the honey its colour, spice and texture.",
-        "Heathland needs active care. Without it, ageing plants and other vegetation gradually replace the heather. Local conservation work renews the landscape in cycles, allowing fresh heather to grow.",
-        "Heather honey is recognised by its deep colour, spicy flavour and dense, smooth texture — qualities shaped by the plant, the place and the season.",
+        "DANSK LYNG heather honey comes from the West Jutland coast. In bloom, the beekeepers we work with move the hives to coastal heaths and nature reserves — more than thirty sites from north to south. When the bloom ends, the hives move on.",
+        "Heather heath does not stay purple on its own. Without care, ageing plants and other vegetation slowly take its place. Local conservation work renews the landscape in cycles, allowing fresh heather to grow.",
+        "The honey’s deep colour, spice and dense texture begin with the heather preserved in this landscape, not with a process designed to imitate it.",
       ],
     },
   },
   {
-    slug: "meet-the-beekeeper",
+    slug: "from-hive-to-jar",
     theme: "beekeeping" as JournalTheme,
-    featured: true,
     date: "2026-02-10",
+    image: "/images/craft-bees-comb.jpg",
+    imageAlt: { zh: "健康蜂群上的巢脾", en: "A healthy colony on the comb" } as Localized,
+    imageShape: "portrait" as JournalShape,
+    cta: "catalog" as JournalCta,
+    figures: [
+      {
+        src: "/images/craft-hives-lane.jpg",
+        alt: { zh: "集結待運的蜂箱", en: "Hives gathered for moving" } as Localized,
+        after: 0,
+        shape: "wide" as JournalShape,
+      },
+      {
+        src: "/images/journal/extraction.jpg",
+        alt: { zh: "離心取蜜", en: "Honey spun gently from the comb" } as Localized,
+        after: 2,
+        shape: "square" as JournalShape,
+      },
+    ] as JournalFigure[],
     title: { zh: "從蜂巢到玻璃罐", en: "From hive to jar" },
     lede: {
       zh: "離心取蜜、低溫處理與結晶控制，如何形成細緻、容易塗抹的蜂蜜質地。",
@@ -353,116 +440,83 @@ export const journal = [
       zh: [
         "蜂箱在石楠盛開時移至西日德蘭海岸線的石楠荒原。從北到南，三十多個採集地點依當年花況安排。晚夏花期大致在八月至九月，實際日期隨天氣而定。",
         "蜂蜜以離心方式取出，不以高溫加熱，也不添加其他成分。再以細緻的結晶控制，讓蜂蜜形成柔滑、容易塗抹的質地。",
-        "罐裡只有蜂蜜，也保留每個年份自然形成的差異。Blomsterhonning、Sensommerhonning 與 Skovhonning 同樣來自丹麥的花期與蜜源，只是季節與來源不同。",
+        "罐裡只有蜂蜜，也保留每個年份自然形成的差異。野花蜜、晚夏蜜與森林蜜同樣來自丹麥的花期與蜜源，只是季節與來源不同。",
         "我們希望每一罐留下的，是它來自哪裡，以及那一年自然給出的樣子。",
       ],
       en: [
         "When the heather is in bloom, the hives are moved to the coastal heaths of West Jutland. More than thirty sites, north to south, are used according to the year. The late-summer bloom falls roughly in August and September; the exact days follow the weather.",
         "The honey is gently spun from the comb, never exposed to high heat and made with nothing else added. Careful crystallisation creates a smooth texture that spreads easily.",
-        "Each jar contains honey only and preserves the natural differences of its harvest. Blomsterhonning, Sensommerhonning and Skovhonning come from other Danish seasons and sources, each with its own character.",
+        "Each jar contains honey only and preserves the natural differences of its harvest. Wildflower, late-summer and forest honey come from other Danish seasons and sources, each with its own character.",
         "Every jar should taste of where it came from and the season in which it was made.",
       ],
     },
   },
   {
-    slug: "importing-danish-honey",
+    slug: "four-honeys",
     theme: "taste" as JournalTheme,
-    featured: false,
     date: "2026-05-12",
-    title: { zh: "四款丹麥蜂蜜有什麼不同？", en: "How the four Danish honeys differ" },
+    image: "/images/honey-flight.jpg",
+    imageAlt: { zh: "四款丹麥蜂蜜", en: "The four Danish honeys" } as Localized,
+    imageShape: "wide" as JournalShape,
+    cta: "catalog" as JournalCta,
+    figures: [
+      {
+        src: "/images/lyng-scene-cheese.jpg",
+        alt: { zh: "石楠花蜜與起司", en: "Heather honey with cheese" } as Localized,
+        after: 1,
+        shape: "square" as JournalShape,
+      },
+      {
+        src: "/images/journal/breakfast.jpg",
+        alt: { zh: "蜂蜜與早餐麵包", en: "Honey with breakfast bread" } as Localized,
+        after: 2,
+        shape: "wide" as JournalShape,
+      },
+    ] as JournalFigure[],
+    title: { zh: "四款怎麼不同、怎麼吃", en: "How the four honeys differ, and how to eat them" },
     lede: {
-      zh: "比較石楠花蜜、野花蜜、晚夏蜜與森林蜜的蜜源、色澤、質地和風味。",
-      en: "Heather, wildflower, late summer and forest: source, colour, texture and taste, side by side.",
-    },
-    body: {
-      zh: [
-        "Lynghonning 石楠花蜜來自日德蘭荒原的石楠。紅棕至深酒紅色，辛香而濃厚，質地細緻、易於塗抹。它是品牌最具代表性的風味。",
-        "Blomsterhonning 野花蜜採集自丹麥春季與夏季的多種花源。色澤較淺，風味溫和，帶有細緻花香，是四款中最容易入門的一款。",
-        "Sensommerhonning 晚夏蜜採集自晚夏花期，常見蜜源包括白三葉草、菩提、柳蘭與石楠。色澤較深，香氣飽滿，質地有時較為厚實。不同花源由蜜蜂在同一採集期自然帶回蜂巢，不是人工調配。",
-        "Skovhonning 森林蜜屬於蜜露蜜。來源不是花蜜，而是林木環境中的蜜露。它有時色澤清亮、質地流動；有些批次則顏色較深，味道也更為強勁。批次之間可能有明顯差異，產品描述以實際批次為準。",
-      ],
-      en: [
-        "Lynghonning is heather honey from the Jutland heath. Red-brown to deep burgundy, spicy and full, with a fine texture that spreads easily. It is the flavour the brand is known by.",
-        "Blomsterhonning is wildflower honey from many Danish flowers in spring and summer. Paler, milder, lightly floral — the most approachable of the four.",
-        "Sensommerhonning is gathered in late summer, often from white clover, lime, fireweed and heather. It is deeper in colour, full in aroma and sometimes thicker in texture. The bees naturally gather from these flowers during the same period; the flavour is not blended by hand.",
-        "Skovhonning is a forest honey made from woodland honeydew rather than flower nectar. Some harvests are pale and fluid; others are darker and more intense. Its character can vary noticeably from year to year.",
-      ],
-    },
-  },
-  {
-    slug: "what-our-honey-is-tested-for",
-    theme: "knowledge" as JournalTheme,
-    featured: false,
-    date: "2026-03-08",
-    title: { zh: "蜂蜜為什麼會結晶？", en: "Why honey crystallises" },
-    lede: {
-      zh: "天然結晶及正確保存方式。結晶並不代表蜂蜜變質。",
-      en: "Why natural honey crystallises, what it means and how to store it well.",
-    },
-    body: {
-      zh: [
-        "天然蜂蜜可能隨時間結晶。結晶速度與質地受到蜜源、溫度及保存方式影響，並不代表蜂蜜變質。",
-        "DANSK LYNG 以細緻的結晶控制，讓蜂蜜形成柔滑、容易塗抹的質地。石楠花蜜尤其如此：細緻、濃稠，容易塗在麵包上。",
-        "蜂蜜應置於陰涼、乾燥、避光處，不需冷藏。避免長時間接觸高溫或日光直射。",
-        "罐裡只有蜂蜜。色澤、香氣與質地會隨蜜源和年份而變化，這是自然形成的差異，不是品質的等級。",
-      ],
-      en: [
-        "Natural honey may crystallise with time. How quickly, and in what texture, depends on the source, the temperature and how it is kept. It does not mean the honey has spoiled.",
-        "DANSK LYNG carefully controls crystallisation to create a smooth, spreadable texture. This is especially important for heather honey, which is naturally dense and distinctive.",
-        "Store honey in a cool, dry place away from direct light. Refrigeration is not required. Avoid prolonged heat or direct sunlight.",
-        "Each jar contains honey only. Colour, aroma and texture vary naturally with the source and the season; these differences are not a measure of quality.",
-      ],
-    },
-  },
-  {
-    slug: "how-to-read-the-lyng-aroma-map",
-    theme: "taste" as JournalTheme,
-    featured: false,
-    date: "2026-04-02",
-    title: { zh: "如何品嚐四款丹麥蜂蜜？", en: "How to taste the four Danish honeys" },
-    lede: {
-      zh: "從色澤、香氣、入口質地到尾韻，找到四款蜂蜜各自適合的餐桌搭配。",
-      en: "Compare colour, aroma, texture and finish, then discover the pairings that suit each honey.",
+      zh: "同一個丹麥，四種蜜源。先分辨色澤與味道，再找到各自適合的餐桌。",
+      en: "One Denmark, four sources. First the differences, then the table.",
     },
     body: {
       zh: [
         "先觀察色澤與質地，再聞香、入口，最後留意尾韻。四款蜂蜜的差異，用這個順序最容易分辨。",
-        "Lynghonning 深色、辛香、質地如絲絨。可單獨品嚐，也適合藍紋起司、熟成起司、燕麥餅與黑麥麵包。",
-        "Blomsterhonning 色淺、風味溫和，適合早餐麵包、奶油、優格、燕麥粥與花草茶。Sensommerhonning 香氣飽滿，質地有時較厚，適合黑麥麵包、硬質起司、燕麥粥與紅茶。",
-        "Skovhonning 是蜜露蜜，有時清亮流動，有時深沉強勁。適合早餐麵包、清淡起司，也可用於料理。產品頁上的風味圖譜，可以幫助閱讀 Lynghonning 的花香、焦糖、木質與質地。",
+        "石楠花蜜來自日德蘭荒原的石楠。紅棕至深酒紅色，辛香而濃厚，質地細緻、易於塗抹。可單獨品嚐，也適合藍紋起司、熟成起司、燕麥餅與黑麥麵包。它是品牌最具代表性的風味。",
+        "野花蜜採集自丹麥春季與夏季的多種花源。色澤較淺，風味溫和，帶有細緻花香，是四款中最容易入門的一款。適合早餐麵包、奶油、優格、燕麥粥與花草茶。",
+        "晚夏蜜採集自晚夏花期，常見蜜源包括白三葉草、菩提、柳蘭與石楠。色澤較深，香氣飽滿，質地有時較為厚實。適合黑麥麵包、硬質起司、燕麥粥與紅茶。不同花源由蜜蜂在同一採集期自然帶回蜂巢，不是人工調配。",
+        "森林蜜屬於蜜露蜜。來源不是花蜜，而是林木環境中的蜜露。它有時色澤清亮、質地流動；有些批次則顏色較深，味道也更為強勁。適合早餐麵包、清淡起司，也可用於料理。產品頁上的風味圖譜，可以幫助閱讀石楠花蜜的花香、焦糖、木質與質地。",
       ],
       en: [
         "Begin with colour and texture, then notice the aroma, flavour and finish. This makes the differences between the four honeys easy to recognise.",
-        "Lynghonning is dark, distinctly spicy and velvety-smooth. Enjoy it on its own or pair it with blue cheese, aged cheese, oat biscuits or rye bread.",
-        "Blomsterhonning is pale and mild — breakfast bread, butter, yoghurt, porridge, herbal tea. Sensommerhonning is fuller in aroma, sometimes thicker, and belongs with rye bread, hard cheese, porridge and black tea.",
-        "Skovhonning is made from honeydew: sometimes pale and fluid, sometimes dark and intense. Serve it on breakfast bread, with mild cheese or in cooking. The aroma map on the Lynghonning page explores its floral, caramel, woody and textural notes.",
-      ],
-    },
-  },
-  {
-    slug: "become-a-distribution-partner",
-    theme: "knowledge" as JournalTheme,
-    featured: false,
-    date: "2026-06-01",
-    title: { zh: "荒原為什麼需要被維持", en: "Why the heath has to be kept" },
-    lede: {
-      zh: "石楠荒原不會自己一直開成紫色。沒有管理，其他植被會慢慢把它取代。",
-      en: "Heather heath does not stay purple on its own. Without care, other growth slowly takes its place.",
-    },
-    body: {
-      zh: [
-        "石楠生長於開闊、砂質而相對貧瘠的土地。這樣的環境需要被維持，石楠才能繼續成為主要植物。",
-        "石楠荒原需要持續管理，才能避免老化植株與其他植被逐漸取代石楠。當地自然保護管理會依區域狀況，以週期性更新方式移除老化植株，讓新的石楠重新生長。",
-        "DANSK LYNG 的石楠花蜜，來自這類受管理的西日德蘭海岸荒原。蜂箱在盛開時移入，花期結束後再移走。蜂蜜的色澤、辛香與質地，與這片被維持下來的植物有關。",
-      ],
-      en: [
-        "Heather thrives on open heathland, in sandy, nutrient-poor soil. The landscape must be actively cared for if heather is to remain its defining plant.",
-        "Without ongoing care, ageing plants and other vegetation gradually replace the heather. Local conservation work renews the landscape in cycles, allowing fresh heather to grow.",
-        "DANSK LYNG heather honey comes from managed coastal heathland in West Jutland. The hives arrive for the bloom and move on when it ends. The honey’s colour, spice and texture begin with the heather preserved in this landscape.",
+        "Heather honey from the Jutland heath is red-brown to deep burgundy, spicy and full, with a fine texture that spreads easily. Eat it on its own, or with blue cheese, aged cheese, oat biscuits or rye bread. It is the flavour the brand is known by.",
+        "Wildflower honey from many Danish flowers in spring and summer is paler, milder and lightly floral — the most approachable of the four. It belongs with breakfast bread, butter, yoghurt, porridge and herbal tea.",
+        "Late-summer honey is gathered in late summer, often from white clover, lime, fireweed and heather. It is deeper in colour, full in aroma and sometimes thicker in texture. Serve it with rye bread, hard cheese, porridge and black tea. The bees gather from these flowers in the same period; the flavour is not blended by hand.",
+        "Forest honey is a honeydew honey from woodland rather than flower nectar. Some harvests are pale and fluid; others are darker and more intense. Serve it on breakfast bread, with mild cheese or in cooking. The aroma map on the heather honey page explores its floral, caramel, woody and textural notes.",
       ],
     },
   },
 ] as const;
+
+/** Old journal slugs → current path (including /faq). */
+export const journalAliases: Record<string, string> = {
+  "meet-the-beekeeper": "/journal/from-hive-to-jar",
+  "importing-danish-honey": "/journal/four-honeys",
+  "how-to-read-the-lyng-aroma-map": "/journal/four-honeys",
+  "become-a-distribution-partner": "/journal/the-danish-heathlands",
+  "what-our-honey-is-tested-for": "/faq",
+};
+
+export function journalImageClass(shape: JournalShape) {
+  if (shape === "portrait") return "mx-auto aspect-[3/4] w-full max-w-md object-cover";
+  if (shape === "square") return "mx-auto aspect-square w-full max-w-xl object-cover";
+  return "aspect-video w-full object-cover";
+}
+
+export function nextJournal(slug: string, count = 2) {
+  const i = journal.findIndex((j) => j.slug === slug);
+  if (i < 0) return journal.slice(0, count);
+  return Array.from({ length: count }, (_, n) => journal[(i + 1 + n) % journal.length]);
+}
 
 export function journalBySlug(slug: string) {
   return journal.find((j) => j.slug === slug);
