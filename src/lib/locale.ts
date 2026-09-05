@@ -1,8 +1,8 @@
 import { redirect } from "@tanstack/react-router";
 import type { Lang } from "./content";
 
-export const LANGS = ["zh", "en"] as const;
-export const DEFAULT_LANG: Lang = "zh";
+export const LANGS = ["en", "zh"] as const;
+export const DEFAULT_LANG: Lang = "en";
 export const STORAGE_KEY = "dansk-lyng-lang";
 
 export function isLang(value: string | undefined): value is Lang {
@@ -40,7 +40,7 @@ export function preferredLang(): Lang {
   return DEFAULT_LANG;
 }
 
-/** Redirect an unprefixed URL to the same path under /zh or /en. */
+/** Redirect an unprefixed URL to the same path under /en or /zh. */
 export function redirectPreservingPath({ location }: { location: { pathname: string } }) {
   throw redirect({ href: localePath(preferredLang(), location.pathname) });
 }

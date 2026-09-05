@@ -22,16 +22,16 @@ export function renderSitemap(): string {
       const en = xmlEscape(absoluteUrl(localePath("en", path)));
       return [
         "  <url>",
-        `    <loc>${zh}</loc>`,
-        `    <xhtml:link rel="alternate" hreflang="zh-Hant" href="${zh}" />`,
+        `    <loc>${en}</loc>`,
         `    <xhtml:link rel="alternate" hreflang="en" href="${en}" />`,
-        `    <xhtml:link rel="alternate" hreflang="x-default" href="${zh}" />`,
+        `    <xhtml:link rel="alternate" hreflang="zh-Hant" href="${zh}" />`,
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${en}" />`,
         "  </url>",
         "  <url>",
-        `    <loc>${en}</loc>`,
-        `    <xhtml:link rel="alternate" hreflang="zh-Hant" href="${zh}" />`,
+        `    <loc>${zh}</loc>`,
         `    <xhtml:link rel="alternate" hreflang="en" href="${en}" />`,
-        `    <xhtml:link rel="alternate" hreflang="x-default" href="${zh}" />`,
+        `    <xhtml:link rel="alternate" hreflang="zh-Hant" href="${zh}" />`,
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${en}" />`,
         "  </url>",
       ].join("\n");
     })

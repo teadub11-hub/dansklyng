@@ -1,7 +1,7 @@
 import { Outlet, createFileRoute, notFound } from "@tanstack/react-router";
 import { LanguageProvider } from "@/lib/i18n";
 import { SiteShell } from "@/components/site-shell";
-import { isLang } from "@/lib/locale";
+import { isLang, DEFAULT_LANG } from "@/lib/locale";
 import { JsonLd, organizationJsonLd } from "@/lib/seo";
 import type { Lang } from "@/lib/content";
 
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/$lang")({
 
 function LangLayout() {
   const { lang } = Route.useParams();
-  const safe: Lang = isLang(lang) ? lang : "zh";
+  const safe: Lang = isLang(lang) ? lang : DEFAULT_LANG;
   return (
     <LanguageProvider lang={safe}>
       <SiteShell>
