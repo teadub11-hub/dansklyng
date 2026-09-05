@@ -22,6 +22,12 @@ function ProductsPage() {
       <h1 className="mt-3 font-display text-5xl text-ink">{t.catalogTitle}</h1>
       <p className="mt-4 max-w-2xl text-pretty text-ink-soft">{t.catalogLede}</p>
 
+      <img
+        src="/images/honey-flight.jpg"
+        alt={lang === "zh" ? "DANSK LYNG 四款蜂蜜" : "The four DANSK LYNG honeys"}
+        className="mt-12 aspect-video w-full object-cover"
+      />
+
       <article className="mt-16 grid items-center gap-10 border-b border-line pb-20 lg:grid-cols-2">
         <img
           src={lyng.image}
