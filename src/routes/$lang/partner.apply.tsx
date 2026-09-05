@@ -74,7 +74,7 @@ function ApplyPage() {
     e.preventDefault();
     const chosen = products
       .filter((p) => draft.interest.includes(p.slug))
-      .map((p) => `${p.name[lang]} (${p.danish})`)
+      .map((p) => p.name[lang])
       .join(", ");
     const typeLabel =
       draft.type === "importer"
@@ -156,10 +156,7 @@ function ApplyPage() {
                     onChange={() => toggleInterest(p.slug)}
                     className="size-4 accent-heath"
                   />
-                  <span>
-                    {p.name[lang]}
-                    <span className="text-ink-soft"> · {p.danish}</span>
-                  </span>
+                  <span>{p.name[lang]}</span>
                 </label>
               </li>
             ))}
