@@ -52,7 +52,7 @@ export function seoHead({ lang, path, title, description, image = "/og.jpg", typ
       { rel: "canonical", href: canonical },
       { rel: "alternate", hrefLang: "zh-Hant", href: zh },
       { rel: "alternate", hrefLang: "en", href: en },
-      { rel: "alternate", hrefLang: "x-default", href: zh },
+      { rel: "alternate", hrefLang: "x-default", href: en },
     ],
   };
 }
