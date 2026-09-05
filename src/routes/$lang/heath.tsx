@@ -32,8 +32,8 @@ function HeathPage() {
 
       <figure className="bg-cream">
         <img
-          src="/images/hives.jpg"
-          alt={lang === "zh" ? "西日德蘭海岸的石楠荒原" : "Heather heath on the West Jutland coast"}
+          src="/images/journal/heathland.jpg"
+          alt={lang === "zh" ? "西日德蘭海岸的紫色石楠荒原" : "Purple heather on the West Jutland coast"}
           className="mx-auto max-h-[36rem] w-full max-w-6xl object-cover"
         />
       </figure>
