@@ -18,6 +18,8 @@ export const products = [
     color: { zh: "紅棕至深酒紅色", en: "Red-brown to deep burgundy" } as Localized,
     texture: { zh: "細緻、濃稠、易於塗抹", en: "Fine, dense, easy to spread" } as Localized,
     flavor: { zh: "鮮明辛香", en: "Clear, spicy character" } as Localized,
+    season: { zh: "晚夏花期", en: "Late-summer bloom" } as Localized,
+    tasting: { zh: "紅棕至酒紅 · 鮮明辛香 · 細緻濃稠", en: "Red-brown to burgundy · Spicy · Fine and dense" } as Localized,
     notes: {
       zh: "辛香、深色，質地細緻而易於塗抹。",
       en: "Spicy and dark, with a fine texture that spreads easily.",
@@ -82,6 +84,8 @@ export const products = [
     color: { zh: "極淺、淡黃至淺棕", en: "Very pale, light yellow to light brown" } as Localized,
     texture: { zh: "柔和、易於塗抹", en: "Soft, easy to spread" } as Localized,
     flavor: { zh: "溫和、細緻", en: "Mild and delicate" } as Localized,
+    season: { zh: "春夏", en: "Spring and summer" } as Localized,
+    tasting: { zh: "淺金 · 溫和花香 · 柔和易塗", en: "Pale gold · Mild floral · Soft and spreadable" } as Localized,
     notes: {
       zh: "來自春夏多種花源，色澤較淺，風味溫和。",
       en: "From many spring and summer flowers. Paler in colour, mild in taste.",
@@ -138,6 +142,8 @@ export const products = [
       zh: "飽滿，呈現多種晚夏花源的層次",
       en: "Full, with the layered character of late-summer flowers",
     } as Localized,
+    season: { zh: "晚夏", en: "Late summer" } as Localized,
+    tasting: { zh: "色澤較深 · 飽滿花香 · 有時厚實", en: "Deeper colour · Full aroma · Sometimes thicker" } as Localized,
     notes: {
       zh: "多種晚夏花源由蜜蜂自然採集，香氣飽滿，質地有時較為厚實。",
       en: "Bees gather several late-summer flowers. The aroma is full; the texture is sometimes thicker.",
@@ -191,6 +197,8 @@ export const products = [
       zh: "帶有辛香；深色批次可能更為強勁",
       en: "A spicy note; darker batches can taste stronger",
     } as Localized,
+    season: { zh: "林木蜜露", en: "Woodland honeydew" } as Localized,
+    tasting: { zh: "淺至深 · 帶有辛香 · 有時流動", en: "Pale to dark · A spicy note · Sometimes fluid" } as Localized,
     notes: {
       zh: "來自林間蜜露，色澤與風味依批次而異，有時清亮，有時深沉強勁。",
       en: "From woodland honeydew. Colour and taste change with the batch: sometimes pale, sometimes dark and intense.",

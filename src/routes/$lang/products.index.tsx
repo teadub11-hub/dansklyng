@@ -35,11 +35,12 @@ function ProductsPage() {
           className="aspect-3/4 w-full object-cover object-bottom"
         />
         <div>
-          <h2 className="font-display text-4xl text-ink">{lyng.name[lang]}</h2>
-          <p className="mt-6 text-lg text-ink-soft">{lyng.lede[lang]}</p>
-          <p className="mt-4 text-sm text-muted">
-            {lyng.color[lang]} · {lyng.texture[lang]}
+          <p className="text-xs tracking-widest text-heather uppercase">
+            {t.homeFlag} · {lyng.season[lang]}
           </p>
+          <h2 className="mt-3 font-display text-4xl text-ink">{lyng.name[lang]}</h2>
+          <p className="mt-4 text-sm text-muted">{lyng.tasting[lang]}</p>
+          <p className="mt-6 text-lg text-ink-soft">{lyng.lede[lang]}</p>
           <div className="mt-10">
             <Link
               to={localePath(lang, `/products/${lyng.slug}`) as "/"}
@@ -52,8 +53,8 @@ function ProductsPage() {
       </article>
 
       <div className="mt-16">
-        <p className="text-xs tracking-widest text-muted uppercase">{t.homeRange}</p>
-        <h2 className="mt-3 font-display text-3xl text-ink">{t.homeRangeTitle}</h2>
+        <p className="text-xs tracking-widest text-muted uppercase">{t.catalogRest}</p>
+        <h2 className="mt-3 font-display text-3xl text-ink">{t.catalogRestTitle}</h2>
       </div>
 
       <div className="mt-12 grid gap-12 md:grid-cols-3">
@@ -64,7 +65,9 @@ function ProductsPage() {
               alt={p.name[lang]}
               className="aspect-3/4 w-full object-cover"
             />
-            <h2 className="mt-5 font-display text-2xl text-ink">{p.name[lang]}</h2>
+            <p className="mt-5 text-xs tracking-widest text-heather uppercase">{p.season[lang]}</p>
+            <h2 className="mt-2 font-display text-2xl text-ink">{p.name[lang]}</h2>
+            <p className="mt-2 text-sm text-muted">{p.tasting[lang]}</p>
             <p className="mt-3 text-sm text-ink-soft">{p.lede[lang]}</p>
             <Link
               to={localePath(lang, `/products/${p.slug}`) as "/"}

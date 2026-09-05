@@ -117,7 +117,10 @@ export const ui = {
       "鮮明的丹麥來源、容易記住的石楠故事，以及四款各有風味的產品，讓品牌容易被辨認，也讓消費者有更多選擇。",
     catalogEyebrow: "THE COLLECTION",
     catalogTitle: "四款丹麥蜂蜜",
-    catalogLede: "從溫和的春夏花蜜、氣味飽滿的晚夏蜜，到來自蜜露的森林蜜，以及最具代表性的石楠花蜜。天然蜂蜜的色澤、質地與風味會隨蜜源和年份而變化。",
+    catalogLede:
+      "石楠花蜜是品牌代表。其餘三款依花期閱讀：春夏野花、晚夏花源，再到林間蜜露。天然蜂蜜的色澤、質地與風味會隨蜜源和年份而變化。",
+    catalogRest: "其餘花期",
+    catalogRestTitle: "春夏、晚夏與森林",
     catalogReady: "尋找批發與經銷資訊？",
     catalogReadyBody: "查看產品系列、品牌資料與業務聯絡方式。",
     specSource: "蜜源",
@@ -362,7 +365,9 @@ export const ui = {
     catalogEyebrow: "THE COLLECTION",
     catalogTitle: "Four Danish honeys",
     catalogLede:
-      "From mild spring and summer blossom, to a full late-summer honey, to forest honey from honeydew, and the signature heather honey. Colour, texture and taste change with source and year.",
+      "Heather honey is the signature. The other three follow the year: spring and summer wildflower, the late-summer bloom, then woodland honeydew. Colour, texture and taste change with source and year.",
+    catalogRest: "The rest of the year",
+    catalogRestTitle: "Spring, late summer, and the forest",
     catalogReady: "Looking for wholesale?",
     catalogReadyBody: "Explore the range, discover the brand and contact our team.",
     specSource: "Source",
