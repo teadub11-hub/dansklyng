@@ -82,6 +82,26 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       return { ok: true as const };
     }
 
+    const siteUrl = (process.env.URL || process.env.DEPLOY_PRIME_URL || "").replace(/\/$/, "");
+    if (siteUrl) {
+      const res = await fetch(`${siteUrl}/enquiry.html`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "form-name": "enquiry",
+          company: data.company,
+          name: data.name,
+          email: data.email,
+          country: data.country,
+          type: data.type,
+          interest: data.interest.join(", "),
+          message: data.message,
+        }),
+      });
+      if (!res.ok) throw new Error("mail");
+      return { ok: true as const };
+    }
+
     if (webhook) {
       const res = await fetch(webhook, {
         method: "POST",
@@ -97,7 +117,9 @@ export const submitEnquiry = createServerFn({ method: "POST" })
         }),
       });
       if (!res.ok) throw new Error("mail");
+      return { ok: true as const };
     }
 
+    if (process.env.NETLIFY || process.env.VERCEL) throw new Error("mail");
     return { ok: true as const };
   });
