@@ -31,7 +31,7 @@ function ProductsPage() {
       <article className="mt-16 grid items-center gap-10 border-b border-line pb-20 lg:grid-cols-2">
         <img
           src={lyng.image}
-          alt={lyng.name[lang]}
+          alt={lang === "zh" ? lyng.name.zh : `Jar of DANSK LYNG ${lyng.name.en.toLowerCase()}`}
           className="aspect-3/4 w-full object-cover object-bottom"
         />
         <div>
@@ -62,7 +62,7 @@ function ProductsPage() {
           <article key={p.slug}>
             <img
               src={p.image}
-              alt={p.name[lang]}
+              alt={lang === "zh" ? p.name.zh : `Jar of DANSK LYNG ${p.name.en.toLowerCase()}`}
               className="aspect-3/4 w-full object-cover"
             />
             <p className="mt-5 text-xs tracking-widest text-heather uppercase">{p.season[lang]}</p>

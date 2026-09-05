@@ -209,7 +209,7 @@ function Footer() {
       </div>
       <div className="border-t border-cream/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs tracking-widest text-cream/50 uppercase sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <span>© 2026 Dansk Lyng</span>
+          <span>© 2026 DANSK LYNG</span>
           <span>{t.footerTag}</span>
           <a href={`mailto:${EMAIL}`} className="text-cream/70 hover:text-cream">
             {EMAIL}

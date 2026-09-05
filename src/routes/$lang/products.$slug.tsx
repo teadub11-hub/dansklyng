@@ -16,7 +16,7 @@ export const Route = createFileRoute("/$lang/products/$slug")({
     const lang = parseLang(params.lang);
     const product = loaderData?.product;
     if (!product) {
-      return seoHead({ lang, path: `/products/${params.slug}`, title: "Dansk Lyng", description: "" });
+      return seoHead({ lang, path: `/products/${params.slug}`, title: "DANSK LYNG", description: "" });
     }
     return seoHead({
       lang,
@@ -51,7 +51,7 @@ function ProductPage() {
         <div className="bg-cream">
           <img
             src={product.image}
-            alt={product.name[lang]}
+            alt={lang === "zh" ? product.name.zh : `Jar of DANSK LYNG ${product.name.en.toLowerCase()}`}
             className="mx-auto max-h-dvh w-full object-contain"
           />
         </div>
@@ -142,7 +142,7 @@ function ProductPage() {
         <figure className="mx-auto max-w-3xl px-4 pb-8 sm:px-6">
           <img
             src="/images/lyng-scene-breakfast.jpg"
-            alt={lang === "zh" ? "石楠花蜜配黑麥麵包與茶" : "Heather honey with rye bread and tea"}
+            alt={lang === "zh" ? "石楠花蜜配黑麥麵包與茶" : "Heather honey served with rye bread and tea"}
             className="aspect-square w-full object-cover"
           />
         </figure>

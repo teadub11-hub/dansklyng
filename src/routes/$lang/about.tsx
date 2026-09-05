@@ -47,7 +47,7 @@ function AboutPage() {
       <figure className="bg-cream">
         <img
           src="/images/craft-comb.jpg"
-          alt={lang === "zh" ? "封蓋良好的巢脾" : "A well-capped comb from a healthy colony"}
+          alt={lang === "zh" ? "封蓋良好的巢脾" : "Capped honeycomb from a healthy bee colony"}
           className="mx-auto max-h-[40rem] w-full max-w-xl object-cover"
         />
       </figure>

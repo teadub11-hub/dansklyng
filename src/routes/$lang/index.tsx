@@ -58,7 +58,7 @@ function Home() {
         </div>
         <img
           src="/images/meadow.jpg"
-          alt={lang === "zh" ? "丹麥自然中的花期" : "Danish landscape in bloom"}
+          alt={lang === "zh" ? "丹麥自然中的花期" : "Danish wildflowers in bloom"}
           className="aspect-square w-full object-cover"
         />
       </section>
@@ -67,7 +67,7 @@ function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2">
           <img
             src="/images/honey-texture.jpg"
-            alt={lang === "zh" ? "石楠花蜜細緻的質地" : "Fine texture of heather honey"}
+            alt={lang === "zh" ? "石楠花蜜細緻的質地" : "The smooth, velvety texture of heather honey"}
             className="aspect-square w-full object-cover lg:order-last"
           />
           <div>
@@ -75,7 +75,7 @@ function Home() {
             <h2 className="mt-3 font-display text-4xl text-ink sm:text-5xl">{t.homeLyngTitle}</h2>
             <p className="mt-8 max-w-md text-pretty text-lg text-ink-soft">{t.homeLyngBody}</p>
             <div className="mt-10">
-              <TextLink to="/products/lyng">{t.ctaHeath}</TextLink>
+              <TextLink to="/products/lyng">{t.ctaDiscoverLyng}</TextLink>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2">
           <img
             src="/images/craft-cream.jpg"
-            alt={lang === "zh" ? "結晶控制中的蜂蜜" : "Honey during crystallisation"}
+            alt={lang === "zh" ? "結晶控制中的蜂蜜" : "Honey developing its smooth texture during crystallisation"}
             className="aspect-video w-full object-cover"
           />
           <div>
