@@ -425,10 +425,10 @@ export const journal = [
         shape: "wide" as JournalShape,
       },
       {
-        src: "/images/journal/honeycomb.jpg",
-        alt: { zh: "室溫下處理蜂巢", en: "Working the comb at room temperature" } as Localized,
+        src: "/images/craft-bees-comb.jpg",
+        alt: { zh: "健康蜂群上的巢脾", en: "A healthy colony on the comb" } as Localized,
         after: 1,
-        shape: "square" as JournalShape,
+        shape: "portrait" as JournalShape,
       },
       {
         src: "/images/journal/extraction.jpg",
