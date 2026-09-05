@@ -419,8 +419,8 @@ export const journal = [
     cta: "catalog" as JournalCta,
     figures: [
       {
-        src: "/images/journal/hives-heath.jpg",
-        alt: { zh: "石楠花期中的蜂箱", en: "Hives placed on the heath in bloom" } as Localized,
+        src: "/images/craft-hives-lane.jpg",
+        alt: { zh: "集結待運的蜂箱", en: "Hives gathered for moving" } as Localized,
         after: 0,
         shape: "wide" as JournalShape,
       },

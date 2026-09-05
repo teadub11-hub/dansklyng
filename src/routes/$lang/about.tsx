@@ -46,9 +46,9 @@ function AboutPage() {
 
       <figure className="bg-cream">
         <img
-          src="/images/journal/honeycomb.jpg"
-          alt={lang === "zh" ? "室溫下處理的蜂巢" : "Comb handled at room temperature"}
-          className="mx-auto max-h-[36rem] w-full max-w-3xl object-cover"
+          src="/images/craft-comb.jpg"
+          alt={lang === "zh" ? "封蓋良好的巢脾" : "A well-capped comb from a healthy colony"}
+          className="mx-auto max-h-[40rem] w-full max-w-xl object-cover"
         />
       </figure>
 

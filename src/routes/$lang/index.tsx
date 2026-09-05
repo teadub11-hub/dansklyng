@@ -117,8 +117,8 @@ function Home() {
       <section className="border-t border-line bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2">
           <img
-            src="/images/hives.jpg"
-            alt={lang === "zh" ? "荒原上的蜂箱" : "Hives on the heath"}
+            src="/images/craft-cream.jpg"
+            alt={lang === "zh" ? "結晶控制中的蜂蜜" : "Honey during crystallisation"}
             className="aspect-video w-full object-cover"
           />
           <div>
