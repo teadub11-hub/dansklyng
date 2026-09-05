@@ -21,7 +21,11 @@ function PartnerPage() {
   return (
     <article>
       <header className="relative isolate overflow-hidden">
-        <img src="/images/hero-heath.jpg" alt="" className="h-[32rem] w-full object-cover sm:h-[40rem]" />
+        <img
+          src="/images/craft-hives-lane.jpg"
+          alt=""
+          className="h-[32rem] w-full object-cover object-center sm:h-[40rem]"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-heath via-heath/40 to-heath/20" />
         <div className="absolute inset-0 mx-auto flex max-w-3xl flex-col justify-end px-4 py-16 sm:px-6">
           <p className="text-xs tracking-widest text-cream/70 uppercase">{t.partnerEyebrow}</p>

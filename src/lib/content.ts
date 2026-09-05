@@ -413,9 +413,9 @@ export const journal = [
     slug: "from-hive-to-jar",
     theme: "beekeeping" as JournalTheme,
     date: "2026-02-10",
-    image: "/images/journal/beekeeper.jpg",
-    imageAlt: { zh: "日德蘭荒原上的養蜂人", en: "A beekeeper on the Danish heath" } as Localized,
-    imageShape: "square" as JournalShape,
+    image: "/images/craft-bees-comb.jpg",
+    imageAlt: { zh: "健康蜂群上的巢脾", en: "A healthy colony on the comb" } as Localized,
+    imageShape: "portrait" as JournalShape,
     cta: "catalog" as JournalCta,
     figures: [
       {
@@ -423,12 +423,6 @@ export const journal = [
         alt: { zh: "集結待運的蜂箱", en: "Hives gathered for moving" } as Localized,
         after: 0,
         shape: "wide" as JournalShape,
-      },
-      {
-        src: "/images/craft-bees-comb.jpg",
-        alt: { zh: "健康蜂群上的巢脾", en: "A healthy colony on the comb" } as Localized,
-        after: 1,
-        shape: "portrait" as JournalShape,
       },
       {
         src: "/images/journal/extraction.jpg",
