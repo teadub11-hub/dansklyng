@@ -34,7 +34,7 @@ export function seoHead({ lang, path, title, description, image = "/og.jpg", typ
     meta: [
       { title },
       { name: "description", content: description },
-      { property: "og:site_name", content: "Dansk Lyng" },
+      { property: "og:site_name", content: "DANSK LYNG" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: type },
@@ -72,10 +72,10 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Dansk Lyng",
+    name: "DANSK LYNG",
     url: origin || undefined,
     email: "hej@dansklyng.com",
-    description: "Danish heather honey from the West Jutland heathlands.",
+    description: "Danish heather honey from the heathlands of West Jutland.",
     logo: origin ? `${origin}/favicon.svg` : undefined,
     areaServed: "DK",
   };
@@ -94,7 +94,7 @@ export function productJsonLd(input: {
     name: input.name,
     description: input.description,
     image: absoluteUrl(input.image),
-    brand: { "@type": "Brand", name: "Dansk Lyng" },
+    brand: { "@type": "Brand", name: "DANSK LYNG" },
     countryOfOrigin: "DK",
     url: absoluteUrl(localePath(input.lang, `/products/${input.slug}`)),
   };
@@ -116,8 +116,8 @@ export function articleJsonLd(input: {
     image: input.image ? absoluteUrl(input.image) : undefined,
     datePublished: input.date,
     inLanguage: htmlLang(input.lang),
-    author: { "@type": "Organization", name: "Dansk Lyng" },
-    publisher: { "@type": "Organization", name: "Dansk Lyng" },
+    author: { "@type": "Organization", name: "DANSK LYNG" },
+    publisher: { "@type": "Organization", name: "DANSK LYNG" },
     url: absoluteUrl(localePath(input.lang, `/journal/${input.slug}`)),
   };
 }

@@ -48,10 +48,10 @@ export function AromaMap({ lang }: { lang: Lang }) {
             className="fill-ink font-display"
             fontSize="22"
           >
-            Lyng
+            LYNG
           </text>
           <text x="200" y="218" textAnchor="middle" className="fill-muted" fontSize="11">
-            {lang === "zh" ? "五項在罐中" : "five in the jar"}
+            {lang === "zh" ? "五項在罐中" : "HEATHER HONEY"}
           </text>
         </svg>
         <div className="pointer-events-none absolute inset-0">

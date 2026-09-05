@@ -12,9 +12,9 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dansk Lyng" },
+      { title: "DANSK LYNG" },
       { name: "theme-color", content: "#3D4A3A" },
-      { name: "author", content: "Dansk Lyng" },
+      { name: "author", content: "DANSK LYNG" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

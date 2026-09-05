@@ -26,12 +26,12 @@ export const Route = createFileRoute("/$lang/journal/$slug")({
     const lang = parseLang(params.lang);
     const entry = loaderData?.entry;
     if (!entry) {
-      return seoHead({ lang, path: `/journal/${params.slug}`, title: "Dansk Lyng", description: "" });
+      return seoHead({ lang, path: `/journal/${params.slug}`, title: "DANSK LYNG", description: "" });
     }
     return seoHead({
       lang,
       path: `/journal/${entry.slug}`,
-      title: `${entry.title[lang]} — Dansk Lyng`,
+      title: `${entry.title[lang]} — DANSK LYNG`,
       description: entry.lede[lang],
       image: entry.image,
       type: "article",
