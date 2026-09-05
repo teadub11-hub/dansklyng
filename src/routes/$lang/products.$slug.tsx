@@ -42,7 +42,6 @@ function ProductPage() {
         data={productJsonLd({
           lang,
           name: product.name[lang],
-          danish: product.danish,
           description: product.lede[lang],
           image: product.image,
           slug: product.slug,
@@ -52,16 +51,19 @@ function ProductPage() {
         <div className="bg-cream">
           <img
             src={product.image}
-            alt={`${product.danish} — ${product.name[lang]}`}
+            alt={product.name[lang]}
             className="mx-auto max-h-dvh w-full object-contain"
           />
         </div>
         <div className="flex flex-col justify-center px-4 py-16 sm:px-12">
           <p className="text-xs tracking-widest text-heather uppercase">{product.eyebrow[lang]}</p>
-          <h1 className="mt-3 font-display text-5xl text-ink">{product.danish}</h1>
-          <p className="mt-2 font-display text-2xl text-ink-soft">{product.name[lang]}</p>
+          <h1 className="mt-3 font-display text-5xl text-ink">{product.name[lang]}</h1>
           <p className="mt-6 max-w-md text-ink-soft">{product.lede[lang]}</p>
           <dl className="mt-10 grid max-w-md grid-cols-2 gap-6 text-sm">
+            <div>
+              <dt className="text-xs tracking-widest text-muted uppercase">{t.specDanish}</dt>
+              <dd className="mt-1">{product.danish}</dd>
+            </div>
             <div>
               <dt className="text-xs tracking-widest text-muted uppercase">{t.specSource}</dt>
               <dd className="mt-1">{product.source[lang]}</dd>
@@ -167,8 +169,7 @@ function ProductPage() {
                 className="group block"
               >
                 <img src={p.image} alt="" className="aspect-3/4 w-full object-cover" />
-                <p className="mt-3 font-display italic text-heather">{p.danish}</p>
-                <h3 className="font-display text-2xl text-ink group-hover:text-heather">{p.name[lang]}</h3>
+                <p className="mt-3 font-display text-2xl text-ink group-hover:text-heather">{p.name[lang]}</p>
               </Link>
             ))}
           </div>

@@ -52,7 +52,7 @@ export const ui = {
     ctaCatalog: "查看蜂蜜",
     ctaStory: "品牌故事",
     ctaRead: "閱讀文章",
-    ctaDiscoverLyng: "認識 Lynghonning",
+    ctaDiscoverLyng: "認識石楠花蜜",
     ctaHeath: "認識石楠花蜜",
     ctaForTrade: "批發與經銷",
     ctaDiscuss: "業務洽詢",
@@ -90,7 +90,7 @@ export const ui = {
     homeH1a: "丹麥的純淨，石楠的個性",
     homeH1b: "",
     homeLede:
-      "四款來自丹麥自然的蜂蜜，從溫和花香到深色蜜露，各有自己的風味。品牌代表 Lynghonning，來自西日德蘭石楠荒原，辛香、深色，質地如絲絨般細緻。",
+      "四款來自丹麥自然的蜂蜜，從溫和花香到深色蜜露，各有自己的風味。品牌代表是石楠花蜜，來自西日德蘭石楠荒原，辛香、深色，質地如絲絨般細緻。",
     homeScroll: "往下",
     homeDanskEyebrow: "PURITY FROM DENMARK",
     homeDanskTitle: "純淨，是每一款蜂蜜共同的起點",
@@ -103,7 +103,7 @@ export const ui = {
     homeRange: "FOUR DANISH HONEYS",
     homeRangeTitle: "同一個丹麥，四種蜂蜜風味",
     homeRangeLede:
-      "Lynghonning 是品牌最具代表性的風味；Blomsterhonning、Sensommerhonning 與 Skovhonning，則從不同花期與蜜源，展現丹麥蜂蜜由明亮溫和到深沉飽滿的完整層次。",
+      "石楠花蜜是品牌最具代表性的風味；野花蜜、晚夏蜜與森林蜜，則從不同花期與蜜源，展現丹麥蜂蜜由明亮溫和到深沉飽滿的完整層次。",
     homeFlag: "品牌代表",
     homeCraftEyebrow: "SIMPLY HONEY",
     homeCraftTitle: "保留蜂蜜原來的樣子",
@@ -122,6 +122,7 @@ export const ui = {
     catalogReadyBody: "查看產品系列、品牌資料與業務聯絡方式。",
     specSource: "蜜源",
     specOrigin: "產地",
+    specDanish: "丹麥名稱",
     specColor: "色澤",
     specTexture: "質地",
     specFlavour: "風味",
@@ -162,7 +163,7 @@ export const ui = {
       "Lyng 是丹麥文的石楠。它生長在西日德蘭開闊的海岸荒原，迎著風，在其他花期接近尾聲的晚夏盛開。紫色荒原、深酒紅色蜂蜜、鮮明辛香與絲絨般質地，共同形成 DANSK LYNG 的品牌識別。",
     aboutRangeT: "以石楠為代表，不只石楠",
     aboutRange:
-      "Lynghonning 是品牌代表，但 DANSK LYNG 不只一款蜂蜜。Blomsterhonning、Sensommerhonning 與 Skovhonning 分別帶來春夏花香、晚夏層次與森林蜜露的深沉風味。四款產品一起，才是我們想呈現的丹麥蜂蜜。",
+      "石楠花蜜是品牌代表，但 DANSK LYNG 不只一款蜂蜜。野花蜜、晚夏蜜與森林蜜分別帶來春夏花香、晚夏層次與森林蜜露的深沉風味。四款產品一起，才是我們想呈現的丹麥蜂蜜。",
     aboutCraftT: "少一點加工，多一點蜂蜜本身",
     aboutCraft:
       "蜂蜜以離心方式取出，不以高溫加熱，也不添加其他成分。透過細緻的結晶控制，使質地柔滑而容易塗抹，同時保留不同蜜源與年份帶來的自然差異。",
@@ -178,13 +179,13 @@ export const ui = {
     partnerHow: "有代表產品，也有完整系列",
     partnerCh1t: "代表產品",
     partnerCh1:
-      "Lynghonning 以西日德蘭石楠荒原、深色辛香與絲絨般質地建立品牌記憶。",
+      "石楠花蜜以西日德蘭石楠荒原、深色辛香與絲絨般質地建立品牌記憶。",
     partnerCh2t: "完整系列",
     partnerCh2:
-      "Blomsterhonning、Sensommerhonning 與 Skovhonning 提供由溫和至濃厚、由花蜜至蜜露的選擇，組成層次清楚的四款系列。",
+      "野花蜜、晚夏蜜與森林蜜提供由溫和至濃厚、由花蜜至蜜露的選擇，組成層次清楚的四款系列。",
     partnerCh3t: "容易說明",
     partnerCh3:
-      "一致的丹麥產品名稱、清楚的風味區分與完整品牌視覺，適合選品零售、食品、餐飲、禮贈與生活風格通路。",
+      "清楚的品名、風味區分與完整品牌視覺，適合選品零售、食品、餐飲、禮贈與生活風格通路。",
     supportTitle: "容易放上貨架，也容易說明",
     support1t: "產品介紹",
     support1: "四款蜂蜜各有清楚的蜜源、色澤、質地、風味與餐桌搭配，方便店員介紹，也方便消費者選擇。",
@@ -231,7 +232,7 @@ export const ui = {
     faqTitle: "常見問題",
     faqLede: "四款蜂蜜、石楠花蜜、森林蜜與保存。",
     faq1q: "DANSK LYNG 有哪些蜂蜜？",
-    faq1a: "系列包含 Lynghonning 石楠花蜜、Blomsterhonning 野花蜜、Sensommerhonning 晚夏蜜與 Skovhonning 森林蜜。",
+    faq1a: "系列包含石楠花蜜、野花蜜、晚夏蜜與森林蜜。",
     faq2q: "石楠花蜜有什麼不同？",
     faq2a: "石楠花蜜通常呈紅棕至深酒紅色，帶有辛香與濃厚風味，質地細緻而易於塗抹。實際特性會因年份及批次而異。",
     faq3q: "森林蜜也是花蜜嗎？",
@@ -294,7 +295,7 @@ export const ui = {
     ctaCatalog: "View the honeys",
     ctaStory: "Our story",
     ctaRead: "Read the article",
-    ctaDiscoverLyng: "Meet Lynghonning",
+    ctaDiscoverLyng: "Discover heather honey",
     ctaHeath: "Heather honey",
     ctaForTrade: "Wholesale",
     ctaDiscuss: "Trade enquiry",
@@ -332,7 +333,7 @@ export const ui = {
     homeH1a: "The purity of Denmark. The character of heather.",
     homeH1b: "",
     homeLede:
-      "Four Danish honeys, from delicate wildflower to dark forest honeydew. Our signature is Lynghonning from the West Jutland heath: deep in colour, distinctly spicy and velvety-smooth.",
+      "Four Danish honeys, from delicate wildflower to dark forest honeydew. Our signature is heather honey from the West Jutland heath: deep in colour, distinctly spicy and velvety-smooth.",
     homeScroll: "Scroll",
     homeDanskEyebrow: "PURITY FROM DENMARK",
     homeDanskTitle: "Purity begins with what we leave untouched",
@@ -345,7 +346,7 @@ export const ui = {
     homeRange: "FOUR DANISH HONEYS",
     homeRangeTitle: "One Denmark. Four honeys.",
     homeRangeLede:
-      "Lynghonning is the flavour the brand is known by. Blomsterhonning, Sensommerhonning and Skovhonning follow other blooms and sources, from pale and mild to dark and full.",
+      "Heather honey is the flavour the brand is known by. Wildflower, late-summer and forest honey follow other blooms and sources, from pale and mild to dark and full.",
     homeFlag: "Signature",
     homeCraftEyebrow: "SIMPLY HONEY",
     homeCraftTitle: "Nothing added. Nothing overwhelmed.",
@@ -365,6 +366,7 @@ export const ui = {
     catalogReadyBody: "Explore the range, discover the brand and contact our team.",
     specSource: "Source",
     specOrigin: "Origin",
+    specDanish: "Danish name",
     specColor: "Colour",
     specTexture: "Texture",
     specFlavour: "Taste",
@@ -407,7 +409,7 @@ export const ui = {
       "Lyng is the Danish word for heather. It grows on the open coastal heath of West Jutland, in the wind, and flowers in late summer when other blooms are ending. Purple heath, burgundy honey, clear spice and a velvet texture: that is how DANSK LYNG is recognised.",
     aboutRangeT: "Led by heather, completed by four honeys",
     aboutRange:
-      "Lynghonning is our signature, but it is only one expression of Danish honey. Blomsterhonning brings delicate spring and summer blossom, Sensommerhonning the fullness of late summer, and Skovhonning the depth of forest honeydew. Together, they form the DANSK LYNG collection.",
+      "Heather honey is our signature, but it is only one expression of Danish honey. Wildflower honey brings delicate spring and summer blossom, late-summer honey the fullness of late summer, and forest honey the depth of forest honeydew. Together, they form the DANSK LYNG collection.",
     aboutCraftT: "A light touch, so the honey speaks for itself",
     aboutCraft:
       "Gently spun from the comb, never exposed to high heat and made with nothing but honey. Careful crystallisation creates a smooth, spreadable texture while preserving the natural variation of each source and harvest.",
@@ -423,13 +425,13 @@ export const ui = {
     partnerHow: "A signature, and a full range",
     partnerCh1t: "The signature",
     partnerCh1:
-      "Lynghonning gives the range its signature: the West Jutland heath, deep colour, distinct spice and a velvety texture.",
+      "Heather honey gives the range its signature: the West Jutland heath, deep colour, distinct spice and a velvety texture.",
     partnerCh2t: "The range",
     partnerCh2:
-      "Blomsterhonning, Sensommerhonning and Skovhonning extend the range from delicate to full-flavoured, and from blossom nectar to forest honeydew.",
+      "Wildflower, late-summer and forest honey extend the range from delicate to full-flavoured, and from blossom nectar to forest honeydew.",
     partnerCh3t: "Easy to explain",
     partnerCh3:
-      "Danish product names, clearly differentiated flavours and a consistent visual identity make the range easy to present across speciality retail, food, hospitality, gifting and lifestyle channels.",
+      "Clear product names, clearly differentiated flavours and a consistent visual identity make the range easy to present across speciality retail, food, hospitality, gifting and lifestyle channels.",
     supportTitle: "Easy on the shelf, and easy to explain",
     support1t: "Product notes",
     support1: "Clear source, colour, texture, flavour and pairing notes help retail teams present the range and customers choose between the four honeys.",
@@ -477,7 +479,7 @@ export const ui = {
     faqTitle: "Questions",
     faqLede: "The four honeys, heather honey, forest honey, crystallisation and storage.",
     faq1q: "Which honeys does DANSK LYNG make?",
-    faq1a: "The range is Lynghonning heather honey, Blomsterhonning wildflower honey, Sensommerhonning late-summer honey, and Skovhonning forest honey.",
+    faq1a: "The range is heather honey, wildflower honey, late-summer honey, and forest honey.",
     faq2q: "What is different about heather honey?",
     faq2a: "Heather honey is usually red-brown to deep burgundy, spicy and full, with a fine texture that spreads easily. The exact character follows the year and the batch.",
     faq3q: "Is forest honey a blossom honey?",

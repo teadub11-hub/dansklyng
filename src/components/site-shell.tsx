@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
-import { EMAIL } from "@/lib/content";
+import { EMAIL, products } from "@/lib/content";
 import { useLang, useT } from "@/lib/i18n";
 import { localePath, stripLangPrefix } from "@/lib/locale";
 
@@ -182,7 +182,7 @@ function Footer() {
             title={t.footerProducts}
             items={[
               { to: localePath(lang, "/products"), label: t.ctaCatalog },
-              { to: localePath(lang, "/products/lyng"), label: "Lynghonning" },
+              { to: localePath(lang, "/products/lyng"), label: products.find((p) => p.featured)!.name[lang] },
               { to: localePath(lang, "/heath"), label: t.navHeath },
               { to: localePath(lang, "/faq"), label: "FAQ" },
             ]}

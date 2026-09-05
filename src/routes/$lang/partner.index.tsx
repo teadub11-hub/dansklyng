@@ -51,7 +51,7 @@ function PartnerPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2">
           <img
             src="/images/jar-lyng.jpg"
-            alt={lang === "zh" ? "Lynghonning" : "Lynghonning"}
+            alt={lang === "zh" ? "石楠花蜜" : "Heather honey"}
             className="aspect-3/4 w-full object-cover object-bottom"
           />
           <div>

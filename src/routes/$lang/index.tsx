@@ -103,8 +103,7 @@ function Home() {
                 to={localePath(lang, `/products/${p.slug}`) as "/"}
                 className="group block"
               >
-                <p className="font-display text-sm italic text-heather">{p.danish}</p>
-                <h3 className="mt-1 font-display text-2xl text-ink group-hover:text-heather">{p.name[lang]}</h3>
+                <h3 className="font-display text-2xl text-ink group-hover:text-heather">{p.name[lang]}</h3>
                 {p.featured ? (
                   <p className="mt-2 text-xs tracking-widest text-heather uppercase">{t.homeFlag}</p>
                 ) : null}

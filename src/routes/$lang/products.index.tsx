@@ -25,12 +25,11 @@ function ProductsPage() {
       <article className="mt-16 grid items-center gap-10 border-b border-line pb-20 lg:grid-cols-2">
         <img
           src={lyng.image}
-          alt={`${lyng.danish} — ${lyng.name[lang]}`}
+          alt={lyng.name[lang]}
           className="aspect-3/4 w-full object-cover object-bottom"
         />
         <div>
-          <p className="font-display text-lg italic text-heather">{lyng.danish}</p>
-          <h2 className="mt-1 font-display text-4xl text-ink">{lyng.name[lang]}</h2>
+          <h2 className="font-display text-4xl text-ink">{lyng.name[lang]}</h2>
           <p className="mt-6 text-lg text-ink-soft">{lyng.lede[lang]}</p>
           <p className="mt-4 text-sm text-muted">
             {lyng.color[lang]} · {lyng.texture[lang]}
@@ -56,11 +55,10 @@ function ProductsPage() {
           <article key={p.slug}>
             <img
               src={p.image}
-              alt={`${p.danish} — ${p.name[lang]}`}
+              alt={p.name[lang]}
               className="aspect-3/4 w-full object-cover"
             />
-            <p className="mt-5 font-display italic text-heather">{p.danish}</p>
-            <h2 className="font-display text-2xl text-ink">{p.name[lang]}</h2>
+            <h2 className="mt-5 font-display text-2xl text-ink">{p.name[lang]}</h2>
             <p className="mt-3 text-sm text-ink-soft">{p.lede[lang]}</p>
             <Link
               to={localePath(lang, `/products/${p.slug}`) as "/"}
