@@ -21,6 +21,7 @@ export const Route = createFileRoute("/$lang/journal/$slug")({
       path: `/journal/${entry.slug}`,
       title: `${entry.title[lang]} — Dansk Lyng`,
       description: entry.lede[lang],
+      image: entry.image,
       type: "article",
     });
   },
@@ -43,14 +44,30 @@ function JournalEntry() {
           description: entry.lede[lang],
           date: entry.date,
           slug: entry.slug,
+          image: entry.image,
         })}
       />
       <p className="text-xs tracking-widest text-heather uppercase">{themeLabel[entry.theme][lang]}</p>
       <h1 className="mt-4 font-display text-5xl text-ink">{entry.title[lang]}</h1>
       <p className="mt-6 text-lg text-ink-soft">{entry.lede[lang]}</p>
+      <img
+        src={entry.image}
+        alt={entry.imageAlt[lang]}
+        className="mt-12 aspect-video w-full object-cover"
+      />
       <div className="mt-12 space-y-6 text-base leading-relaxed text-ink">
-        {entry.body[lang].map((p) => (
-          <p key={p.slice(0, 24)}>{p}</p>
+        {entry.body[lang].map((p, i) => (
+          <div key={p.slice(0, 24)}>
+            <p>{p}</p>
+            {entry.figures
+              .filter((fig) => fig.after === i)
+              .map((fig) => (
+                <figure key={fig.src} className="py-8">
+                  <img src={fig.src} alt={fig.alt[lang]} className="w-full object-cover" />
+                  <figcaption className="mt-3 text-xs tracking-wide text-muted">{fig.alt[lang]}</figcaption>
+                </figure>
+              ))}
+          </div>
         ))}
       </div>
       <p className="mt-16">

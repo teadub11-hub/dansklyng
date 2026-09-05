@@ -263,12 +263,27 @@ export const aromaFamilies = [
 
 export type JournalTheme = "terroir" | "taste" | "knowledge" | "beekeeping";
 
+export type JournalFigure = {
+  src: string;
+  alt: Localized;
+  after: number;
+};
+
 export const journal = [
   {
     slug: "what-is-lyng-honey",
     theme: "taste" as JournalTheme,
     featured: true,
     date: "2025-08-15",
+    image: "/images/journal/heather-closeup.jpg",
+    imageAlt: { zh: "盛開的石楠", en: "Heather in bloom" } as Localized,
+    figures: [
+      {
+        src: "/images/journal/honey-spoon.jpg",
+        alt: { zh: "石楠花蜜濃稠細緻的質地", en: "The dense, fine texture of heather honey" } as Localized,
+        after: 1,
+      },
+    ] as JournalFigure[],
     title: { zh: "什麼是丹麥石楠花蜜？", en: "What is Danish heather honey?" },
     lede: {
       zh: "從蜜源、色澤、辛香與質地，認識石楠花蜜與一般花蜜的不同。",
@@ -294,6 +309,15 @@ export const journal = [
     theme: "terroir" as JournalTheme,
     featured: true,
     date: "2026-03-01",
+    image: "/images/journal/heather-bloom.jpg",
+    imageAlt: { zh: "西日德蘭石楠盛開", en: "Heather in full bloom in West Jutland" } as Localized,
+    figures: [
+      {
+        src: "/images/journal/bees-bloom.jpg",
+        alt: { zh: "蜜蜂在石楠花上採蜜", en: "Bees gathering from heather bloom" } as Localized,
+        after: 1,
+      },
+    ] as JournalFigure[],
     title: { zh: "石楠花期如何影響蜂蜜？", en: "How the heather bloom shapes the honey" },
     lede: {
       zh: "開花、天氣與蜜蜂採集的條件，會讓每年的石楠花蜜有所不同。",
@@ -319,6 +343,20 @@ export const journal = [
     theme: "terroir" as JournalTheme,
     featured: true,
     date: "2026-04-20",
+    image: "/images/journal/dunes.jpg",
+    imageAlt: { zh: "日德蘭西岸沙丘與荒原", en: "West Jutland dunes and heathland" } as Localized,
+    figures: [
+      {
+        src: "/images/journal/heathland.jpg",
+        alt: { zh: "紫色石楠荒原", en: "Purple heather across the heath" } as Localized,
+        after: 0,
+      },
+      {
+        src: "/images/journal/red-deer.jpg",
+        alt: { zh: "荒原上的野生紅鹿", en: "Wild red deer on the heath" } as Localized,
+        after: 2,
+      },
+    ] as JournalFigure[],
     title: { zh: "西日德蘭的石楠荒原", en: "The heather heaths of West Jutland" },
     lede: {
       zh: "Lyng 是丹麥文的石楠，也是 DANSK LYNG 名稱的由來。招牌蜂蜜的蜜源，從這裡開始。",
@@ -344,6 +382,25 @@ export const journal = [
     theme: "beekeeping" as JournalTheme,
     featured: true,
     date: "2026-02-10",
+    image: "/images/journal/beekeeper.jpg",
+    imageAlt: { zh: "日德蘭荒原上的養蜂人", en: "A beekeeper on the Danish heath" } as Localized,
+    figures: [
+      {
+        src: "/images/journal/hives-heath.jpg",
+        alt: { zh: "石楠花期中的蜂箱", en: "Hives placed on the heath in bloom" } as Localized,
+        after: 0,
+      },
+      {
+        src: "/images/journal/honeycomb.jpg",
+        alt: { zh: "室溫下處理蜂巢", en: "Working the comb at room temperature" } as Localized,
+        after: 1,
+      },
+      {
+        src: "/images/journal/extraction.jpg",
+        alt: { zh: "離心取蜜", en: "Honey spun gently from the comb" } as Localized,
+        after: 2,
+      },
+    ] as JournalFigure[],
     title: { zh: "從蜂巢到玻璃罐", en: "From hive to jar" },
     lede: {
       zh: "離心取蜜、低溫處理與結晶控制，如何形成細緻、容易塗抹的蜂蜜質地。",
@@ -369,6 +426,9 @@ export const journal = [
     theme: "taste" as JournalTheme,
     featured: false,
     date: "2026-05-12",
+    image: "/images/honey-flight.jpg",
+    imageAlt: { zh: "四款丹麥蜂蜜", en: "The four Danish honeys" } as Localized,
+    figures: [] as JournalFigure[],
     title: { zh: "四款丹麥蜂蜜有什麼不同？", en: "How the four Danish honeys differ" },
     lede: {
       zh: "比較石楠花蜜、野花蜜、晚夏蜜與森林蜜的蜜源、色澤、質地和風味。",
@@ -394,6 +454,9 @@ export const journal = [
     theme: "knowledge" as JournalTheme,
     featured: false,
     date: "2026-03-08",
+    image: "/images/honey-texture.jpg",
+    imageAlt: { zh: "蜂蜜細緻的結晶質地", en: "The fine crystallised texture of honey" } as Localized,
+    figures: [] as JournalFigure[],
     title: { zh: "蜂蜜為什麼會結晶？", en: "Why honey crystallises" },
     lede: {
       zh: "天然結晶及正確保存方式。結晶並不代表蜂蜜變質。",
@@ -419,6 +482,20 @@ export const journal = [
     theme: "taste" as JournalTheme,
     featured: false,
     date: "2026-04-02",
+    image: "/images/journal/table-honey.jpg",
+    imageAlt: { zh: "餐桌上的丹麥蜂蜜", en: "Danish honey at the table" } as Localized,
+    figures: [
+      {
+        src: "/images/journal/cheese.jpg",
+        alt: { zh: "石楠花蜜與起司", en: "Heather honey with cheese" } as Localized,
+        after: 1,
+      },
+      {
+        src: "/images/journal/breakfast.jpg",
+        alt: { zh: "蜂蜜與早餐麵包", en: "Honey with breakfast bread" } as Localized,
+        after: 2,
+      },
+    ] as JournalFigure[],
     title: { zh: "如何品嚐四款丹麥蜂蜜？", en: "How to taste the four Danish honeys" },
     lede: {
       zh: "從色澤、香氣、入口質地到尾韻，找到四款蜂蜜各自適合的餐桌搭配。",
@@ -444,6 +521,20 @@ export const journal = [
     theme: "knowledge" as JournalTheme,
     featured: false,
     date: "2026-06-01",
+    image: "/images/journal/moorland.jpg",
+    imageAlt: { zh: "需要被維持的石楠荒原", en: "Heathland that has to be kept" } as Localized,
+    figures: [
+      {
+        src: "/images/journal/burn.jpg",
+        alt: { zh: "荒原的週期性更新", en: "Cyclical renewal of the heath" } as Localized,
+        after: 1,
+      },
+      {
+        src: "/images/journal/new-shoots.jpg",
+        alt: { zh: "更新後重新生長的石楠", en: "Fresh heather rising after renewal" } as Localized,
+        after: 2,
+      },
+    ] as JournalFigure[],
     title: { zh: "荒原為什麼需要被維持", en: "Why the heath has to be kept" },
     lede: {
       zh: "石楠荒原不會自己一直開成紫色。沒有管理，其他植被會慢慢把它取代。",

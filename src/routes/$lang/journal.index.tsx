@@ -34,6 +34,11 @@ function JournalPage() {
               to={localePath(lang, `/journal/${j.slug}`) as "/"}
               className="group block border-t border-line pt-6"
             >
+              <img
+                src={j.image}
+                alt={j.imageAlt[lang]}
+                className="mb-6 aspect-[4/3] w-full object-cover"
+              />
               <p className="text-xs tracking-widest text-heather uppercase">{themeLabel[j.theme][lang]}</p>
               <h2 className="mt-2 font-display text-3xl text-ink group-hover:text-heather">{j.title[lang]}</h2>
               <p className="mt-3 text-sm text-ink-soft">{j.lede[lang]}</p>
