@@ -23,9 +23,9 @@ function AboutPage() {
     <article>
       <header className="relative isolate overflow-hidden">
         <img
-          src="/images/journal/beekeeper.jpg"
+          src="/images/lyng-scene-heath.jpg"
           alt=""
-          className="h-[32rem] w-full object-cover object-top sm:h-[40rem]"
+          className="h-[32rem] w-full object-cover object-center sm:h-[40rem]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-heath via-heath/40 to-heath/15" />
         <div className="absolute inset-0 mx-auto flex max-w-3xl flex-col justify-end px-4 py-16 sm:px-6">

@@ -467,10 +467,10 @@ export const journal = [
     cta: "catalog" as JournalCta,
     figures: [
       {
-        src: "/images/journal/cheese.jpg",
+        src: "/images/lyng-scene-cheese.jpg",
         alt: { zh: "石楠花蜜與起司", en: "Heather honey with cheese" } as Localized,
         after: 1,
-        shape: "wide" as JournalShape,
+        shape: "square" as JournalShape,
       },
       {
         src: "/images/journal/breakfast.jpg",

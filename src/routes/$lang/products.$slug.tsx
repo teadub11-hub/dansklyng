@@ -139,6 +139,16 @@ function ProductPage() {
       </section>
 
       {product.slug === "lyng" ? (
+        <figure className="mx-auto max-w-3xl px-4 pb-8 sm:px-6">
+          <img
+            src="/images/lyng-scene-breakfast.jpg"
+            alt={lang === "zh" ? "石楠花蜜配黑麥麵包與茶" : "Heather honey with rye bread and tea"}
+            className="aspect-square w-full object-cover"
+          />
+        </figure>
+      ) : null}
+
+      {product.slug === "lyng" ? (
         <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
           <p className="text-xs tracking-widest text-muted uppercase">{t.aromaTitle}</p>
           <h2 className="mt-3 max-w-2xl font-display text-4xl text-ink">{t.aromaLede}</h2>
