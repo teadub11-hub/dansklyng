@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
-import { EMAIL, products } from "@/lib/content";
+import { products } from "@/lib/content";
+import { submitEnquiry } from "@/lib/enquiry";
 import { useLang, useT } from "@/lib/i18n";
 import { uiHead } from "@/lib/seo";
+import { SolidLink } from "@/components/site-shell";
 
 export const Route = createFileRoute("/$lang/partner/apply")({
   head: ({ params }) => uiHead(params.lang, "/partner/apply", "seoApplyTitle", "seoApplyDesc"),
@@ -35,8 +37,9 @@ function ApplyPage() {
   const t = useT();
   const { lang } = useLang();
   const [draft, setDraft] = useState<Draft>(empty);
+  const [website, setWebsite] = useState("");
   const [saved, setSaved] = useState(false);
-  const [mailed, setMailed] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   useEffect(() => {
     const raw = window.localStorage.getItem(DRAFT_KEY);
@@ -70,37 +73,22 @@ function ApplyPage() {
     patch({ interest: next });
   }
 
-  function submit(e: FormEvent) {
+  async function submit(e: FormEvent) {
     e.preventDefault();
-    const chosen = products
-      .filter((p) => draft.interest.includes(p.slug))
-      .map((p) => p.name[lang])
-      .join(", ");
-    const typeLabel =
-      draft.type === "importer"
-        ? t.typeImporter
-        : draft.type === "distributor"
-          ? t.typeDistributor
-          : draft.type === "retail"
-            ? t.typeRetail
-            : draft.type === "horeca"
-              ? t.typeHoreca
-              : draft.type === "other"
-                ? t.typeOther
-                : draft.type;
-    const lines = [
-      `Company: ${draft.company}`,
-      `Name: ${draft.name}`,
-      `Email: ${draft.email}`,
-      `Country: ${draft.country}`,
-      draft.type ? `Channel: ${typeLabel}` : "",
-      chosen ? `Honeys: ${chosen}` : "",
-      draft.message ? `Message:\n${draft.message}` : "",
-    ].filter(Boolean);
-    const subject = encodeURIComponent(`DANSK LYNG — ${draft.company}`);
-    const body = encodeURIComponent(lines.join("\n"));
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-    setMailed(true);
+    if (status === "sending") return;
+    setStatus("sending");
+    try {
+      await submitEnquiry({
+        data: {
+          ...draft,
+          website,
+        },
+      });
+      window.localStorage.removeItem(DRAFT_KEY);
+      setStatus("done");
+    } catch {
+      setStatus("error");
+    }
   }
 
   const types = [
@@ -110,6 +98,19 @@ function ApplyPage() {
     ["horeca", t.typeHoreca],
     ["other", t.typeOther],
   ] as const;
+
+  if (status === "done") {
+    return (
+      <div className="mx-auto max-w-xl px-4 py-20 sm:px-6">
+        <p className="text-xs tracking-widest text-muted uppercase">{t.partnerEyebrow}</p>
+        <h1 className="mt-3 font-display text-5xl text-ink">{t.applyDoneTitle}</h1>
+        <p className="mt-4 text-ink-soft">{t.applyDoneBody}</p>
+        <div className="mt-10">
+          <SolidLink to="/products">{t.ctaCatalog}</SolidLink>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-xl px-4 py-20 sm:px-6">
@@ -129,6 +130,15 @@ function ApplyPage() {
           type="email"
         />
         <Field label={t.applyCountry} value={draft.country} onChange={(v) => patch({ country: v })} required />
+        <label className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+          <span>Website</span>
+          <input
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </label>
         <label className="block">
           <span className="text-xs tracking-widest text-muted uppercase">{t.applyType}</span>
           <select
@@ -172,13 +182,14 @@ function ApplyPage() {
           />
         </label>
         <p className="text-xs text-muted">{t.applyPrivacy}</p>
+        {status === "error" ? <p className="text-sm text-heather">{t.applyError}</p> : null}
         <button
           type="submit"
-          className="min-h-11 bg-heath px-6 text-xs tracking-widest text-cream uppercase transition-transform duration-150 ease-out active:scale-[0.96]"
+          disabled={status === "sending"}
+          className="min-h-11 bg-heath px-6 text-xs tracking-widest text-cream uppercase transition-transform duration-150 ease-out enabled:active:scale-[0.96] disabled:opacity-60"
         >
-          {t.applySubmit}
+          {status === "sending" ? t.applySending : t.applySubmit}
         </button>
-        {mailed ? <p className="text-sm text-ink-soft">{t.applyDoneBody}</p> : null}
       </form>
     </div>
   );
