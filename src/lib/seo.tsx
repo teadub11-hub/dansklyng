@@ -45,6 +45,7 @@ export function seoHead({ lang, path, title, description, image = "/og.jpg", typ
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
+      { name: "twitter:url", content: canonical },
       { name: "twitter:image", content: ogImage },
       { name: "theme-color", content: "#3D4A3A" },
     ],
@@ -72,6 +73,7 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": origin ? `${origin}/#organization` : undefined,
     name: "DANSK LYNG",
     url: origin || undefined,
     email: "hej@dansklyng.com",
@@ -81,22 +83,75 @@ export function organizationJsonLd() {
   };
 }
 
-export function productJsonLd(input: {
+/**
+ * Brand catalogue page markup for a B2B site that does not sell online.
+ * Do not use schema.org Product here: Google treats it as a merchant listing
+ * and requires offers, review or aggregateRating — none of which exist.
+ */
+export function itemPageJsonLd(input: {
   lang: Lang;
   name: string;
   description: string;
   image: string;
   slug: string;
+  collectionLabel: string;
+  siteName: string;
 }) {
+  const origin = siteOrigin();
+  const pageUrl = absoluteUrl(localePath(input.lang, `/products/${input.slug}`));
+  const homeUrl = absoluteUrl(localePath(input.lang, "/"));
+  const collectionUrl = absoluteUrl(localePath(input.lang, "/products"));
+  const orgId = origin ? `${origin}/#organization` : undefined;
+  const image = absoluteUrl(input.image);
+  const pageId = `${pageUrl}#webpage`;
+  const entityId = `${pageUrl}#honey`;
+  const crumbId = `${pageUrl}#breadcrumb`;
+  const publisher = orgId ? { "@id": orgId } : { "@type": "Organization", name: "DANSK LYNG" };
+
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: input.name,
-    description: input.description,
-    image: absoluteUrl(input.image),
-    brand: { "@type": "Brand", name: "DANSK LYNG" },
-    countryOfOrigin: "DK",
-    url: absoluteUrl(localePath(input.lang, `/products/${input.slug}`)),
+    "@graph": [
+      {
+        "@type": "ItemPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: input.name,
+        description: input.description,
+        inLanguage: htmlLang(input.lang),
+        isPartOf: {
+          "@type": "WebSite",
+          "@id": origin ? `${origin}/#website` : undefined,
+          name: "DANSK LYNG",
+          url: origin || undefined,
+          publisher,
+        },
+        about: { "@id": entityId },
+        mainEntity: { "@id": entityId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: image,
+        },
+        publisher,
+        breadcrumb: { "@id": crumbId },
+      },
+      {
+        "@type": "Thing",
+        "@id": entityId,
+        name: input.name,
+        description: input.description,
+        image,
+        url: pageUrl,
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": crumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: input.siteName, item: homeUrl },
+          { "@type": "ListItem", position: 2, name: input.collectionLabel, item: collectionUrl },
+          { "@type": "ListItem", position: 3, name: input.name, item: pageUrl },
+        ],
+      },
+    ],
   };
 }
 

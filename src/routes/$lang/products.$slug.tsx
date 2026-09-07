@@ -4,7 +4,7 @@ import { SolidLink } from "@/components/site-shell";
 import { productBySlug, products } from "@/lib/content";
 import { useLang, useT } from "@/lib/i18n";
 import { localePath, parseLang } from "@/lib/locale";
-import { JsonLd, productJsonLd, seoHead } from "@/lib/seo";
+import { JsonLd, itemPageJsonLd, seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/$lang/products/$slug")({
   loader: ({ params }) => {
@@ -39,12 +39,14 @@ function ProductPage() {
   return (
     <article>
       <JsonLd
-        data={productJsonLd({
+        data={itemPageJsonLd({
           lang,
           name: product.name[lang],
           description: product.lede[lang],
           image: product.image,
           slug: product.slug,
+          collectionLabel: t.navProducts,
+          siteName: t.wordmark,
         })}
       />
       <section className="grid lg:grid-cols-2">
