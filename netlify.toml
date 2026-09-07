@@ -5,3 +5,5 @@
 [build.environment]
   NODE_VERSION = "22"
   NITRO_PRESET = "netlify"
+  VITE_SITE_ORIGIN = "https://dansklyng.com"
+  VITE_PUBLIC_HOSTNAME = "dansklyng.com"
