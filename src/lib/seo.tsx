@@ -162,18 +162,46 @@ export function articleJsonLd(input: {
   date: string;
   slug: string;
   image?: string;
+  dateModified?: string;
 }) {
+  const pageUrl = absoluteUrl(localePath(input.lang, `/journal/${input.slug}`));
+  const homeUrl = absoluteUrl(localePath(input.lang, "/"));
+  const journalUrl = absoluteUrl(localePath(input.lang, "/journal"));
+  const origin = siteOrigin();
+  const orgId = origin ? `${origin}/#organization` : undefined;
+  const publisher = orgId ? { "@id": orgId } : { "@type": "Organization", name: "DANSK LYNG" };
+  const crumbId = `${pageUrl}#breadcrumb`;
+
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: input.title,
-    description: input.description,
-    image: input.image ? absoluteUrl(input.image) : undefined,
-    datePublished: input.date,
-    inLanguage: htmlLang(input.lang),
-    author: { "@type": "Organization", name: "DANSK LYNG" },
-    publisher: { "@type": "Organization", name: "DANSK LYNG" },
-    url: absoluteUrl(localePath(input.lang, `/journal/${input.slug}`)),
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: input.title,
+        description: input.description,
+        image: input.image ? absoluteUrl(input.image) : undefined,
+        datePublished: input.date,
+        dateModified: input.dateModified ?? input.date,
+        inLanguage: htmlLang(input.lang),
+        author: { "@type": "Organization", name: "DANSK LYNG" },
+        publisher,
+        url: pageUrl,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": pageUrl,
+        },
+        breadcrumb: { "@id": crumbId },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": crumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: ui[input.lang].wordmark, item: homeUrl },
+          { "@type": "ListItem", position: 2, name: ui[input.lang].navJournal, item: journalUrl },
+          { "@type": "ListItem", position: 3, name: input.title, item: pageUrl },
+        ],
+      },
+    ],
   };
 }
 
