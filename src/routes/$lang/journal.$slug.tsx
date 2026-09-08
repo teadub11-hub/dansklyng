@@ -59,6 +59,7 @@ function JournalEntry() {
           date: entry.date,
           slug: entry.slug,
           image: entry.image,
+          dateModified: "updated" in entry ? entry.updated : undefined,
         })}
       />
       <p className="text-xs tracking-widest text-heather uppercase">{themeLabel[entry.theme][lang]}</p>
@@ -70,19 +71,47 @@ function JournalEntry() {
         className={`mt-12 ${journalImageClass(entry.imageShape)}`}
       />
       <div className="mt-12 space-y-6 text-base leading-relaxed text-ink">
-        {entry.body[lang].map((p, i) => (
-          <div key={p.slice(0, 24)}>
-            <p>{p}</p>
-            {entry.figures
-              .filter((fig) => fig.after === i)
-              .map((fig) => (
-                <figure key={fig.src} className="py-8">
-                  <img src={fig.src} alt={fig.alt[lang]} className={journalImageClass(fig.shape)} />
-                  <figcaption className="mt-3 text-center text-xs tracking-wide text-muted">{fig.alt[lang]}</figcaption>
-                </figure>
-              ))}
-          </div>
-        ))}
+        {"lead" in entry && entry.lead ? <p>{entry.lead[lang]}</p> : null}
+        {"sections" in entry && entry.sections
+          ? entry.sections.map((section, sectionIndex) => {
+              const prior =
+                ("lead" in entry && entry.lead ? 1 : 0) +
+                entry.sections.slice(0, sectionIndex).reduce((n, s) => n + s.paragraphs[lang].length, 0);
+              return (
+                <section key={section.heading.en} className="space-y-6">
+                  <h2 className="font-display text-3xl text-ink">{section.heading[lang]}</h2>
+                  {section.paragraphs[lang].map((p, i) => {
+                    const index = prior + i;
+                    return (
+                      <div key={p.slice(0, 24)}>
+                        <p>{p}</p>
+                        {entry.figures
+                          .filter((fig) => fig.after === index)
+                          .map((fig) => (
+                            <figure key={fig.src} className="py-8">
+                              <img src={fig.src} alt={fig.alt[lang]} className={journalImageClass(fig.shape)} />
+                              <figcaption className="mt-3 text-center text-xs tracking-wide text-muted">{fig.alt[lang]}</figcaption>
+                            </figure>
+                          ))}
+                      </div>
+                    );
+                  })}
+                </section>
+              );
+            })
+          : entry.body[lang].map((p, i) => (
+              <div key={p.slice(0, 24)}>
+                <p>{p}</p>
+                {entry.figures
+                  .filter((fig) => fig.after === i)
+                  .map((fig) => (
+                    <figure key={fig.src} className="py-8">
+                      <img src={fig.src} alt={fig.alt[lang]} className={journalImageClass(fig.shape)} />
+                      <figcaption className="mt-3 text-center text-xs tracking-wide text-muted">{fig.alt[lang]}</figcaption>
+                    </figure>
+                  ))}
+              </div>
+            ))}
       </div>
       <p className="mt-12">
         <TextLink to={ctaTo}>{ctaLabel}</TextLink>
