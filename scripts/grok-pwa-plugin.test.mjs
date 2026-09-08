@@ -410,3 +410,21 @@ test("vite plugin bakes og identity as a virtual module", () => {
   assert.match(plugin, /snapshotOgIdentity/);
 });
 
+test("document title wins over site.json title for og:title", () => {
+  const html =
+    '<html><head><title>What makes Danish heather honey distinctive? — DANSK LYNG</title></head></html>';
+  const out = injectGrokPwaHead(html, {
+    appName: "Dansk Lyng",
+    cwd: "/tmp",
+    site: { title: "Dansk Lyng" },
+  });
+  assert.match(
+    out,
+    /property="og:title" content="What makes Danish heather honey distinctive\? — DANSK LYNG"/,
+  );
+  assert.match(
+    out,
+    /name="twitter:title" content="What makes Danish heather honey distinctive\? — DANSK LYNG"/,
+  );
+  assert.doesNotMatch(out, /property="og:title" content="Dansk Lyng"/);
+});

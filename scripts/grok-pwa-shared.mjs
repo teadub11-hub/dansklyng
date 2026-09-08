@@ -303,10 +303,10 @@ export function resolveOgTitle(
   host = "",
   documentTitle = "",
 ) {
-  const fromSite = String(site.title ?? "").trim();
-  if (fromSite) return fromSite;
   const fromDoc = String(documentTitle ?? "").trim();
   if (fromDoc) return fromDoc;
+  const fromSite = String(site.title ?? "").trim();
+  if (fromSite) return fromSite;
   const fromHost = appNameFromHost(host);
   if (fromHost && fromHost !== DEFAULT_APP_NAME) return fromHost;
   const fromArg = String(appName ?? "").trim();
@@ -345,6 +345,7 @@ export function grokOgHeadTags({
   const tags = [
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta property="og:title" content="${escapeHtml(title)}">`,
+    `<meta name="twitter:title" content="${escapeHtml(title)}">`,
   ];
   const description = String(site.description ?? "").trim();
   if (description) {
