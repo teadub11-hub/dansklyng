@@ -62,7 +62,7 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       data.interest.length ? `Honeys: ${data.interest.join(", ")}` : "",
       data.packing.length
         ? `Packing: ${data.packing
-            .map((item) => (item === "drums" ? "heather drums ~290 kg" : "450 g branded jars"))
+            .map((item) => (item === "drums" ? "heather drums ~290–300 kg" : "450 g branded jars"))
             .join(", ")}`
         : "",
       data.message ? `Message:\n${data.message}` : "",

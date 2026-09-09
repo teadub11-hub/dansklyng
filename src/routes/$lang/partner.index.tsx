@@ -94,8 +94,10 @@ function PartnerPage() {
           <div className="mt-12 max-w-xl">
             <p className="text-xs tracking-widest text-muted uppercase">{t.partnerSupplyK}</p>
             <p className="mt-4 text-pretty text-ink">{t.partnerSupplyJars}</p>
+            <p className="mt-3 text-pretty text-ink">{t.partnerSupplyCase}</p>
             <p className="mt-3 text-pretty text-ink">{t.partnerSupplyDrums}</p>
             <p className="mt-3 text-pretty text-ink">{t.partnerSupplyLot}</p>
+            <p className="mt-3 text-pretty text-ink">{t.partnerSupplyYield}</p>
           </div>
           <div className="mt-10">
             <SolidLink to="/partner/apply">{t.ctaPartner}</SolidLink>
