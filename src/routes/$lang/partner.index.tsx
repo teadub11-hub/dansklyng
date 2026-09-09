@@ -79,7 +79,7 @@ function PartnerPage() {
         <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
           <figure>
             <img
-              src="/images/craft-supers-waiting.jpg"
+              src="/images/craft-supers-waiting-v2.jpg"
               alt={
                 lang === "zh"
                   ? "蜂蜜房內成疊的繼箱，等待離心取蜜"
