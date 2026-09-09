@@ -156,7 +156,7 @@ export const ui = {
     heathCare:
       "石楠荒原需要持續管理，才能避免老化植株與其他植被逐漸取代石楠。當地自然保護管理會依區域狀況，以週期性更新方式移除老化植株，讓新的石楠重新生長。",
     aboutEyebrow: "ABOUT DANSK LYNG",
-    aboutH1: "一個名字，說出品牌來自哪裡",
+    aboutH1: "丹麥。石楠",
     aboutLede: "DANSK 是丹麥，LYNG 是石楠。這兩個字，組成了品牌的來源，也組成了我們想帶給餐桌的風味。",
     aboutDanskT: "DANSK｜丹麥的純淨",
     aboutDansk:
