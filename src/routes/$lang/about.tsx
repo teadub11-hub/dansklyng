@@ -42,6 +42,12 @@ function AboutPage() {
             <p className="mt-6 text-lg leading-relaxed text-pretty text-ink-soft">{block.body}</p>
           </div>
         ))}
+        <div className="mt-16">
+          <h2 className="font-display text-3xl text-ink sm:text-4xl">{t.aboutMissionT}</h2>
+          <p className="mt-6 text-lg leading-relaxed text-pretty text-ink-soft">{t.aboutMission1}</p>
+          <p className="mt-6 text-lg leading-relaxed text-pretty text-ink-soft">{t.aboutMission2}</p>
+          <p className="mt-6 text-lg leading-relaxed text-pretty text-ink-soft">{t.aboutMission3}</p>
+        </div>
       </section>
 
       <figure className="bg-cream">
