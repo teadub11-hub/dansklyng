@@ -113,30 +113,13 @@ function ApplyPage() {
   }
 
   return (
-    <div>
-      <div className="mx-auto max-w-xl px-4 pt-20 sm:px-6">
-        <p className="text-xs tracking-widest text-muted uppercase">{t.partnerEyebrow}</p>
-        <h1 className="mt-3 font-display text-5xl text-ink">{t.applyTitle}</h1>
-        <p className="mt-4 text-ink-soft">{t.applyLede}</p>
-        {saved ? <p className="mt-3 text-xs text-heather">{t.applyDraft}</p> : null}
-      </div>
+    <div className="mx-auto max-w-xl px-4 py-20 sm:px-6">
+      <p className="text-xs tracking-widest text-muted uppercase">{t.partnerEyebrow}</p>
+      <h1 className="mt-3 font-display text-5xl text-ink">{t.applyTitle}</h1>
+      <p className="mt-4 text-ink-soft">{t.applyLede}</p>
+      {saved ? <p className="mt-3 text-xs text-heather">{t.applyDraft}</p> : null}
 
-      <figure className="mx-auto mt-10 max-w-4xl px-4 sm:px-6">
-        <img
-          src="/images/craft-supers-waiting.jpg"
-          alt={
-            lang === "zh"
-              ? "蜂蜜房內成疊的繼箱，等待離心取蜜"
-              : "Stacked honey supers in the honey house, waiting to be extracted"
-          }
-          className="w-full object-cover"
-          width={1600}
-          height={1205}
-        />
-        <figcaption className="mt-3 text-sm text-ink-soft">{t.partnerSupersCaption}</figcaption>
-      </figure>
-
-      <form onSubmit={submit} className="mx-auto mt-10 max-w-xl space-y-6 px-4 pb-20 sm:px-6">
+      <form onSubmit={submit} className="mt-10 space-y-6">
         <Field label={t.applyCompany} value={draft.company} onChange={(v) => patch({ company: v })} required />
         <Field label={t.applyName} value={draft.name} onChange={(v) => patch({ name: v })} required />
         <Field
