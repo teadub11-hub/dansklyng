@@ -87,7 +87,7 @@ function PartnerPage() {
               }
               className="w-full object-cover"
               width={1600}
-              height={1205}
+              height={1200}
             />
             <figcaption className="mt-4 text-sm text-ink-soft">{t.partnerSupersCaption}</figcaption>
           </figure>
