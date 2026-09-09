@@ -207,7 +207,8 @@ export const ui = {
     partnerSupersCaption: "收成後的繼箱，等待離心取蜜。",
     partnerSupplyK: "供貨方式",
     partnerSupplyJars: "DANSK LYNG 品牌罐 450g。",
-    partnerSupplyDrums: "石楠蜜大桶約 290 kg，供自行後續處理與灌裝的合作夥伴。",
+    partnerSupplyDrums: "石楠蜜以鋼桶出貨，約 290 kg，產地封口，供自行後續處理與灌裝的合作夥伴。",
+    partnerSupplyLot: "每桶有批次編號，可追溯至養蜂人與採集地。",
     applyTitle: "業務洽詢",
     applyLede: "請留下聯絡資料與感興趣的產品，我們會回覆相關資訊。",
     applyStepCompany: "公司",
@@ -478,7 +479,9 @@ export const ui = {
     partnerSupersCaption: "Honey supers, after the harvest, waiting to be extracted.",
     partnerSupplyK: "HOW WE SUPPLY",
     partnerSupplyJars: "DANSK LYNG 450 g branded jars.",
-    partnerSupplyDrums: "Heather honey in drums of about 290 kg, for partners who pack their own.",
+    partnerSupplyDrums:
+      "Heather honey in steel drums of about 290 kg, sealed at origin, for partners who pack their own.",
+    partnerSupplyLot: "Each drum carries a lot code, traceable to the beekeeper and the harvest.",
     applyTitle: "Trade enquiry",
     applyLede:
       "Leave your contact details and tell us which products interest you. Our team will reply with the relevant information.",
