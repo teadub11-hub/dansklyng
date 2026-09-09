@@ -74,6 +74,28 @@ function PartnerPage() {
           ))}
         </ol>
       </section>
+
+      <section className="bg-cream">
+        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+          <figure>
+            <img
+              src="/images/craft-supers-waiting.jpg"
+              alt={
+                lang === "zh"
+                  ? "蜂蜜房內成疊的繼箱，等待離心取蜜"
+                  : "Stacked honey supers in the honey house, waiting to be extracted"
+              }
+              className="w-full object-cover"
+              width={1600}
+              height={1205}
+            />
+            <figcaption className="mt-4 text-sm text-ink-soft">{t.partnerSupersCaption}</figcaption>
+          </figure>
+          <div className="mt-10">
+            <SolidLink to="/partner/apply">{t.ctaPartner}</SolidLink>
+          </div>
+        </div>
+      </section>
     </article>
   );
 }

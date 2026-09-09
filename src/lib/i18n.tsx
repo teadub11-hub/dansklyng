@@ -204,6 +204,7 @@ export const ui = {
     support3: "合作夥伴可取得產品介紹、品牌故事、圖片與銷售素材。",
     support4t: "合作",
     support4: "如需產品、樣品或合作資訊，請聯絡我們。",
+    partnerSupersCaption: "收成後的繼箱，等待離心取蜜。",
     applyTitle: "業務洽詢",
     applyLede: "請留下聯絡資料與感興趣的產品，我們會回覆相關資訊。",
     applyStepCompany: "公司",
@@ -468,6 +469,7 @@ export const ui = {
     support3: "Partners receive product information, brand storytelling, imagery and sales materials.",
     support4t: "Working together",
     support4: "Contact us for product details, samples and wholesale enquiries.",
+    partnerSupersCaption: "Honey supers, after the harvest, waiting to be extracted.",
     applyTitle: "Trade enquiry",
     applyLede:
       "Leave your contact details and tell us which products interest you. Our team will reply with the relevant information.",
