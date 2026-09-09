@@ -91,6 +91,11 @@ function PartnerPage() {
             />
             <figcaption className="mt-4 text-sm text-ink-soft">{t.partnerSupersCaption}</figcaption>
           </figure>
+          <div className="mt-12 max-w-xl">
+            <p className="text-xs tracking-widest text-muted uppercase">{t.partnerSupplyK}</p>
+            <p className="mt-4 text-pretty text-ink">{t.partnerSupplyJars}</p>
+            <p className="mt-3 text-pretty text-ink">{t.partnerSupplyDrums}</p>
+          </div>
           <div className="mt-10">
             <SolidLink to="/partner/apply">{t.ctaPartner}</SolidLink>
           </div>
