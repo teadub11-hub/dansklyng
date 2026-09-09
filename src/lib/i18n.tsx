@@ -206,11 +206,9 @@ export const ui = {
     support4: "如需產品、樣品或合作資訊，請聯絡我們。",
     partnerSupersCaption: "收成後的繼箱，等待離心取蜜。",
     partnerSupplyK: "供貨方式",
-    partnerSupplyJars: "DANSK LYNG 品牌罐 450g。",
-    partnerSupplyCase: "每箱 12 入。歐規棧板 110 箱，共 1,320 罐。",
-    partnerSupplyDrums: "石楠蜜以桶裝出貨，約 290–300 kg，產地封口，供自行後續處理與灌裝的合作夥伴。",
-    partnerSupplyLot: "每桶有批次編號，可追溯至養蜂人與採集地。",
-    partnerSupplyYield: "一桶約可裝 640–650 罐（450g）。",
+    partnerSupplyJars: "DANSK LYNG 品牌罐 450g。每箱 12 入；歐規棧板 110 箱，共 1,320 罐。",
+    partnerSupplyDrums:
+      "石楠蜜以桶裝出貨，約 290–300 kg，產地封口，供自行後續處理與灌裝的合作夥伴。每桶有批次編號，可追溯至養蜂人與採集地。一桶約可裝 640–650 罐（450g）。",
     applyTitle: "業務洽詢",
     applyLede: "請留下聯絡資料與感興趣的產品，我們會回覆相關資訊。",
     applyStepCompany: "公司",
@@ -289,8 +287,9 @@ export const ui = {
     seoHeathDesc: "了解石楠的生長環境、花期與天氣如何影響丹麥石楠花蜜。",
     seoJournalTitle: "石楠、荒原與丹麥蜂蜜｜DANSK LYNG",
     seoJournalDesc: "從丹麥自然、石楠荒原與移動蜂箱，到四款蜂蜜的風味、質地、餐桌搭配與保存方式。",
-    seoPartnerTitle: "丹麥蜂蜜批發與經銷｜DANSK LYNG",
-    seoPartnerDesc: "洽詢 DANSK LYNG 石楠花蜜與丹麥蜂蜜系列的進口、經銷、零售及餐飲合作。",
+    seoPartnerTitle: "丹麥西日德蘭石楠蜜｜品牌罐與桶裝｜DANSK LYNG",
+    seoPartnerDesc:
+      "DANSK LYNG 石楠蜜來自西日德蘭。品牌罐 450g，或約 290–300 kg 桶裝、產地封口、有批次編號，供自行後續處理與灌裝。歡迎洽詢。",
     seoApplyTitle: "業務洽詢｜DANSK LYNG",
     seoApplyDesc: "請留下聯絡資料與感興趣的產品。以電子郵件與我們聯絡。",
     seoContactTitle: "聯絡 DANSK LYNG",
@@ -480,12 +479,10 @@ export const ui = {
     support4: "Contact us for product details, samples and wholesale enquiries.",
     partnerSupersCaption: "Honey supers, after the harvest, waiting to be extracted.",
     partnerSupplyK: "HOW WE SUPPLY",
-    partnerSupplyJars: "DANSK LYNG 450 g branded jars.",
-    partnerSupplyCase: "12 jars per carton. One EUR-pallet holds 110 cartons — 1,320 jars.",
+    partnerSupplyJars:
+      "DANSK LYNG 450 g branded jars. 12 jars per carton; 1,320 jars per EUR-pallet (110 cartons).",
     partnerSupplyDrums:
-      "Heather honey in drums of about 290–300 kg, sealed at origin, for partners who pack their own.",
-    partnerSupplyLot: "Each drum carries a lot code, traceable to the beekeeper and the harvest.",
-    partnerSupplyYield: "One drum fills about 640–650 jars of 450 g.",
+      "Heather honey in drums of about 290–300 kg, sealed at origin, for partners who pack their own. Each drum carries a lot code, traceable to the beekeeper and the harvest, and fills about 640–650 jars of 450 g.",
     applyTitle: "Trade enquiry",
     applyLede:
       "Leave your contact details and tell us which products interest you. Our team will reply with the relevant information.",
@@ -581,9 +578,9 @@ export const ui = {
     seoJournalTitle: "Heather, heathland and Danish honey | DANSK LYNG",
     seoJournalDesc:
       "Stories of Danish heathland, the moving hives and the flavour, texture and place behind each of our four honeys.",
-    seoPartnerTitle: "Danish honey wholesale & distribution | DANSK LYNG",
+    seoPartnerTitle: "Danish heather honey in jars and drums | DANSK LYNG",
     seoPartnerDesc:
-      "Discover DANSK LYNG for import, distribution, speciality retail, hospitality and gifting. Enquire about products and samples.",
+      "Heather honey from West Jutland. 450 g branded jars, or drums of about 290–300 kg for partners who pack their own. Lot-coded and sealed at origin. Trade enquiry.",
     seoApplyTitle: "Trade enquiry | DANSK LYNG",
     seoApplyDesc: "Contact DANSK LYNG for product information, samples, wholesale and distribution enquiries.",
     seoContactTitle: "Contact DANSK LYNG",
