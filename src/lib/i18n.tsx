@@ -170,6 +170,12 @@ export const ui = {
     aboutCraftT: "少一點加工，多一點蜂蜜本身",
     aboutCraft:
       "蜂蜜以離心方式取出，不以高溫加熱，也不添加其他成分。透過細緻的結晶控制，使質地柔滑而容易塗抹，同時保留不同蜜源與年份帶來的自然差異。",
+    aboutMissionT: "從西日德蘭，到你的餐桌",
+    aboutMission1:
+      "DANSK LYNG 扎根於丹麥西日德蘭。我們結合當地的養蜂經驗、對蜂蜜的細心選擇與呈現，讓具有鮮明地域個性的丹麥蜂蜜，走進不同的飲食文化與日常生活。",
+    aboutMission2:
+      "我們從產地出發，關注季節如何塑造蜜源，也重視每一季收成所展現的風味與質地。從選蜜到餐桌呈現，每一個環節都圍繞同一件事：讓人品嚐西日德蘭，也理解這片土地帶來的不同。",
+    aboutMission3: "丹麥，是我們的產地。石楠，是鮮明的個性。DANSK LYNG 將兩者帶上餐桌。",
     ctaStart: "業務洽詢",
     partnerEyebrow: "WHOLESALE & DISTRIBUTION",
     partnerTitle: "一個消費者容易記住的丹麥蜂蜜品牌",
@@ -425,6 +431,13 @@ export const ui = {
     aboutCraftT: "Handled gently, true to each harvest",
     aboutCraft:
       "The honey is gently extracted from the comb, never exposed to high heat and made with nothing else added. Careful crystallisation develops a smooth, spreadable texture while preserving the natural variation of every source and harvest.",
+    aboutMissionT: "From West Jutland to your table",
+    aboutMission1:
+      "DANSK LYNG is rooted in West Jutland. We bring together local beekeeping knowledge, careful selection and thoughtful presentation, allowing Danish honeys with a distinct sense of place to find their way into different food cultures and everyday life.",
+    aboutMission2:
+      "We begin with the landscape: how the seasons shape each nectar source, and how every harvest develops its own flavour and texture. From selecting the honey to bringing it to the table, each step follows the same idea—to let people taste West Jutland and understand what makes this place different.",
+    aboutMission3:
+      "Denmark is our origin. Heather is our signature. DANSK LYNG brings both to the table.",
     ctaStart: "Trade enquiry",
     partnerEyebrow: "WHOLESALE & DISTRIBUTION",
     partnerTitle: "A Danish honey brand with a story customers remember",
