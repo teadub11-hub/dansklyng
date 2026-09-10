@@ -204,7 +204,7 @@ export const ui = {
     support3: "合作夥伴可取得產品介紹、品牌故事、圖片與銷售素材。",
     support4t: "合作",
     support4: "如需產品、樣品或合作資訊，請聯絡我們。",
-    partnerSupersCaption: "收成後的繼箱，等待離心取蜜。",
+    partnerSupersCaption: "從荒原收成的繼箱，先入暖房，再送離心取蜜。",
     partnerSupplyK: "供貨方式",
     partnerSupplyJars: "DANSK LYNG 品牌罐 450g。每箱 12 入；歐規棧板 110 箱，共 1,320 罐。",
     partnerSupplyDrums:
@@ -477,7 +477,7 @@ export const ui = {
     support3: "Partners receive product information, brand storytelling, imagery and sales materials.",
     support4t: "Working together",
     support4: "Contact us for product details, samples and wholesale enquiries.",
-    partnerSupersCaption: "Honey supers, after the harvest, waiting to be extracted.",
+    partnerSupersCaption: "Harvest supers from the heath, held in the warm room before extraction.",
     partnerSupplyK: "HOW WE SUPPLY",
     partnerSupplyJars:
       "DANSK LYNG 450 g branded jars. 12 jars per carton; 1,320 jars per EUR-pallet (110 cartons).",
