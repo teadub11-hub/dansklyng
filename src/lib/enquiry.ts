@@ -8,14 +8,12 @@ export type EnquiryInput = {
   country: string;
   type: string;
   interest: string[];
-  packing: string[];
   message: string;
   website: string;
 };
 
 const TYPES = new Set(["", "importer", "distributor", "retail", "horeca", "other"]);
 const HONEYS = new Set(["lyng", "blomster", "sensommer", "skov"]);
-const PACKING = new Set(["jars", "drums"]);
 
 function text(value: unknown, max: number) {
   if (typeof value !== "string") return "";
@@ -37,9 +35,6 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       interest: Array.isArray(raw?.interest)
         ? raw.interest.map((item) => text(item, 40)).filter((item) => HONEYS.has(item)).slice(0, 4)
         : [],
-      packing: Array.isArray(raw?.packing)
-        ? raw.packing.map((item) => text(item, 40)).filter((item) => PACKING.has(item)).slice(0, 2)
-        : [],
       message: typeof raw?.message === "string" ? raw.message.trim().slice(0, 4000) : "",
       website: text(raw?.website, 200),
     };
@@ -60,11 +55,6 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       `Country: ${data.country}`,
       data.type ? `Channel: ${data.type}` : "",
       data.interest.length ? `Honeys: ${data.interest.join(", ")}` : "",
-      data.packing.length
-        ? `Packing: ${data.packing
-            .map((item) => (item === "drums" ? "heather drums ~290–300 kg" : "450 g branded jars"))
-            .join(", ")}`
-        : "",
       data.message ? `Message:\n${data.message}` : "",
     ].filter(Boolean);
     const textBody = lines.join("\n");
@@ -105,7 +95,6 @@ export const submitEnquiry = createServerFn({ method: "POST" })
           country: data.country,
           type: data.type,
           interest: data.interest.join(", "),
-          packing: data.packing.join(", "),
           message: data.message,
         }),
       });
@@ -124,7 +113,6 @@ export const submitEnquiry = createServerFn({ method: "POST" })
           country: data.country,
           type: data.type,
           interest: data.interest,
-          packing: data.packing,
           message: data.message,
         }),
       });
