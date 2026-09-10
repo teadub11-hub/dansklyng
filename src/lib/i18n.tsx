@@ -86,20 +86,20 @@ export const ui = {
     productExplore: "探索風味與搭配",
     productTradeTitle: "批發與經銷",
     productTradeBody: "如需產品、樣品或合作資訊，請聯絡我們。",
-    homeEyebrow: "DANISH HONEY · JUTLAND",
+    homeEyebrow: "DANISH HONEY · WEST JUTLAND",
     homeH1a: "丹麥的純淨，石楠的個性",
     homeH1b: "",
     homeLede:
-      "四款來自丹麥自然的蜂蜜，從溫和花香到深色蜜露，各有自己的風味。品牌代表是石楠花蜜，來自西日德蘭石楠荒原，辛香、深色，質地如絲絨般細緻。",
+      "四款丹麥蜂蜜，隨季節而不同。品牌代表是西日德蘭荒原的石楠蜜——色深、帶辛香，質地天生濃稠。",
     homeScroll: "往下",
     homeDanskEyebrow: "PURITY FROM DENMARK",
     homeDanskTitle: "純淨，是每一款蜂蜜共同的起點",
     homeDanskBody:
-      "來自丹麥的自然環境，以離心方式取蜜，不以高溫加熱，也不添加其他成分。留下的，是不同花期與蜜源原有的色澤、香氣和質地。",
+      "來自丹麥，自巢脾取出，不添加其他成分。留下的，是這一季蜜源原有的色澤、香氣與質地。",
     homeLyngEyebrow: "THE SIGNATURE OF DANSK LYNG",
-    homeLyngTitle: "Lyng，是丹麥文的石楠",
+    homeLyngTitle: "花期短暫。入罐可辨。",
     homeLyngBody:
-      "石楠迎著海風生長在開闊荒原，到了晚夏，整片土地轉為紫色。它的蜂蜜則呈紅棕至深酒紅色，帶有辛香與濃厚風味，質地細緻、柔滑而容易塗抹。這就是 DANSK LYNG 最鮮明的味道。",
+      "西日德蘭的石楠荒原，在晚夏迎來短暫花期。蜂蜜呈深琥珀至紅棕色，風味飽滿、帶花香與溫暖辛香，尾韻回甘悠長。質地天生濃稠，近乎柔軟的凝膠，而不是清淺流動的花蜜。入罐，便是石楠。",
     homeRange: "FOUR DANISH HONEYS",
     homeRangeTitle: "同一個丹麥，四種蜂蜜風味",
     homeRangeLede:
@@ -108,7 +108,7 @@ export const ui = {
     homeCraftEyebrow: "SIMPLY HONEY",
     homeCraftTitle: "保留蜂蜜原來的樣子",
     homeCraftBody:
-      "離心取蜜、不以高溫加熱、零添加。再以細緻的結晶控制，讓蜂蜜形成柔滑、容易塗抹的質地。罐裡只有蜂蜜，也保留每個年份自然形成的差異。",
+      "色澤、香氣與質地，隨蜜源與年份而不同。石楠蜜天生濃稠；野花、晚夏與森林蜜則各有自己的狀態。罐裡是那一季，不是統一的做法。",
     homeJournal: "走進丹麥蜂蜜的風味",
     homeJournalLede: "從石楠荒原、晚夏花期與移動蜂箱，到四款蜂蜜的風味、質地與餐桌搭配。",
     homeAllNotes: "閱讀風土誌",
@@ -351,29 +351,29 @@ export const ui = {
     productExplore: "Explore flavour & pairings",
     productTradeTitle: "Wholesale enquiries",
     productTradeBody: "For product information, samples or wholesale enquiries, contact our team.",
-    homeEyebrow: "DANISH HONEY · JUTLAND",
+    homeEyebrow: "DANISH HONEY · WEST JUTLAND",
     homeH1a: "Pure Danish nature. Distinctly heather.",
     homeH1b: "",
     homeLede:
-      "Four honeys shaped by Denmark's changing seasons, from delicate wildflower honey to dark forest honeydew. At the heart of the collection is our heather honey from West Jutland: deep in colour, warm with spice and naturally velvety.",
+      "Four Danish honeys, shaped by the seasons. At the heart of the collection is heather honey from the West Jutland heath — deep in colour, warm with spice, naturally dense.",
     homeScroll: "Scroll",
     homeDanskEyebrow: "PURE DANISH NATURE",
     homeDanskTitle: "Honey, with nothing unnecessary",
     homeDanskBody:
-      "Harvested in Denmark, gently extracted from the comb and never exposed to high heat. Nothing else is added, allowing every jar to retain the colour, aroma and texture of its season and source.",
+      "Harvested in Denmark, gently extracted from the comb. Nothing else is added. What remains is the colour, aroma and texture of the harvest.",
     homeLyngEyebrow: "THE SIGNATURE OF DANSK LYNG",
-    homeLyngTitle: "Lyng is Danish for heather",
+    homeLyngTitle: "Rare in season. Unmistakable in the jar.",
     homeLyngBody:
-      "Heather grows across the open heath, exposed to the wind from the North Sea. In late summer, the landscape turns purple. The honey is red-brown to deep burgundy, distinctly spicy and naturally velvety—the defining taste of DANSK LYNG.",
+      "Across the West Jutland heath, heather blooms for a brief season in late summer. The honey is deep amber to reddish-brown, full and floral, with warm spice and a lingering finish. It is naturally dense — closer to a soft gel than to a runny blossom honey. In the jar, it is unmistakably heather.",
     homeRange: "FOUR DANISH HONEYS",
     homeRangeTitle: "One landscape. Four distinct honeys.",
     homeRangeLede:
       "Heather honey is our signature. Wildflower, late-summer and forest honey reveal other seasons and sources, creating a collection that moves from pale and delicate to dark and full-flavoured.",
     homeFlag: "Signature",
     homeCraftEyebrow: "SIMPLY HONEY",
-    homeCraftTitle: "Nothing added. Nature preserved.",
+    homeCraftTitle: "The harvest, not a house style.",
     homeCraftBody:
-      "Gently extracted from the comb, never exposed to high heat and made with nothing but honey. Careful crystallisation develops a smooth, spreadable texture while preserving the natural character of each harvest.",
+      "Colour, aroma and texture follow the source and the year. Heather honey is dense by nature; wildflower, late-summer and forest honey each have a character of their own. What you taste is the season.",
     homeJournal: "Discover the character of Danish honey",
     homeJournalLede:
       "Explore the heather heathlands, the late-summer bloom and the journeys of the hives—along with the flavour, texture and place behind each honey.",
