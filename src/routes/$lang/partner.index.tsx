@@ -82,8 +82,8 @@ function PartnerPage() {
               src="/images/craft-supers-waiting-v2.jpg"
               alt={
                 lang === "zh"
-                  ? "蜂蜜房內成疊的繼箱，等待離心取蜜"
-                  : "Stacked honey supers in the honey house, waiting to be extracted"
+                  ? "從荒原收成的繼箱，在暖房內成疊，待送離心取蜜"
+                  : "Harvest supers from the heath, stacked in the warm room before extraction"
               }
               className="w-full object-cover"
               width={1600}
