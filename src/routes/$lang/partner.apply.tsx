@@ -20,7 +20,6 @@ type Draft = {
   country: string;
   type: string;
   interest: string[];
-  packing: string[];
   message: string;
 };
 
@@ -31,7 +30,6 @@ const empty: Draft = {
   country: "",
   type: "",
   interest: [],
-  packing: [],
   message: "",
 };
 
@@ -52,7 +50,6 @@ function ApplyPage() {
           ...empty,
           ...parsed,
           interest: Array.isArray(parsed.interest) ? parsed.interest : [],
-          packing: Array.isArray(parsed.packing) ? parsed.packing : [],
         });
       } catch {
         /* ignore */
@@ -74,13 +71,6 @@ function ApplyPage() {
       ? draft.interest.filter((s) => s !== slug)
       : [...draft.interest, slug];
     patch({ interest: next });
-  }
-
-  function togglePacking(slug: string) {
-    const next = draft.packing.includes(slug)
-      ? draft.packing.filter((s) => s !== slug)
-      : [...draft.packing, slug];
-    patch({ packing: next });
   }
 
   async function submit(e: FormEvent) {
@@ -180,33 +170,6 @@ function ApplyPage() {
                 </label>
               </li>
             ))}
-          </ul>
-        </fieldset>
-        <fieldset>
-          <legend className="text-xs tracking-widest text-muted uppercase">{t.applyPacking}</legend>
-          <ul className="mt-3 space-y-1">
-            <li>
-              <label className="flex min-h-11 items-center gap-3 text-sm">
-                <input
-                  type="checkbox"
-                  checked={draft.packing.includes("jars")}
-                  onChange={() => togglePacking("jars")}
-                  className="size-4 accent-heath"
-                />
-                <span>{t.applyPackJars}</span>
-              </label>
-            </li>
-            <li>
-              <label className="flex min-h-11 items-center gap-3 text-sm">
-                <input
-                  type="checkbox"
-                  checked={draft.packing.includes("drums")}
-                  onChange={() => togglePacking("drums")}
-                  className="size-4 accent-heath"
-                />
-                <span>{t.applyPackDrums}</span>
-              </label>
-            </li>
           </ul>
         </fieldset>
         <label className="block">
