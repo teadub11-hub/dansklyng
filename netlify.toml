@@ -7,3 +7,97 @@
   NITRO_PRESET = "netlify"
   VITE_SITE_ORIGIN = "https://dansklyng.com"
   VITE_PUBLIC_HOSTNAME = "dansklyng.com"
+
+# Old Lovable shop / enquiry / partners URLs. force=true so they win over the 404.
+[[redirects]]
+  from = "/shop"
+  query = { product = ":product" }
+  to = "/en/products/:product"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/shop"
+  query = { product = ":product" }
+  to = "/en/products/:product"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh/shop"
+  query = { product = ":product" }
+  to = "/zh/products/:product"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/shop/*"
+  to = "/en/products/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh/shop/*"
+  to = "/zh/products/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/*"
+  to = "/en/products/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/shop"
+  to = "/en/products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh/shop"
+  to = "/zh/products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop"
+  to = "/en/products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/inquiry"
+  to = "/en/partner/apply"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/inquiry"
+  to = "/en/partner/apply"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh/inquiry"
+  to = "/zh/partner/apply"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/partners"
+  to = "/en/partner"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/partners"
+  to = "/en/partner"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh/partners"
+  to = "/zh/partner"
+  status = 301
+  force = true
