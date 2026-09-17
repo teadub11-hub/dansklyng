@@ -14,19 +14,19 @@ export const products = [
     name: { zh: "石楠花蜜", en: "Heather honey" } as Localized,
     eyebrow: { zh: "DANISH HEATHER HONEY", en: "DANISH HEATHER HONEY" } as Localized,
     source: { zh: "石楠", en: "Heather" } as Localized,
-    origin: { zh: "丹麥日德蘭", en: "West Jutland, Denmark" } as Localized,
-    color: { zh: "紅棕至深酒紅色", en: "Red-brown to deep burgundy" } as Localized,
-    texture: { zh: "細緻、濃稠、易於塗抹", en: "Smooth, velvety and spreadable" } as Localized,
+    origin: { zh: "西日德蘭，丹麥", en: "West Jutland, Denmark" } as Localized,
+    color: { zh: "紅棕至深酒紅", en: "Red-brown to deep burgundy" } as Localized,
+    texture: { zh: "天生濃稠，近乎柔軟的凝膠", en: "Dense and gel-like by nature" } as Localized,
     flavor: { zh: "鮮明辛香", en: "Distinctly spicy and full-flavoured" } as Localized,
     season: { zh: "晚夏花期", en: "Late summer" } as Localized,
-    tasting: { zh: "紅棕至酒紅 · 鮮明辛香 · 細緻濃稠", en: "Deep burgundy · Distinctly spicy · Naturally velvety" } as Localized,
+    tasting: { zh: "深紅棕 · 溫暖辛香 · 入罐濃稠", en: "Deep red-brown · Warm spice · Dense in the jar" } as Localized,
     notes: {
-      zh: "辛香、深色，質地細緻而易於塗抹。",
-      en: "Deep in colour, warm with spice and naturally velvety.",
+      zh: "深紅棕、辛香，質地天生濃稠。",
+      en: "Deep red-brown, warm with spice, dense by nature.",
     } as Localized,
     lede: {
-      zh: "來自日德蘭荒原的石楠花蜜。紅棕至深酒紅色，辛香而濃厚，質地細緻、易於塗抹。",
-      en: "Heather honey from the heathlands of West Jutland. Red-brown to deep burgundy, warm with spice and full-flavoured, with a smooth, velvety texture.",
+      zh: "來自西日德蘭海岸荒原的石楠花蜜。深紅棕色澤、溫暖辛香，質地天生濃稠，入罐即可辨認。",
+      en: "Heather honey from the coastal heathlands of West Jutland. Deep red-brown, warm with spice, and dense by nature—unmistakably heather in the jar.",
     } as Localized,
     pairings: {
       zh: "藍紋起司、熟成起司、燕麥餅與黑麥麵包",
@@ -36,29 +36,29 @@ export const products = [
       {
         title: { zh: "它有什麼不同？", en: "What makes it distinctive" },
         body: {
-          zh: "石楠花蜜不以清淡為特色。它的深色、辛香與濃厚質地，使味道停留得更久，也與一般春夏花蜜形成清楚區別。",
-          en: "Heather honey is full-flavoured by nature. Its deep colour, warm spice and velvety texture linger on the palate, setting it apart from the lighter blossom honeys of spring and summer.",
+          zh: "西日德蘭的石楠荒原，在晚夏迎來短暫花期。這款蜜色澤深、辛香飽滿，質地天生濃稠。花期短。入罐即可辨認。",
+          en: "Across the West Jutland heath, heather blooms for a brief season in late summer. The honey is deep in colour, warm with spice, and dense by nature. Rare in season. Unmistakable in the jar.",
         },
       },
       {
         title: { zh: "怎麼品嚐？", en: "How to taste it" },
         body: {
-          zh: "先觀察色澤與質地，再聞香、入口，最後留意尾韻。可單獨品嚐，也適合搭配藍紋起司、熟成起司、燕麥餅與黑麥麵包。",
-          en: "Begin with the colour and texture, then notice the aroma, flavour and finish. Enjoy it on its own or pair it with blue cheese, aged cheese, oat biscuits or rye bread.",
+          zh: "先看色澤，再感受罐中濃稠的質地，然後是香氣、飽滿風味與悠長尾韻。可單獨品嚐，也適合藍紋起司、熟成起司、燕麥餅與黑麥麵包。",
+          en: "Look first at the colour and the dense set in the jar. Then the aroma, the full flavour, and a long finish. Taste it on its own, or with blue cheese, aged cheese, oat biscuits and rye bread.",
         },
       },
       {
         title: { zh: "天然的批次差異", en: "Naturally different each year" },
         body: {
-          zh: "花期與天氣每年不同，天然蜂蜜的色澤、香氣、質地與產量也可能有所變化。個別產品資訊以實際批次為準。",
+          zh: "花期與天氣每年不同，色澤、香氣、質地與產量也隨之變化。每一季收成，都有自己的層次。",
           en: "The bloom and weather change from year to year, and the honey changes with them. Each harvest has its own nuances of colour, aroma and texture.",
         },
       },
       {
         title: { zh: "從蜂巢到玻璃罐", en: "From hive to jar" },
         body: {
-          zh: "蜂箱在石楠盛開時移至西日德蘭海岸線的石楠荒原。蜂蜜以離心方式取出，不以高溫加熱，並透過結晶控制形成細緻、如絲絨般容易塗抹的質地。產品不添加其他成分。",
-          en: "When the heather blooms, the hives are moved to coastal heathlands across West Jutland. The honey is gently extracted from the comb, never exposed to high heat and carefully crystallised to develop its fine, velvety texture. Nothing else is added.",
+          zh: "石楠盛開時，蜂箱移至西日德蘭沿岸的石楠荒原。蜂蜜自巢脾取出，不添加其他成分。色澤、香氣與質地，隨蜜源與年份而定。",
+          en: "When the heather blooms, the hives are moved among coastal heathlands across West Jutland. The honey is extracted from the comb. Nothing else is added. Colour, aroma and texture follow the source and the year.",
         },
       },
     ] as ProductSection[],
@@ -67,8 +67,8 @@ export const products = [
       en: "Danish heather honey | DANSK LYNG",
     } as Localized,
     seoDesc: {
-      zh: "認識來自日德蘭荒原、帶有深色外觀、辛香風味與細緻質地的丹麥石楠花蜜。",
-      en: "Danish heather honey from the heathlands of West Jutland, with a deep colour, distinctly spicy flavour and naturally velvety texture.",
+      zh: "來自西日德蘭荒原的丹麥石楠花蜜：深紅棕色澤、溫暖辛香、天生濃稠。",
+      en: "Danish heather honey from the heathlands of West Jutland: deep red-brown, warm with spice, dense by nature.",
     } as Localized,
     image: "/images/jar-lyng.jpg",
     landscape: "/images/flavor-lyng.jpg",
