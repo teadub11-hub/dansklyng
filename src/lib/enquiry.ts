@@ -3,6 +3,8 @@ import { EMAIL } from "@/lib/content";
 
 export type EnquiryInput = {
   company: string;
+  channels: string;
+  companyWebsite: string;
   name: string;
   email: string;
   country: string;
@@ -13,6 +15,13 @@ export type EnquiryInput = {
 };
 
 const TYPES = new Set(["", "importer", "distributor", "retail", "horeca", "other"]);
+const CHANNELS = new Set(["retail", "distributor", "both", "other"]);
+const CHANNEL_LABELS: Record<string, string> = {
+  retail: "Retail",
+  distributor: "Distribution",
+  both: "Retail and distribution",
+  other: "Other",
+};
 const HONEYS = new Set(["lyng", "blomster", "sensommer", "skov"]);
 
 function text(value: unknown, max: number) {
@@ -28,6 +37,8 @@ export const submitEnquiry = createServerFn({ method: "POST" })
   .inputValidator((raw: EnquiryInput): EnquiryInput => {
     const data: EnquiryInput = {
       company: text(raw?.company, 200),
+      channels: text(raw?.channels, 40),
+      companyWebsite: text(raw?.companyWebsite, 300),
       name: text(raw?.name, 120),
       email: text(raw?.email, 200).toLowerCase(),
       country: text(raw?.country, 120),
@@ -39,7 +50,8 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       website: text(raw?.website, 200),
     };
     if (!TYPES.has(data.type)) data.type = "";
-    if (!data.company || !data.name || !data.email || !data.country) {
+    if (!CHANNELS.has(data.channels)) throw new Error("required");
+    if (!data.company || !data.name || !data.email || !data.country || data.interest.length === 0) {
       throw new Error("required");
     }
     if (!isEmail(data.email)) throw new Error("email");
@@ -50,11 +62,13 @@ export const submitEnquiry = createServerFn({ method: "POST" })
 
     const lines = [
       `Company: ${data.company}`,
+      `Main sales channels: ${CHANNEL_LABELS[data.channels]}`,
+      data.companyWebsite ? `Website: ${data.companyWebsite}` : "",
       `Name: ${data.name}`,
       `Email: ${data.email}`,
       `Country: ${data.country}`,
       data.type ? `Channel: ${data.type}` : "",
-      data.interest.length ? `Honeys: ${data.interest.join(", ")}` : "",
+      `Honeys: ${data.interest.join(", ")}`,
       data.message ? `Message:\n${data.message}` : "",
     ].filter(Boolean);
     const textBody = lines.join("\n");
@@ -90,6 +104,8 @@ export const submitEnquiry = createServerFn({ method: "POST" })
         body: new URLSearchParams({
           "form-name": "enquiry",
           company: data.company,
+          channels: data.channels,
+          companyWebsite: data.companyWebsite,
           name: data.name,
           email: data.email,
           country: data.country,
@@ -108,6 +124,8 @@ export const submitEnquiry = createServerFn({ method: "POST" })
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           company: data.company,
+          channels: data.channels,
+          companyWebsite: data.companyWebsite,
           name: data.name,
           email: data.email,
           country: data.country,

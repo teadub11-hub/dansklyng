@@ -15,6 +15,8 @@ const DRAFT_KEY = "dansk-lyng-enquiry";
 
 type Draft = {
   company: string;
+  channels: string;
+  companyWebsite: string;
   name: string;
   email: string;
   country: string;
@@ -25,6 +27,8 @@ type Draft = {
 
 const empty: Draft = {
   company: "",
+  channels: "",
+  companyWebsite: "",
   name: "",
   email: "",
   country: "",
@@ -40,6 +44,7 @@ function ApplyPage() {
   const [website, setWebsite] = useState("");
   const [saved, setSaved] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [interestMissing, setInterestMissing] = useState(false);
 
   useEffect(() => {
     const raw = window.localStorage.getItem(DRAFT_KEY);
@@ -70,12 +75,17 @@ function ApplyPage() {
     const next = draft.interest.includes(slug)
       ? draft.interest.filter((s) => s !== slug)
       : [...draft.interest, slug];
+    if (next.length > 0) setInterestMissing(false);
     patch({ interest: next });
   }
 
   async function submit(e: FormEvent) {
     e.preventDefault();
     if (status === "sending") return;
+    if (draft.interest.length === 0) {
+      setInterestMissing(true);
+      return;
+    }
     setStatus("sending");
     try {
       await submitEnquiry({
@@ -90,6 +100,13 @@ function ApplyPage() {
       setStatus("error");
     }
   }
+
+  const channels = [
+    ["retail", t.channelRetail],
+    ["distributor", t.channelDistributor],
+    ["both", t.channelBoth],
+    ["other", t.channelOther],
+  ] as const;
 
   const types = [
     ["importer", t.typeImporter],
@@ -121,6 +138,29 @@ function ApplyPage() {
 
       <form onSubmit={submit} className="mt-10 space-y-6">
         <Field label={t.applyCompany} value={draft.company} onChange={(v) => patch({ company: v })} required />
+        <label className="block">
+          <span className="text-xs tracking-widest text-muted uppercase">{t.applyChannels}</span>
+          <select
+            required
+            value={draft.channels}
+            onChange={(e) => patch({ channels: e.target.value })}
+            className="mt-2 min-h-11 w-full border border-line bg-parchment px-3 text-sm outline-none focus:border-ink"
+          >
+            <option value="">{t.applyChannelsPh}</option>
+            {channels.map(([v, label]) => (
+              <option key={v} value={v}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <Field
+          label={t.applyWebsite}
+          value={draft.companyWebsite}
+          onChange={(v) => patch({ companyWebsite: v })}
+          type="text"
+          autoComplete="url"
+        />
         <Field label={t.applyName} value={draft.name} onChange={(v) => patch({ name: v })} required />
         <Field
           label={t.applyEmail}
@@ -131,7 +171,7 @@ function ApplyPage() {
         />
         <Field label={t.applyCountry} value={draft.country} onChange={(v) => patch({ country: v })} required />
         <label className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
-          <span>Website</span>
+          <span>Fax</span>
           <input
             tabIndex={-1}
             autoComplete="off"
@@ -166,11 +206,15 @@ function ApplyPage() {
                     onChange={() => toggleInterest(p.slug)}
                     className="size-4 accent-heath"
                   />
-                  <span>{p.name[lang]}</span>
+                  <span>
+                    {p.name[lang]}
+                    {p.slug === "lyng" ? ` (${p.danish})` : ""}
+                  </span>
                 </label>
               </li>
             ))}
           </ul>
+          {interestMissing ? <p className="mt-2 text-sm text-heather">{t.applyProductsRequired}</p> : null}
         </fieldset>
         <label className="block">
           <span className="text-xs tracking-widest text-muted uppercase">{t.applyMessage}</span>
@@ -201,12 +245,14 @@ function Field({
   onChange,
   required,
   type = "text",
+  autoComplete,
 }: {
   label: string;
   value: string;
   onChange: (v: string) => void;
   required?: boolean;
   type?: string;
+  autoComplete?: string;
 }) {
   return (
     <label className="block">
@@ -214,6 +260,7 @@ function Field({
       <input
         type={type}
         required={required}
+        autoComplete={autoComplete}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="mt-2 min-h-11 w-full border border-line bg-parchment px-3 text-sm outline-none focus:border-ink"
