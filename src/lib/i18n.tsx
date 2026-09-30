@@ -163,13 +163,13 @@ export const ui = {
       "丹麥的自然環境，給了四款蜂蜜共同的品牌底色：乾淨、清楚、不過度修飾。從溫和的春夏花蜜到來自林間蜜露的森林蜜，每一款都保留自己的蜜源與季節個性。",
     aboutLyngT: "LYNG｜石楠的個性",
     aboutLyng:
-      "Lyng 是丹麥文的石楠。它生長在西日德蘭開闊的海岸荒原，迎著風，在其他花期接近尾聲的晚夏盛開。紫色荒原、深酒紅色蜂蜜、鮮明辛香與絲絨般質地，共同形成 DANSK LYNG 的品牌識別。",
+      "Lyng 是丹麥文的石楠。它生長在西日德蘭開闊的海岸荒原，迎著風，在其他花期接近尾聲的晚夏盛開。紫色荒原、深紅棕蜂蜜、鮮明辛香，質地天生濃稠：這是 DANSK LYNG 的品牌識別。",
     aboutRangeT: "以石楠為代表，不只石楠",
     aboutRange:
       "石楠花蜜是品牌代表，但 DANSK LYNG 不只一款蜂蜜。野花蜜、晚夏蜜與森林蜜分別帶來春夏花香、晚夏層次與森林蜜露的深沉風味。四款產品一起，才是我們想呈現的丹麥蜂蜜。",
     aboutCraftT: "少一點加工，多一點蜂蜜本身",
     aboutCraft:
-      "蜂蜜以離心方式取出，不以高溫加熱，也不添加其他成分。透過細緻的結晶控制，使質地柔滑而容易塗抹，同時保留不同蜜源與年份帶來的自然差異。",
+      "蜂蜜自巢脾取出，不添加其他成分。石楠蜜天生濃稠；其他蜂蜜各自保留該次收成的質地。",
     aboutMissionT: "從西日德蘭，到你的餐桌",
     aboutMission1:
       "DANSK LYNG 扎根於丹麥西日德蘭。我們結合當地的養蜂經驗、對蜂蜜的細心選擇與呈現，讓具有鮮明地域個性的丹麥蜂蜜，走進不同的飲食文化與日常生活。",
@@ -178,9 +178,9 @@ export const ui = {
     aboutMission3: "丹麥，是我們的產地。石楠，是鮮明的個性。DANSK LYNG 將兩者帶上餐桌。",
     ctaStart: "業務洽詢",
     partnerEyebrow: "WHOLESALE & DISTRIBUTION",
-    partnerTitle: "一個消費者容易記住的丹麥蜂蜜品牌",
+    partnerTitle: "西日德蘭石楠蜜，以及同一產地的另外三款丹麥蜂蜜。",
     partnerLede:
-      "丹麥的純淨、石楠的鮮明個性，加上四款風味清楚的蜂蜜，讓 DANSK LYNG 容易被看見、介紹與選購。",
+      "貨架上只有一個產地。石楠是顧客記得的那一款，另外三款把系列補齊。",
     partnerOriginK: "清楚的購買理由",
     partnerOriginH: "從丹麥來源，到可以品嚐的差異。",
     partnerOriginB:
@@ -433,13 +433,13 @@ export const ui = {
       "All four honeys begin in Denmark's landscape and changing seasons. From delicate spring and summer flowers to deep forest honeydew, each jar is made with nothing but honey and retains the natural character of its source and harvest.",
     aboutLyngT: "LYNG · the character of heather",
     aboutLyng:
-      "Lyng is Danish for heather. It grows across the open coastal heathlands of West Jutland and flowers in late summer, as many other blooms begin to fade. Purple heathland, burgundy honey, warm spice and a velvety texture: this is the signature of DANSK LYNG.",
+      "Lyng is Danish for heather. It grows across the open coastal heathlands of West Jutland and flowers in late summer, as many other blooms begin to fade. Purple heathland, deep red-brown honey, warm spice, and a texture that is dense by nature: this is the signature of DANSK LYNG.",
     aboutRangeT: "One signature. Four Danish honeys.",
     aboutRange:
       "Heather honey leads the collection. Wildflower honey brings the delicacy of spring and summer flowers; late-summer honey, the richness of the season's final bloom; and forest honey, the depth and natural variation of woodland honeydew. Together, they show the breadth of Danish honey.",
     aboutCraftT: "Handled gently, true to each harvest",
     aboutCraft:
-      "The honey is gently extracted from the comb, never exposed to high heat and made with nothing else added. Careful crystallisation develops a smooth, spreadable texture while preserving the natural variation of every source and harvest.",
+      "The honey is extracted from the comb. Nothing else is added. Heather stays dense by nature; the other honeys keep the texture of their own harvest.",
     aboutMissionT: "From West Jutland to your table",
     aboutMission1:
       "DANSK LYNG is rooted in West Jutland. We bring together local beekeeping knowledge, careful selection and thoughtful presentation, allowing Danish honeys with a distinct sense of place to find their way into different food cultures and everyday life.",
@@ -449,9 +449,9 @@ export const ui = {
       "Denmark is our origin. Heather is our signature. DANSK LYNG brings both to the table.",
     ctaStart: "Trade enquiry",
     partnerEyebrow: "WHOLESALE & DISTRIBUTION",
-    partnerTitle: "A Danish honey brand with a story customers remember",
+    partnerTitle: "West Jutland heather honey, with three other Danish honeys from the same landscape.",
     partnerLede:
-      "A clear Danish origin, a distinctive signature honey and four complementary flavour profiles give DANSK LYNG a strong identity on shelf and an easy story to share.",
+      "One origin for the shelf. Heather is the honey customers remember. The other three give the range its breadth.",
     partnerOriginK: "WHY DANSK LYNG",
     partnerOriginH: "Danish origin. A difference customers can taste.",
     partnerOriginB:
