@@ -294,7 +294,7 @@ export const journal = [
     figures: [
       {
         src: "/images/journal/honey-spoon.jpg",
-        alt: { zh: "石楠花蜜濃稠細緻的質地", en: "The smooth, velvety texture of heather honey" } as Localized,
+        alt: { zh: "石楠花蜜天生濃稠的質地", en: "The dense, gel-like texture of heather honey" } as Localized,
         after: 2,
         shape: "square" as JournalShape,
       },
@@ -302,12 +302,12 @@ export const journal = [
     title: { zh: "什麼是丹麥石楠花蜜？", en: "What makes Danish heather honey distinctive?" },
     lede: {
       zh: "從蜜源、色澤、辛香與質地，認識石楠花蜜與一般花蜜的不同。",
-      en: "Discover how heather gives the honey its deep colour, warm spice and naturally velvety texture.",
+      en: "Discover how heather gives the honey its deep colour, warm spice and a texture that is dense by nature.",
     },
-    updated: "2026-09-08",
+    updated: "2026-09-30",
     lead: {
-      zh: "Lyng 在丹麥語中意為石楠。石楠蜜採自晚夏盛開的石楠花，以深紅棕色澤、溫暖辛香、飽滿風味與天然絲絨般質地為特色。",
-      en: "Lyng is the Danish word for heather. Heather honey is a late-summer honey known for its deep red-brown colour, warm spice, full flavour and naturally velvety texture.",
+      zh: "Lyng 在丹麥語中意為石楠。石楠蜜採自晚夏盛開的石楠花，以深紅棕色澤、溫暖辛香、飽滿風味與天生濃稠的質地為特色。",
+      en: "Lyng is the Danish word for heather. Heather honey is a late-summer honey known for its deep red-brown colour, warm spice, full flavour and a texture that is dense by nature.",
     } as Localized,
     sections: [
       {
@@ -325,10 +325,10 @@ export const journal = [
         heading: { zh: "風味為何不同", en: "Why it tastes different" },
         paragraphs: {
           zh: [
-            "它通常呈紅棕至深酒紅色，帶有鮮明辛香，質地細緻、濃稠而容易塗抹。石楠花蜜不以清淡為特色。深色、辛香與濃厚質地，使味道停留得更久，也與一般春夏花蜜形成清楚區別。",
+            "它通常呈紅棕至深酒紅色，帶有鮮明辛香，質地天生濃稠，近乎柔軟的凝膠。石楠花蜜不以清淡為特色。深色、辛香與濃厚質地，使味道停留得更久，也與一般春夏花蜜形成清楚區別。",
           ],
           en: [
-            "The honey is red-brown to deep burgundy, distinctly spicy and full-flavoured, with a smooth, velvety texture. These qualities set it apart from the paler, more delicate blossom honeys of spring and summer.",
+            "The honey is red-brown to deep burgundy, distinctly spicy and full-flavoured, dense and gel-like by nature. These qualities set it apart from the paler, more delicate blossom honeys of spring and summer.",
           ],
         },
       },
@@ -348,16 +348,16 @@ export const journal = [
     ],
     body: {
       zh: [
-        "Lyng 在丹麥語中意為石楠。石楠蜜採自晚夏盛開的石楠花，以深紅棕色澤、溫暖辛香、飽滿風味與天然絲絨般質地為特色。",
+        "Lyng 在丹麥語中意為石楠。石楠蜜採自晚夏盛開的石楠花，以深紅棕色澤、溫暖辛香、飽滿風味與天生濃稠的質地為特色。",
         "這是來自日德蘭荒原的石楠花蜜。石楠迎著海風生長在開闊的砂質土地，到了晚夏，整片荒原轉為紫色。蜜蜂在這段花期採集，才有這款蜂蜜。",
-        "它通常呈紅棕至深酒紅色，帶有鮮明辛香，質地細緻、濃稠而容易塗抹。石楠花蜜不以清淡為特色。深色、辛香與濃厚質地，使味道停留得更久，也與一般春夏花蜜形成清楚區別。",
+        "它通常呈紅棕至深酒紅色，帶有鮮明辛香，質地天生濃稠，近乎柔軟的凝膠。石楠花蜜不以清淡為特色。深色、辛香與濃厚質地，使味道停留得更久，也與一般春夏花蜜形成清楚區別。",
         "DANSK LYNG 的石楠花蜜來自西日德蘭海岸線。石楠盛開時，丹麥養蜂人將蜂箱移至沿岸不同的石楠荒原與自然保護區，從北到南分布於三十多個採集地點。盛花期的沿岸荒原以石楠為主要蜜源。",
         "花期與天氣每年不同，色澤、香氣、質地與產量也可能有所變化。它是品牌最具代表性的風味。",
       ],
       en: [
-        "Lyng is the Danish word for heather. Heather honey is a late-summer honey known for its deep red-brown colour, warm spice, full flavour and naturally velvety texture.",
+        "Lyng is the Danish word for heather. Heather honey is a late-summer honey known for its deep red-brown colour, warm spice, full flavour and a texture that is dense by nature.",
         "Heather honey begins with a landscape. Heather thrives in the open, sandy ground of West Jutland, exposed to the wind from the North Sea. In late summer, the heathland turns purple and the bees begin to gather nectar from its flowers.",
-        "The honey is red-brown to deep burgundy, distinctly spicy and full-flavoured, with a smooth, velvety texture. These qualities set it apart from the paler, more delicate blossom honeys of spring and summer.",
+        "The honey is red-brown to deep burgundy, distinctly spicy and full-flavoured, dense and gel-like by nature. These qualities set it apart from the paler, more delicate blossom honeys of spring and summer.",
         "When the heather comes into bloom, the beekeepers we work with move their hives among more than thirty coastal heathland sites and nature reserves, from north to south. Here, flowering heather dominates the landscape and becomes the defining source of the harvest.",
         "No two seasons are identical. Temperature, wind and rainfall influence both the bloom and the bees' work, giving every harvest its own nuances of colour, aroma and texture. Heather honey remains the defining taste of DANSK LYNG.",
       ],
