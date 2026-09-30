@@ -206,10 +206,7 @@ function ApplyPage() {
                     onChange={() => toggleInterest(p.slug)}
                     className="size-4 accent-heath"
                   />
-                  <span>
-                    {p.name[lang]}
-                    {p.slug === "lyng" ? ` (${p.danish})` : ""}
-                  </span>
+                  <span>{p.name[lang]}</span>
                 </label>
               </li>
             ))}
