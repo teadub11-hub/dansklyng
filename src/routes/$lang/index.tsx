@@ -47,6 +47,49 @@ function Home() {
         </div>
       </section>
 
+      <section className="bg-cream">
+        <div className="mx-auto grid max-w-7xl lg:min-h-[calc(100dvh-5rem)] lg:grid-cols-[minmax(0,1.4fr)_minmax(18rem,1fr)]">
+          <Link
+            to={localePath(lang, "/products/lyng") as "/"}
+            className="group flex flex-col border-b border-line lg:border-r lg:border-b-0"
+          >
+            <div className="flex flex-1 items-center justify-center px-8 pt-12">
+              <img
+                src="/images/jar-lyng.jpg"
+                alt={lang === "zh" ? "DANSK LYNG 石楠花蜜" : "Jar of DANSK LYNG heather honey"}
+                className="w-full max-w-md object-contain"
+              />
+            </div>
+            <div className="px-6 pb-12 sm:px-12">
+              <p className="text-xs tracking-widest text-heather uppercase">{t.homeFlag}</p>
+              <h2 className="mt-3 font-display text-4xl text-ink group-hover:text-heather sm:text-5xl">
+                {products[0].name[lang]}
+              </h2>
+              <p className="mt-4 max-w-sm text-ink-soft">{products[0].notes[lang]}</p>
+            </div>
+          </Link>
+          <div className="grid sm:grid-cols-3 lg:h-full lg:grid-cols-1 lg:grid-rows-3">
+            {products.slice(1).map((p) => (
+              <Link
+                key={p.slug}
+                to={localePath(lang, `/products/${p.slug}`) as "/"}
+                className="group flex items-center gap-4 border-b border-line px-5 py-6 last:border-b-0 sm:border-r sm:px-4 sm:last:border-r-0 lg:border-r-0 lg:gap-6 lg:px-8"
+              >
+                <img
+                  src={p.image}
+                  alt=""
+                  className="h-24 w-24 shrink-0 object-contain sm:h-20 sm:w-20 lg:h-28 lg:w-28"
+                />
+                <div>
+                  <h3 className="font-display text-2xl text-ink group-hover:text-heather">{p.name[lang]}</h3>
+                  <p className="mt-2 text-sm text-ink-soft">{p.notes[lang]}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2">
         <div>
           <p className="text-xs tracking-widest text-muted uppercase">{t.homeDanskEyebrow}</p>
@@ -61,57 +104,6 @@ function Home() {
           alt={lang === "zh" ? "丹麥自然中的花期" : "Danish wildflowers in bloom"}
           className="aspect-square w-full object-cover"
         />
-      </section>
-
-      <section className="border-t border-line bg-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2">
-          <img
-            src="/images/honey-texture.jpg"
-            alt={lang === "zh" ? "石楠花蜜細緻的質地" : "The smooth, velvety texture of heather honey"}
-            className="aspect-square w-full object-cover lg:order-last"
-          />
-          <div>
-            <p className="text-xs tracking-widest text-heather uppercase">{t.homeLyngEyebrow}</p>
-            <h2 className="mt-3 font-display text-4xl text-ink sm:text-5xl">{t.homeLyngTitle}</h2>
-            <p className="mt-8 max-w-md text-pretty text-lg text-ink-soft">{t.homeLyngBody}</p>
-            <div className="mt-10">
-              <TextLink to="/products/lyng">{t.ctaDiscoverLyng}</TextLink>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="text-xs tracking-widest text-muted uppercase">{t.homeRange}</p>
-              <h2 className="mt-3 max-w-xl font-display text-3xl text-ink">{t.homeRangeTitle}</h2>
-              <p className="mt-4 max-w-2xl text-pretty text-ink-soft">{t.homeRangeLede}</p>
-            </div>
-            <TextLink to="/products">{t.ctaCatalog}</TextLink>
-          </div>
-          <img
-            src="/images/honey-flight.jpg"
-            alt={lang === "zh" ? "DANSK LYNG 四款蜂蜜" : "The four DANSK LYNG honeys"}
-            className="mt-12 aspect-video w-full object-cover"
-          />
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {products.map((p) => (
-              <Link
-                key={p.slug}
-                to={localePath(lang, `/products/${p.slug}`) as "/"}
-                className="group block"
-              >
-                <h3 className="font-display text-2xl text-ink group-hover:text-heather">{p.name[lang]}</h3>
-                {p.featured ? (
-                  <p className="mt-2 text-xs tracking-widest text-heather uppercase">{t.homeFlag}</p>
-                ) : null}
-                <p className="mt-3 text-sm text-ink-soft">{p.notes[lang]}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
       </section>
 
       <section className="border-t border-line bg-cream">
