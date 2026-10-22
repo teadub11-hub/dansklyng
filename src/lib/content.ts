@@ -16,17 +16,20 @@ export const products = [
     source: { zh: "石楠", en: "Heather" } as Localized,
     origin: { zh: "西日德蘭，丹麥", en: "West Jutland, Denmark" } as Localized,
     color: { zh: "紅棕至深酒紅", en: "Red-brown to deep burgundy" } as Localized,
-    texture: { zh: "天生濃稠，近乎柔軟的凝膠", en: "Dense and gel-like by nature" } as Localized,
+    texture: {
+      zh: "採收時呈凝膠；入罐後為細緻結晶，可塗抹。",
+      en: "Gel-like at harvest; a fine, spreadable crystal in the jar.",
+    } as Localized,
     flavor: { zh: "鮮明辛香", en: "Distinctly spicy and full-flavoured" } as Localized,
     season: { zh: "晚夏花期", en: "Late summer" } as Localized,
-    tasting: { zh: "深紅棕 · 溫暖辛香 · 入罐濃稠", en: "Deep red-brown · Warm spice · Dense in the jar" } as Localized,
+    tasting: { zh: "深紅棕 · 溫暖辛香 · 細緻結晶", en: "Deep red-brown · Warm spice · Fine crystal" } as Localized,
     notes: {
       zh: "深紅棕、辛香，質地天生濃稠。",
       en: "Deep red-brown, warm with spice, dense by nature.",
     } as Localized,
     lede: {
-      zh: "來自西日德蘭海岸荒原的石楠花蜜。深紅棕色澤、溫暖辛香，質地天生濃稠，入罐即可辨認。",
-      en: "Heather honey from the coastal heathlands of West Jutland. Deep red-brown, warm with spice, and dense by nature—unmistakably heather in the jar.",
+      zh: "西日德蘭荒原的季節石楠蜜。深紅棕、辛香飽滿；入罐後是細緻結晶，塗得開。450 g。",
+      en: "Seasonal heather honey from the West Jutland heath. Deep red-brown, spicy and full; in the jar, a fine crystal that spreads. 450 g.",
     } as Localized,
     pairings: {
       zh: "藍紋起司、熟成起司、燕麥餅與黑麥麵包",
@@ -34,31 +37,24 @@ export const products = [
     } as Localized,
     sections: [
       {
-        title: { zh: "它有什麼不同？", en: "What makes it distinctive" },
+        title: { zh: "石楠", en: "Heather" },
         body: {
-          zh: "西日德蘭的石楠荒原，在晚夏迎來短暫花期。這款蜜色澤深、辛香飽滿，質地天生濃稠。花期短。入罐即可辨認。",
-          en: "Across the West Jutland heath, heather blooms for a brief season in late summer. The honey is deep in colour, warm with spice, and dense by nature. Rare in season. Unmistakable in the jar.",
+          zh: "石楠是低矮的野生灌木。晚夏時，西日德蘭開闊的荒原會轉成紫色。蜜蜂在這段花期採集，才有這款蜜。",
+          en: "Heather is a low wild shrub. In late summer it turns the open heath of West Jutland purple. The bees gather it then.",
         },
       },
       {
-        title: { zh: "怎麼品嚐？", en: "How to taste it" },
+        title: { zh: "為什麼不好處理", en: "Why it is handled differently" },
         body: {
-          zh: "先看色澤，再感受罐中濃稠的質地，然後是香氣、飽滿風味與悠長尾韻。可單獨品嚐，也適合藍紋起司、熟成起司、燕麥餅與黑麥麵包。",
-          en: "Look first at the colour and the dense set in the jar. Then the aroma, the full flavour, and a long finish. Taste it on its own, or with blue cheese, aged cheese, oat biscuits and rye bread.",
+          zh: "石楠蜜天生呈凝膠。它不像一般花蜜那樣流動、可以直接過篩。巢房要先刺開，蜂蜜才能取出，過篩也要比液態蜂蜜更費工。",
+          en: "Heather honey is gel-like by nature. It does not run or strain like blossom honey. The comb is opened before the honey can be extracted, and the straining takes more care.",
         },
       },
       {
-        title: { zh: "天然的批次差異", en: "Naturally different each year" },
+        title: { zh: "罐子裡", en: "In the jar" },
         body: {
-          zh: "花期與天氣每年不同，色澤、香氣、質地與產量也隨之變化。每一季收成，都有自己的層次。",
-          en: "The bloom and weather change from year to year, and the honey changes with them. Each harvest has its own nuances of colour, aroma and texture.",
-        },
-      },
-      {
-        title: { zh: "從蜂巢到玻璃罐", en: "From hive to jar" },
-        body: {
-          zh: "石楠盛開時，蜂箱移至西日德蘭沿岸的石楠荒原。蜂蜜自巢脾取出，不添加其他成分。色澤、香氣與質地，隨蜜源與年份而定。",
-          en: "When the heather blooms, the hives are moved among coastal heathlands across West Jutland. The honey is extracted from the comb. Nothing else is added. Colour, aroma and texture follow the source and the year.",
+          zh: "取出之後，要靠時間和有經驗的處理，才會結成細緻的結晶。放著不管，石楠蜜可能結成粗粒。細緻結晶才塗得開。色澤、辛香和濃厚，仍是這片荒原的。",
+          en: "Time and an experienced hand then bring it to a fine crystal. Left alone, it can set coarse. The fine crystal is what you spread. Colour, spice and density stay those of the heath.",
         },
       },
     ] as ProductSection[],
@@ -257,8 +253,8 @@ export const aromaNotes = [
   { id: "spice", family: "wood", present: true, name: { zh: "辛香", en: "Warm spice" } },
   { id: "resin", family: "wood", present: false, name: { zh: "樹脂", en: "Resin" } },
   { id: "peat", family: "wood", present: false, name: { zh: "荒原泥炭", en: "Peat" } },
-  { id: "gel", family: "texture", present: false, name: { zh: "凝膠", en: "Gel-like" } },
-  { id: "silk", family: "texture", present: true, name: { zh: "絲絨", en: "Velvet" } },
+  { id: "gel", family: "texture", present: true, name: { zh: "凝膠", en: "Gel-like" } },
+  { id: "silk", family: "texture", present: false, name: { zh: "絲絨", en: "Velvet" } },
   { id: "tannin", family: "texture", present: false, name: { zh: "單寧", en: "Tannin" } },
 ] as const;
 
