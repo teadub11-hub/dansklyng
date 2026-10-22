@@ -78,7 +78,7 @@ function ProductPage() {
               <dt className="text-xs tracking-widest text-muted uppercase">{t.specColor}</dt>
               <dd className="mt-1">{product.color[lang]}</dd>
             </div>
-            <div>
+            <div className="col-span-2">
               <dt className="text-xs tracking-widest text-muted uppercase">{t.specTexture}</dt>
               <dd className="mt-1">{product.texture[lang]}</dd>
             </div>
@@ -89,6 +89,10 @@ function ProductPage() {
             <div className="col-span-2">
               <dt className="text-xs tracking-widest text-muted uppercase">{t.format}</dt>
               <dd className="mt-1">{t.jar}</dd>
+            </div>
+            <div className="col-span-2">
+              <dt className="text-xs tracking-widest text-muted uppercase">{t.specIngredients}</dt>
+              <dd className="mt-1">{t.ingredientsValue}</dd>
             </div>
             <div className="col-span-2">
               <dt className="text-xs tracking-widest text-muted uppercase">{t.pairings}</dt>

@@ -99,7 +99,7 @@ export const ui = {
     homeLyngEyebrow: "THE SIGNATURE OF DANSK LYNG",
     homeLyngTitle: "花期短暫。入罐可辨。",
     homeLyngBody:
-      "西日德蘭的石楠荒原，在晚夏迎來短暫花期。蜂蜜呈深琥珀至紅棕色，風味飽滿、帶花香與溫暖辛香，尾韻回甘悠長。質地天生濃稠，近乎柔軟的凝膠，而不是清淺流動的花蜜。入罐，便是石楠。",
+      "西日德蘭的石楠荒原，在晚夏迎來短暫花期。蜂蜜呈深紅棕色，風味飽滿、帶花香與溫暖辛香，尾韻回甘悠長。質地天生濃稠，近乎柔軟的凝膠，而不是清淺流動的花蜜。入罐，便是石楠。",
     homeRange: "FOUR DANISH HONEYS",
     homeRangeTitle: "同一個丹麥，四種蜂蜜風味",
     homeRangeLede:
@@ -129,6 +129,8 @@ export const ui = {
     specColor: "色澤",
     specTexture: "質地",
     specFlavour: "風味",
+    specIngredients: "成分",
+    ingredientsValue: "蜂蜜",
     harvest: "蜜源",
     aroma: "風味",
     format: "規格",
@@ -364,7 +366,7 @@ export const ui = {
     homeLyngEyebrow: "THE SIGNATURE OF DANSK LYNG",
     homeLyngTitle: "Rare in season. Unmistakable in the jar.",
     homeLyngBody:
-      "Across the West Jutland heath, heather blooms for a brief season in late summer. The honey is deep amber to reddish-brown, full and floral, with warm spice and a lingering finish. It is naturally dense — closer to a soft gel than to a runny blossom honey. In the jar, it is unmistakably heather.",
+      "Across the West Jutland heath, heather blooms for a brief season in late summer. The honey is deep red-brown, full and floral, with warm spice and a lingering finish. It is naturally dense — closer to a soft gel than to a runny blossom honey. In the jar, it is unmistakably heather.",
     homeRange: "FOUR DANISH HONEYS",
     homeRangeTitle: "One landscape. Four distinct honeys.",
     homeRangeLede:
@@ -395,6 +397,8 @@ export const ui = {
     specColor: "Colour",
     specTexture: "Texture",
     specFlavour: "Flavour",
+    specIngredients: "Ingredients",
+    ingredientsValue: "Honey",
     harvest: "Source",
     aroma: "Flavour",
     format: "Size",
